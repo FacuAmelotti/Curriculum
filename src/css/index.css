@@ -8,7 +8,7 @@ html {
     --secondary-color: #1A365D;
     --accent-color: #38BDF8;
     --text-color: #2D3748;
-    --background-color: #F7FAFC;
+    --background-color: #f5f7fa;
 }
 
 body {
@@ -22,6 +22,9 @@ body {
     margin: 0 auto;
 }
 
+
+
+
 /* Encabezado */
 header {
     text-align: center;
@@ -30,6 +33,21 @@ header {
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+    padding: 2rem;
+}
+
+
+header h1:hover {
+    color: var(--primary-color);
+    cursor: default;
+    transform: scale(1.054);
+}
+
+.header-container {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
 }
 
 header h1 {
@@ -39,9 +57,14 @@ header h1 {
     font-weight: 700;
 }
 
+header a:hover {
+    color: var(--accent-color);
+}
+
 header p {
     margin: 0.4rem 0;
     color: var(--text-color);
+    cursor: default;
 }
 
 header a {
@@ -62,6 +85,7 @@ section {
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    cursor: default;
 }
 
 h2 {
@@ -73,6 +97,11 @@ h2 {
     position: relative;
 }
 
+h2:hover{
+    color: var(--primary-color);
+    transform: scale(1.01);
+}
+
 h2::after {
     content: '';
     position: absolute;
@@ -81,6 +110,19 @@ h2::after {
     width: 50px;
     height: 3px;
     background: var(--primary-color);
+}
+
+section:hover::after {
+    opacity: 1;
+}
+
+/* Animación de la línea bajo los títulos */
+h2::after {
+    transition: width 0.6s var(--hover-ease);
+}
+
+h2:hover::after {
+    width: 200px;
 }
 
 h3 {
@@ -105,6 +147,24 @@ li::before {
     position: absolute;
     left: 0;
     color: var(--accent-color);
+}
+
+/* Animación en listas */
+li {
+    transition: transform 0.3s var(--hover-ease);
+}
+
+li:hover {
+    transform: translateX(5px);
+}
+
+li::before {
+    transition: transform 0.3s var(--hover-ease);
+}
+
+li:hover::before {
+    transform: rotate(90deg);
+    color: var(--primary-color);
 }
 
 /* Experiencia laboral */
@@ -204,25 +264,12 @@ header p:nth-of-type(4) a:hover {
     }
 }
 
-/* Layout del Header */
-header {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    margin-bottom: 3rem;
-    padding: 2rem;
-}
-
-.header-container {
-    display: flex;
-    gap: 3rem;
-    align-items: flex-start;
-}
 
 .profile-photo {
     flex: 0 0 30%;
     max-width: 250px;
     position: relative;
+    
 }
 
 .profile-photo img {
@@ -233,6 +280,8 @@ header {
     object-fit: cover;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-top:20px;
+    filter: grayscale(56%); /* Convierte la imagen a blanco y negro */
+    
 }
 
 .header-content {
@@ -294,3 +343,34 @@ header {
     }
 }
 
+/* Efectos hover mejorados */
+.profile-photo img {
+    transition: transform 0.4s var(--hover-ease), box-shadow 0.4s var(--hover-ease);
+}
+
+.profile-photo:hover img {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    filter: grayscale(0%); /* Convierte la imagen a blanco y negro */
+    transition: all 0.3s ease-in-out; /* Suaviza el efecto */
+}
+
+
+.contact-item {
+    transition: transform 0.3s var(--hover-ease);
+    border-radius: 6px;
+}
+
+.contact-item:hover {
+    transform: translateX(8px);
+    background: rgba(56, 189, 248, 0.05);
+}
+
+.contact-item:hover .icon {
+    transform: rotate(-10deg) scale(1.1);
+    filter: drop-shadow(0 2px 4px rgba(42, 92, 170, 0.2));
+}
+
+.icon {
+    transition: all 0.3s var(--hover-ease);
+}
