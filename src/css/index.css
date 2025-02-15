@@ -9,6 +9,7 @@ html {
     --accent-color: #38BDF8;
     --text-color: #2D3748;
     --background-color: #f5f7fa;
+    --lightmode-color: #272525;
 }
 
 body {
@@ -609,3 +610,134 @@ header p:nth-of-type(4) a:hover {
     }
 }
 
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.visible {
+    opacity: 1;
+}
+
+/* Botón de tema */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--lightmode-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(180deg) scale(1.1);
+}
+
+/* Tooltips */
+.tooltip {
+    position: absolute;
+    top: -30px;
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--primary-color) transparent transparent transparent;
+}
+
+/* Botón subir */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: none;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.scroll-top:hover {
+    transform: scale(1.1);
+}
+
+/* Efecto hover proyectos */
+.project-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-item::before {
+    content: '';
+    position: absolute;
+    background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(56, 189, 248, 0.1),
+        transparent 40%
+    );
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-item:hover::before {
+    opacity: 1;
+}
+
+/* Modo oscuro manual */
+body.dark-mode {
+    --primary-color: #88c1e9;
+    --secondary-color: #486c92;
+    --text-color: #E2E8F0;
+    --background-color: #12141b;
+    --lightmode-color: #d4d4d4;
+}
+
+body.dark-mode header,
+body.dark-mode section,
+body.dark-mode .projects-category {
+    background-color: var(--background-color);
+}
+
+body.dark-mode section {
+    box-shadow: 0 4px 6px -1px rgba(44, 192, 230, 0.05);
+}
+
+body.dark-mode .skill-icon {
+    background: rgba(255, 255, 255, 0.05);
+}
