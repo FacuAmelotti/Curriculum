@@ -423,7 +423,7 @@ header p:nth-of-type(4) a:hover {
     }
 }
 
-/*
+
 @media (prefers-color-scheme: dark) {
     .projects-category {
         background: var(--background-color);
@@ -434,7 +434,7 @@ header p:nth-of-type(4) a:hover {
         background: rgba(255, 255, 255, 0.05);
     }
 }
-*/
+
 /* Responsive */
 @media (max-width: 768px) {
     .header-container {
