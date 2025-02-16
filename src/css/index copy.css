@@ -730,7 +730,7 @@ body.dark-mode {
     --primary-color: #88c1e9;
     --secondary-color: #486c92;
     --text-color: #E2E8F0;
-    --background-color: #121314;
+    --background-color: #12141b;
     --lightmode-color: #d4d4d4;
 }
 
@@ -742,22 +742,6 @@ body.dark-mode .projects-category {
 
 body.dark-mode section {
     box-shadow: 0 4px 6px -1px rgba(44, 192, 230, 0.05);
-}
-
-body.dark-mode  .project-logo {
-    width: 90%;
-    background: #CBD5E0;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s var(--hover-ease);
-    padding  : 1px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-}
-
-body.dark-mode  .project-logo:hover {
-    box-shadow: 0 3px 8px rgba(151, 215, 235, 0.23);
 }
 
 body.dark-mode .skill-icon {
