@@ -302,6 +302,7 @@ header p:nth-of-type(4) a:hover {
     gap: 0.8rem;
     margin: 0;
     padding: 0.1rem 0;
+    
 }
 
 /* Sección de Proyectos */
@@ -374,7 +375,6 @@ header p:nth-of-type(4) a:hover {
 }
 
 .category-title::before {
-    content: '📁';
     position: absolute;
     left: -0.5rem;
     top: -2px;
@@ -395,11 +395,11 @@ header p:nth-of-type(4) a:hover {
     border-radius: 10px;
     background: var(--background-color);
     transition: all 0.3s ease;
-    text-decoration: none;
     color: inherit;
     position: relative;
     border-left: 2px solid var(--accent-color);
     overflow: hidden;
+    text-decoration: none;
 }
 
 .project-item:hover {
@@ -477,10 +477,15 @@ header p:nth-of-type(4) a:hover {
 
     .project-logo {
         margin-bottom: 1rem;
+        width: 80px; /* Hacemos la imagen un poco más grande para la vista móvil */
+        height: 80px;
+        margin-left: auto;
+        margin-right: auto; /* Centramos la imagen */
     }
 
     .project-info {
         padding-right: 0;
+        text-align: center; /* Centramos el texto */
     }
 }
 
