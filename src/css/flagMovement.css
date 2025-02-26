@@ -1,0 +1,176 @@
+@keyframes main-wave {
+    0% { --wave-main: 0; }
+    100% { --wave-main: 6.283; } /* 2π radianes */
+}
+
+@keyframes secondary-wave {
+    0% { --wave-sec: 3.1415; } /* π radianes (desfasada) */
+    100% { --wave-sec: 9.4245; } /* 3π radianes */
+}
+
+@keyframes flag-movement {
+    0% {
+        transform:
+            rotate(calc(sin(var(--wave-main)) * 0.5deg + cos(var(--wave-sec)) * 1.2deg))
+            scaleY(calc(1.1 + sin(var(--wave-main) * 1.5) * 0.08))
+            translateX(calc(cos(var(--wave-main) * 3px - sin(var(--wave-sec)) * 2px)))
+            translateY(0);
+    }
+    25% {
+        transform:
+            rotate(calc(sin(var(--wave-main)) * 0.8deg + cos(var(--wave-sec)) * 1.2deg))
+            scaleY(calc(1.05 + sin(var(--wave-main) * 1.5) * 0.08))
+            translateX(calc(sin(var(--wave-main)) * -3px)) /* Moviendo más lentamente */
+            translateY(0);
+    }
+    50% {
+        transform:
+            rotate(calc(cos(var(--wave-main) * 0.7) * -1.8deg + sin(var(--wave-sec) * 1.3) * 0.9deg))
+            scaleY(calc(0.96 + cos(var(--wave-main) * 2) * 0.12))
+            translateX(calc(sin(var(--wave-main) * 2) * -6px + cos(var(--wave-sec)) * 4px)) /* Más movimiento y lento */
+            translateY(0);
+    }
+    75% {
+        transform:
+            rotate(calc(sin(var(--wave-main)) * 0.8deg + cos(var(--wave-sec)) * -1.2deg))
+            scaleY(calc(1.05 + cos(var(--wave-main) * 1.5) * 0.08))
+            translateX(calc(sin(var(--wave-main)) * 3px)) /* Hacia la derecha de manera más lenta */
+            translateY(0);
+    }
+    100% {
+        transform:
+            rotate(calc(sin(var(--wave-main) * 1.1) * 1.4deg + cos(var(--wave-sec) * 0.9) * -0.7deg))
+            scaleY(calc(1.05 + sin(var(--wave-main) * 0.8) * 0.1))
+            translateX(calc(cos(var(--wave-main) * 0.4) * 3px - sin(var(--wave-sec) * 1.5)) * 6px) /* Lento y estable */
+            translateY(0);
+    }
+}
+
+.flag-icon {
+    --wave-main: 0;
+    --wave-sec: 0;
+    width: 32px;
+    height: auto;
+    animation: 
+        flag-movement 10s infinite alternate ease-in-out, /* Tiempo más largo para mayor fluidez */
+        main-wave 15s infinite linear, /* Tiempo más largo para que sea más fluido */
+        secondary-wave 18s infinite linear; /* También más lento */
+    position: relative;
+    display: inline-block;
+    
+    /* Efectos de profundidad */
+    filter: 
+        drop-shadow(calc(cos(var(--wave-main) * 1.5) * 2px) calc(sin(var(--wave-sec) * 0.7) * 3px) 4px rgba(0,0,0,0.15))
+        brightness(calc(0.98 + sin(var(--wave-main) * 2) * 0.04));
+}
+
+
+/* Definición de propiedades personalizadas */
+@property --wave-main {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0;
+}
+
+@property --wave-sec {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0;
+}
+
+.flag-container {
+    cursor: pointer; /* Hace que sea clickeable */
+}
+
+.flag-icon {
+    width: 32px;
+    height: auto;
+    animation: 
+        flag-movement 10s infinite alternate ease-in-out,
+        main-wave 15s infinite linear,
+        secondary-wave 18s infinite linear;
+    position: relative;
+    display: inline-block;
+}
+
+.image-panel {
+    display: none; /* El panel está oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.96);
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.panel-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.panel-image {
+    max-width: 100%;
+    max-height: 1080%;
+    width: auto;
+    height: auto;
+    border: 5px solid white;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(180, 24, 24);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.close-btn:hover {
+    background-color: rgb(204, 20, 20);
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.78);
+    color: white;
+    border: none;
+    padding: 6px;
+    margin: 22px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+.image-panel {
+    display: none; /* El panel está oculto por defecto */
+}
