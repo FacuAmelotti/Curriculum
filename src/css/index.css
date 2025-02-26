@@ -26,58 +26,100 @@ body {
 
 
 
-/* Encabezado */
+/* Estilos generales */
 header {
     text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    padding: 2.5rem;
     margin-bottom: 3rem;
-    padding: 2rem;
+    transition: transform 0.2s ease-in-out;
 }
 
-
-header h1:hover {
-    color: var(--primary-color);
-    cursor: default;
-    transform: scale(1.054);
+header:hover {
+    transform: scale(1.02);
 }
 
+/* Contenedor del encabezado */
 .header-container {
     display: flex;
-    gap: 3rem;
-    align-items: flex-start;
+    gap: 2.5rem;
+    align-items: center;
+    justify-content: center;
 }
 
-header h1 {
+/* Foto de perfil */
+.profile-photo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-photo img:hover {
+    transform: scale(1.1);
+}
+
+/* Información del usuario */
+.header-content h1 {
     color: var(--secondary-color);
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
+    margin-bottom: 0.3rem;
+    transition: color 0.3s ease;
 }
 
-header a:hover {
-    color: var(--accent-color);
-}
-
-header p {
-    margin: 0.4rem 0;
-    color: var(--text-color);
-    cursor: default;
-}
-
-header a {
+.header-content h1:hover {
     color: var(--primary-color);
+}
+
+/* Información de contacto */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.contact-item:hover {
+    color: var(--primary-color);
+}
+
+/* Iconos */
+.icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--primary-color);
+    transition: fill 0.3s ease;
+}
+
+.contact-item:hover .icon {
+    fill: var(--accent-color);
+}
+
+/* Enlaces */
+.linkedin-link {
+    color: var(--primary-color);
+    font-weight: 500;
     text-decoration: none;
     transition: color 0.3s ease;
-    font-weight: 500;
 }
 
-header a:hover {
+.linkedin-link:hover {
     color: var(--accent-color);
 }
+
 
 /* Secciones */
 section {
