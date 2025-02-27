@@ -1,7 +1,6 @@
 // Array de las imágenes
 const images = [
-    "./src/img/Argentina.png",
-    "./src/img/Argentina2.png"
+    "./src/img/Argentina.png"
 ];
 
 let currentImageIndex = 0;
