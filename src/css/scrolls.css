@@ -1,0 +1,31 @@
+:root {
+    --main-color: #13468a; /* Color verde por defecto */
+}
+
+/* Estilos para el scroll en navegadores WebKit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 10px; /* Ancho del scroll vertical */
+    height: 10px; /* Altura del scroll horizontal */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(1, 4, 19, 0.1); /* Color de fondo de la pista */
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--main-color, #4c4eaf); /* Color del thumb (barra deslizante) */
+    border-radius: 5px;
+    border: 2px solid transparent; /* Borde transparente */
+    background-clip: padding-box; /* Evita que el fondo se extienda más allá del borde */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: darken(var(--main-color, #4c56af), 10%); /* Color más oscuro al pasar el mouse */
+}
+
+/* Estilos para Firefox */
+* {
+    scrollbar-width: thin; /* Ancho del scroll */
+    scrollbar-color: var(--main-color, #534caf) rgba(0, 0, 0, 0.1); /* Color del thumb y track */
+}

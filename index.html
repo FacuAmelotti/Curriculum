@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currículum - Facundo Ezequiel Amelotti</title>
+    <link rel="stylesheet" href="./src/css/scrolls.css">
     <link rel="stylesheet" href="./src/css/index.css">
     <link rel="stylesheet" href="./src/css/responsive.css">
     <link rel="stylesheet" href="./src/css/flagMovement.css">
@@ -14,33 +15,40 @@
 <body>
     <header>
         <div class="header-container">
+
             <div class="profile-photo">
                 <!-- Aquí coloca tu imagen -->
                 <img src="./src/img/Facu.jpeg" alt="Foto" class="profile-photo" title="Facundo Amelotti&#10;Software Engineer">
             </div>
             
             <div class="header-content">
+
                 <h1>Facundo Ezequiel Amelotti</h1>
+
                 <div class="contact-info">
+
                     <p class="contact-item">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path d="M12 0c-4.678 0-8.5 3.582-8.5 8 0 4.418 7.495 15.155 8.207 15.99.285.34.72.34 1.005 0 .712-.835 8.207-11.572 8.207-15.99 0-4.418-3.822-8-8.5-8zm0 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8z"/>
                         </svg>
-                        Necochea, Buenos Aires
+                       <a class="item-link"> Necochea, Buenos Aires </a>
                         <img src="./src/img/arg.png" alt="Bandera de Argentina" class="flag-icon">
-                    </p>                    
+                    </p>   
+
                     <p class="contact-item">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                         </svg>
-                        facuezequielamelotti@gmail.com
+                        <a class="item-link">facuezequielamelotti@gmail.com</a>
                     </p>
+
                     <p class="contact-item">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path d="M7 2C5.9 2 5 2.9 5 4v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2H7zm0 2h10v16H7V4zm5 14c-.6 0-1 .4-1 1s.4 1 1 1 1-.4 1-1-.4-1-1-1z"/>
                         </svg>
-                        +2262 629367
-                    </p>                                    
+                        <a class="item-link"> +2262 629367</a>
+                    </p>    
+
                     <p class="contact-item">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path d="M19 0H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zM8 19H5V8h3v11zM6.5 6.7c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zM20 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5V19z"/>
@@ -282,7 +290,7 @@
                                 <div class="project-description">HTML, CSS, JS</div>
                             </div>
                         </a>
-                    </li>
+                    </li>                
                     <li class="project-item">
                         <a href="https://facuamelotti.github.io/Clickeame/" class="project-link">
                             <div class="project-logo">
@@ -351,7 +359,7 @@
 
         <button class="prev-btn" onclick="changeImage(-1)">&#10094;</button>
 
-        <img id="imageDisplay" src="ruta/a/imagen1.jpg" alt="Imagen de Argentina" class="panel-image">
+        <img id="imageDisplay" alt="Imagen de Argentina" class="panel-image">
 
         <button class="next-btn" onclick="changeImage(1)">&#10095;</button>
     </div>
@@ -360,6 +368,7 @@
 <script src="./src/js/index.js"></script>
 <script src="./src/js/panelArg.js"></script>
 <script src="./src/js/pdfCreator.js"></script>
-
+<script src="./src/js/textAnmiStart.js"></script>
+<script src="./src/js/snowfall.js"></script>
 </body>
 </html>
