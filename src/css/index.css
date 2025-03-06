@@ -118,6 +118,7 @@ cursor: pointer;
 }
 .download-btn {
     font-size: 0.72rem;
+    cursor: pointer;
 }
 
 /* Secciones */
