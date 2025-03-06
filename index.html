@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./src/css/responsive.css">
     <link rel="stylesheet" href="./src/css/flagMovement.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
 <body>
     <header>
@@ -45,6 +47,12 @@
                         </svg>
                         <a href="https://www.linkedin.com/in/facundoamelotti/" class="linkedin-link">LinkedIn</a>
                     </p>
+                    <p class="contact-item">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM13 9V3.5L18.5 9H13zM12 13v-3h-2v3H8l4 4 4-4h-2zm-4 5h8v-2H8v2z"/>
+                        </svg>
+                    <a onclick="descargarCV()" class="download-btn">Descargar Curriculum PDF</a>
+                    </p>                                      
                 </div>
             </div>
         </div>
@@ -351,5 +359,7 @@
 
 <script src="./src/js/index.js"></script>
 <script src="./src/js/panelArg.js"></script>
+<script src="./src/js/pdfCreator.js"></script>
+
 </body>
 </html>
