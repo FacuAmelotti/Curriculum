@@ -41,7 +41,7 @@
         z-index: 0;
         transition: all 0.3s ease;
     }
-
+    
     /* Ajuste del borde para modo oscuro */
     @media (prefers-color-scheme: dark) {
         .dynamic-border::before {
@@ -72,6 +72,7 @@
         opacity: 0.6;
     }
 }
+
 
 /* Contenido interior */
 .dynamic-border > * {

@@ -268,14 +268,31 @@ style.textContent = `
             }
         `;
         document.head.appendChild(style);
-    
-        // Eliminar overlay final después de todo
+        
+        
         overlayFinal.addEventListener('animationend', () => {
-            // Delay de 1 segundo antes de eliminar el overlay
+            const startDiv = document.querySelector('.start'); // Obtiene el div con la clase "start"
+            
+            if (startDiv) {
+                startDiv.style.transition = 'opacity 1s ease-out';
+                startDiv.style.opacity = '0';
+                
+                setTimeout(() => {
+                    startDiv.remove();
+                }, 1000); // Tiempo igual a la transición
+            }
+        
             setTimeout(() => {
-                overlayFinal.remove();
-            }, 1200); // 1000 ms = 1 segundo
+                overlayFinal.style.transition = 'opacity 1.2s ease-out';
+                overlayFinal.style.opacity = '0';
+        
+                setTimeout(() => {
+                    overlayFinal.remove(); // Elimina el overlay final
+                }, 1200);
+            }, 100); // Pequeño delay para no solaparse con startDiv
         });
+        
+
         
     }
 });

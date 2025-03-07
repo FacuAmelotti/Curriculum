@@ -13,16 +13,29 @@ html {
     --lightmode-color: #272525;
 }
 
+
 body {
     font-family: 'Inter', 'Segoe UI', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
     margin: 0;
-    padding: 2rem;
     max-width: 900px;
     margin: 0 auto;
     transition: background-color 0.12s ease;
+    padding-top: 2rem;
+}
+
+.start {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    position:absolute;
+    display:flex;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    z-index: 50;
 }
 
 /* HEADER */
