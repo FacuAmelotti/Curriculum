@@ -1,0 +1,94 @@
+/* Clase para secciones con borde dinámico */
+.dynamic-border {
+    position: relative;
+    padding: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 2rem 0;
+    background: #ffffff; /* Fondo blanco (por defecto) */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra ligera */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+    .dynamic-border {
+        background: #1a1a1a; /* Fondo oscuro */
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05); /* Sombra adaptada */
+    }
+}
+
+/* Borde animado con degradado sutil */
+.dynamic-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    padding: 2px; /* Grosor del borde */
+    background: linear-gradient(
+        90deg,
+        rgba(147, 206, 226, 0.5), /* Azul claro suave */
+        rgba(255, 255, 255, 0.1),
+        rgba(147, 206, 226, 0.5)
+    );
+    background-size: 400% 400%;
+    animation: moving-border 6s linear infinite;
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+
+/* Ajuste del borde para modo oscuro */
+@media (prefers-color-scheme: dark) {
+    .dynamic-border::before {
+        background: linear-gradient(
+            90deg,
+            rgba(147, 206, 226, 0.5), /* Mantener azul claro */
+            rgba(0, 0, 0, 0.1), /* Color adaptado para oscuro */
+            rgba(147, 206, 226, 0.5)
+        );
+    }
+}
+
+body.dark-mode .dynamic-border h2, .dynamic-border span  {
+   color: white;
+}
+
+/* Contenido interior */
+.dynamic-border > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Efecto de brillo adicional (opcional) */
+.dynamic-border::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(
+        circle,
+        rgba(173, 216, 230, 0.2),
+        transparent 40%
+    );
+    animation: shine 8s linear infinite;
+    z-index: 0;
+    opacity: 0.6;
+}
+
+/* Animación principal del borde */
+@keyframes moving-border {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+
+/* Animación de brillo */
+@keyframes shine {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg) }
+}

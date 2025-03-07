@@ -80,7 +80,7 @@ var snowFall = (function() {
 
     return {
         start: function() {
-            if (window.innerWidth < 800) return;
+           //    if (window.innerWidth < 800) return;
 
             const container = document.createElement('div');
             container.style.cssText = `

@@ -215,7 +215,19 @@ style.textContent = `
                     margin-bottom: 20px;
                     animation: checkAnim 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
                 ">✓</div>
-                PERFIL CARGADO
+                
+                <p style="
+                    font-size: 1.5em;
+                    padding-bottom:0px;
+                    margin-bottom: 0px;"
+                >BIENVENIDO!</p>
+
+                <p style="
+                    font-size: 0.78em;
+                    top:0;
+                    padding-top:0px;
+                    margin-top: 0px;"
+                >📜</p>
             </div>
         `;
     
