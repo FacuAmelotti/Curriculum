@@ -22,7 +22,7 @@ body {
     padding: 2rem;
     max-width: 900px;
     margin: 0 auto;
-    transition: background-color 1s ease;
+    transition: background-color 0.12s ease;
 }
 
 /* HEADER */
@@ -299,10 +299,10 @@ header p:nth-of-type(4) a:hover {
 .profile-photo img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 12px;
     aspect-ratio: 1/1;
     object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(19, 19, 19, 0.1);
     margin-top:20px;
     filter: grayscale(56%); /* Convierte la imagen a blanco y negro */
     
@@ -753,7 +753,7 @@ body.dark-mode .projects-category {
 }
 
 body.dark-mode section {
-    box-shadow: 0 4px 6px -1px rgba(44, 192, 230, 0.05);
+    box-shadow: 0 4px 6px -1px rgba(75, 116, 126, 0.05);
 }
 
 body.dark-mode  .project-logo:hover {
@@ -764,6 +764,15 @@ body.dark-mode .skill-icon {
     background: rgba(255, 255, 255, 0.05);
 }
 
+body.dark-mode .project-item{
+    background-color: #1d1d1d;
+    box-shadow: 0 2px 8px rgba(80, 115, 126, 0.23);
+}
+
 .snowfall-flakes {
     z-index: 5;
+}
+
+.download-btn{
+    color: var(--primary-color);
 }

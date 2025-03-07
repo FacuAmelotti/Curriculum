@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
         @media (max-width: ${mobileBreakpoint}px) {
             font-size: ${baseFontSize * 1.5}px;
         }
+
+        
     `;
        
 
@@ -43,16 +45,51 @@ document.addEventListener("DOMContentLoaded", () => {
         animation: scan 2.5s cubic-bezier(0.4, 0, 0.2, 1);
     `;
 
-    // Texto de carga holográfico
-    const loaderText = document.createElement('div');
-    loaderText.style.cssText = `
-        font-family: 'Courier New', monospace;
-        font-size: 3em;
-        color:rgb(0, 225, 255);
-        text-shadow: 0 0 15px rgba(0, 225, 255, 0.7);
-        position: relative;
-        mix-blend-mode: screen;
-    `;
+    // Dentro del eventListener DOMContentLoaded, reemplaza la creación del loaderText con:
+
+// Contenedor principal
+const loaderContent = document.createElement('div');
+loaderContent.style.cssText = `
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+`;
+
+// Texto del nombre
+const nombreDiv = document.createElement('div');
+nombreDiv.textContent = 'FACUNDO EZEQUIEL AMELOTTI';
+nombreDiv.style.cssText = `
+    font-family: 'Courier New', monospace;
+    font-size: 1.5em;
+    color: rgb(0, 225, 255);
+    text-shadow: 0 0 15px rgba(0, 225, 255, 0.7);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: block;
+    position: absolute;
+`;
+
+// Texto de carga modificado (tu versión original)
+const loaderText = document.createElement('div');
+loaderText.style.cssText = `
+    font-family: 'Courier New', monospace;
+    font-size: 3em;
+    color: rgb(0, 225, 255);
+    text-shadow: 0 0 15px rgba(0, 225, 255, 0.7);
+    display: block;
+    position: absolute;
+    mix-blend-mode: screen;
+        padding-top:132px;
+`;
+
+
+// Modifica la sección donde añades elementos al overlay:
+loaderContent.appendChild(nombreDiv);
+loaderContent.appendChild(loaderText);
+
+overlay.appendChild(loaderContent);
+    
 
     // Efecto de glitch dinámico
     const glitchEffect = document.createElement('div');
@@ -211,7 +248,7 @@ style.textContent = `
             // Delay de 1 segundo antes de eliminar el overlay
             setTimeout(() => {
                 overlayFinal.remove();
-            }, 1000); // 1000 ms = 1 segundo
+            }, 1200); // 1000 ms = 1 segundo
         });
         
     }

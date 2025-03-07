@@ -1,0 +1,55 @@
+.whiteSection {
+    position: relative;
+    padding: 40px 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    isolation: isolate;
+    
+    /* Degradado dorado refinado */
+    background: linear-gradient(135deg,
+        #e1e5f0 10%,   
+        #d5dce6 30%,  
+        #d1d7e7 50%,  
+        #dbdfee 70%,
+        #d9e2f1 96%
+    );
+    
+
+}
+
+.whiteSection::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background: 
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.08),
+            transparent 30%
+        ),
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 15px,
+            rgba(255, 255, 255, 0.05) 15px,
+            rgba(255, 255, 255, 0.05) 30px
+        );
+    animation: elegantShine 5s linear infinite;
+    z-index: 1;
+    opacity: 0.6;
+    transform: rotate(-45deg);
+}
+
+.whiteSection > * {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes elegantShine {
+    0% { transform: translateX(-50%) translateY(0) rotate(-45deg); }
+    50% { transform: translateX(50%) translateY(50%) rotate(-45deg); }
+    100% { transform: translateX(-50%) translateY(0) rotate(-45deg); }
+}   

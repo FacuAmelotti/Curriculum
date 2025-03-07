@@ -1,0 +1,7 @@
+.fade-scroll {
+    filter: blur(5px);
+}
+
+.fade-scroll.revealed {
+    filter: blur(0);
+}
