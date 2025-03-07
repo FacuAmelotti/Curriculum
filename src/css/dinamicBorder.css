@@ -1,4 +1,4 @@
-/* Clase para secciones con borde dinámico */
+/* Clase base para secciones con borde dinámico */
 .dynamic-border {
     position: relative;
     padding: 30px;
@@ -18,66 +18,65 @@
     }
 }
 
-/* Borde animado con degradado sutil */
-.dynamic-border::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: inherit;
-    padding: 2px; /* Grosor del borde */
-    background: linear-gradient(
-        90deg,
-        rgba(147, 206, 226, 0.5), /* Azul claro suave */
-        rgba(255, 255, 255, 0.1),
-        rgba(147, 206, 226, 0.5)
-    );
-    background-size: 400% 400%;
-    animation: moving-border 6s linear infinite;
-    z-index: 0;
-    transition: all 0.3s ease;
-}
-
-/* Ajuste del borde para modo oscuro */
-@media (prefers-color-scheme: dark) {
+/* Aplicar efectos solo si el ancho es mayor a 900px */
+@media (min-width: 900px) {
+    /* Borde animado con degradado sutil */
     .dynamic-border::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: inherit;
+        padding: 2px; /* Grosor del borde */
         background: linear-gradient(
             90deg,
-            rgba(147, 206, 226, 0.5), /* Mantener azul claro */
-            rgba(0, 0, 0, 0.1), /* Color adaptado para oscuro */
+            rgba(147, 206, 226, 0.5), /* Azul claro suave */
+            rgba(255, 255, 255, 0.1),
             rgba(147, 206, 226, 0.5)
         );
+        background-size: 400% 400%;
+        animation: moving-border 6s linear infinite;
+        z-index: 0;
+        transition: all 0.3s ease;
     }
-}
 
-body.dark-mode .dynamic-border h2, .dynamic-border span  {
-   color: white;
+    /* Ajuste del borde para modo oscuro */
+    @media (prefers-color-scheme: dark) {
+        .dynamic-border::before {
+            background: linear-gradient(
+                90deg,
+                rgba(147, 206, 226, 0.5), /* Mantener azul claro */
+                rgba(0, 0, 0, 0.1), /* Color adaptado para oscuro */
+                rgba(147, 206, 226, 0.5)
+            );
+        }
+    }
+
+    /* Efecto de brillo adicional (opcional) */
+    .dynamic-border::after {
+        content: '';
+        position: absolute;
+        top: -100%;
+        left: -100%;
+        width: 300%;
+        height: 300%;
+        background: radial-gradient(
+            circle,
+            rgba(173, 216, 230, 0.2),
+            transparent 40%
+        );
+        animation: shine 8s linear infinite;
+        z-index: 0;
+        opacity: 0.6;
+    }
 }
 
 /* Contenido interior */
 .dynamic-border > * {
     position: relative;
     z-index: 1;
-}
-
-/* Efecto de brillo adicional (opcional) */
-.dynamic-border::after {
-    content: '';
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    width: 300%;
-    height: 300%;
-    background: radial-gradient(
-        circle,
-        rgba(173, 216, 230, 0.2),
-        transparent 40%
-    );
-    animation: shine 8s linear infinite;
-    z-index: 0;
-    opacity: 0.6;
 }
 
 /* Animación principal del borde */

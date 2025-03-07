@@ -57,9 +57,10 @@ loaderContent.style.cssText = `
 `;
 
 // Texto del nombre
-const nombreDiv = document.createElement('div');
-nombreDiv.textContent = 'FACUNDO EZEQUIEL AMELOTTI';
-nombreDiv.style.cssText = `
+const nombreDiv = document.createElement('div');  
+if (window.innerWidth >= 800) {
+    nombreDiv.textContent = 'FACUNDO EZEQUIEL AMELOTTI';  
+    nombreDiv.style.cssText = `
     font-family: 'Courier New', monospace;
     font-size: 1.5em;
     color: rgb(0, 225, 255);
@@ -69,6 +70,19 @@ nombreDiv.style.cssText = `
     display: block;
     position: absolute;
 `;
+}
+else{
+    nombreDiv.textContent = 'FACUNDO AMELOTTI';  
+    nombreDiv.style.cssText = `
+    font-family: 'Courier New', monospace;
+    font-size: 0.22em;
+    padding: 0px 12px; 
+    color: rgb(0, 225, 255);
+    text-shadow: 0 0 15px rgba(0, 225, 255, 0.7);
+    text-transform: uppercase;
+    position: absolute;
+`;
+}
 
 // Texto de carga modificado (tu versión original)
 const loaderText = document.createElement('div');
