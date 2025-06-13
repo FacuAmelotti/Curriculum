@@ -3,374 +3,394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículum - Facundo Ezequiel Amelotti</title>
-    <link rel="stylesheet" href="./src/css/scrolls.css">
-    <link rel="stylesheet" href="./src/css/index.css">
-    <link rel="stylesheet" href="./src/css/responsive.css">
-    <link rel="stylesheet" href="./src/css/flagMovement.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <title>Facundo Ezequiel Amelotti | Desarrollador digital</title>
+    <link rel="stylesheet" href="./src/css/main.css">
 </head>
-<body>  
-    <div class="start"></div>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-outline"></div>
+    
+    <div class="particles"></div>
 
-    <header>
-        <div class="header-container">
-            <div class="profile-photo">
-                <!-- Aquí coloca tu imagen -->
-                <img src="./src/img/Facu.jpeg" alt="Foto" class="profile-photo" title="Facundo Amelotti&#10;Software Engineer">
-            </div>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">PORTFOLIO</div>           
+          
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#academic">Informacion</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#experience">Experiencia</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+        
+<div class="scroll-indicator">DESLIZAR</div>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+
+    <div class="hero-header">
+  <img src="./src/img/Facu.jpeg" alt="Foto" class="profile-photo" title="Facundo Amelotti&#10;Software Engineer">
+  <div class="hero-name">
+    <h1>Facundo Ezequiel</h1>
+    <h1 class="hero-title-accent">Amelotti</h1>
+  </div>
+</div>
+
+        
+
+        <div class="hero-credentials">            
+            Desarrollador digital
+        </div>
+
+        <p class="hero-description">
+            Me especializo en desarrollo de Aplicaciones, DevOps, Automatización y Creación de videojuegos. Con sólidos conocimientos en múltiples tecnologías y metodologías ágiles.
+        </p>
+
+        <div class="cta-buttons">
+            <a href="#projects" class="cta-primary">Ver Proyectos</a>
+         <a href="https://www.linkedin.com/in/facundoamelotti/" class="cta-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a onclick="descargarCV()" class="cta-secondary">Descargar Curriculum (PDF)</a>
+        </div>
+    </div>
+</section>
+
+
+    <section class="section" id="academic">
+        <div class="section-header">
+            <div class="section-subtitle">Informacion personal</div>
+            <h2>Formacion Academica</h2>            
+        </div>
+        
+        <div class="experience-item">
+            <div class="experience-title">Estudios Primarios y Secundarios</div>            
+            <ul class="experience-tasks">
+                <li><div class="experience-company">Instituto Nuestra Señora del Rosario | Necochea, Bs As, Argentina</div></li>
+            </ul>
+
+            <br>
+
+            <div class="experience-title">Estudiante avanzado del habla inglesa </div>
+            <ul class="experience-tasks">
+                <li><div class="experience-company">Instituto St Patrick | Necochea, Bs As, Argentina</div></li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-title">Estudios Universitarios</div>
+            <p class="section-description">Licenciatura en Sistemas </p>
+            <div class="section-subtitle">Universidad Catolica | La Plata, Bs As, Argentina</div>
             
-            <div class="header-content">
+            <ul class="experience-tasks">
+                <li>Carrera universitaria orientada al diseño, desarrollo, gestión e implementación de soluciones informáticas. 
+                <br>El perfil egresado integra habilidades técnicas capaces de analizar necesidades organizacionales y resolverlas mediante tecnología, combinando conocimientos en programación, bases de datos, redes, ingeniería de software, seguridad informática y gestión de proyecto. Permitiéndole trabajar tanto en desarrollo de software como en infraestructura, análisis funcional, consultoría o liderazgo de equipos tecnológicos.</li>
+            </ul>
+            
+        </div>
+    </section>
+    
+    <section class="section" id="skills">
+        <div class="section-header">
+            <div class="section-subtitle">Stack Tecnológico</div>
+            <h2>Tecnologías Aliadas</h2>
+            <p class="section-description">Conjunto de herramientas y tecnologías que domino para el desarrollo de soluciones completas e innovadoras.</p>
+        </div>
 
-                <h1>Facundo Ezequiel Amelotti</h1>
+<div class="tech-grid">
 
-                <div class="contact-info">
+    <div class="tech-item">
+        <div class="tech-icon">
+            <img src="./src/img/Git.jpg" alt="Git" />
+        </div>
+        <div class="tech-name">Git</div>
+    </div>
 
-                    <p class="contact-item">
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M12 0c-4.678 0-8.5 3.582-8.5 8 0 4.418 7.495 15.155 8.207 15.99.285.34.72.34 1.005 0 .712-.835 8.207-11.572 8.207-15.99 0-4.418-3.822-8-8.5-8zm0 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8z"/>
-                        </svg>
-                       <a class="item-link"> Necochea, Buenos Aires </a>
-                        <img src="./src/img/arg.png" alt="Bandera de Argentina" class="flag-icon">
-                    </p>   
+    <div class="tech-item">
+        <div class="tech-icon">
+            <img src="./src/img/GitLab.jpg" alt="GitLab" />
+        </div>
+        <div class="tech-name">GitLab</div>
+    </div>
 
-                    <p class="contact-item">
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
-                        <a class="item-link">facuezequielamelotti@gmail.com</a>
-                    </p>
+    <div class="tech-item">
+        <div class="tech-icon">
+            <img src="./src/img/GitHub.jpg" alt="GitHub" />
+        </div>
+        <div class="tech-name">GitHub</div>
+    </div>
 
-                    <p class="contact-item">
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M7 2C5.9 2 5 2.9 5 4v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2H7zm0 2h10v16H7V4zm5 14c-.6 0-1 .4-1 1s.4 1 1 1 1-.4 1-1-.4-1-1-1z"/>
-                        </svg>
-                        <a class="item-link"> +2262 629367</a>
-                    </p>    
+    <div class="tech-item">
+        <div class="tech-icon">
+            <img src="./src/img/CSharp.jpg" alt="C Sharp" />
+        </div>
+        <div class="tech-name">C Sharp</div>
+    </div>
 
-                    <p class="contact-item">
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M19 0H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zM8 19H5V8h3v11zM6.5 6.7c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zM20 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5V19z"/>
-                        </svg>
-                        <a href="https://www.linkedin.com/in/facundoamelotti/" class="linkedin-link">LinkedIn</a>
-                    </p>
-                    <p class="contact-item">
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM13 9V3.5L18.5 9H13zM12 13v-3h-2v3H8l4 4 4-4h-2zm-4 5h8v-2H8v2z"/>
-                        </svg>
-                    <a onclick="descargarCV()" class="download-btn">Descargar Curriculum PDF</a>
-                    </p>                                      
+    <div class="tech-item">
+        <div class="tech-icon">
+            <img src="./src/img/JavaScript.jpg" alt="JavaScript" />
+        </div>
+        <div class="tech-name">JavaScript</div>
+    </div>
+
+    <div class="tech-item">
+        <div class="tech-icon">
+            <img src="./src/img/Python.jpg" alt="Python" />
+        </div>
+        <div class="tech-name">Python</div>
+    </div>
+
+    <div class="tech-item">
+        <div class="tech-icon">
+            <img src="./src/img/Java.jpg" alt="Java" />
+        </div>
+        <div class="tech-name">Java</div>
+    </div>
+
+    <div class="tech-item">
+        <div class="tech-icon">
+            <img src="./src/img/Docker.jpg" alt="Docker" />
+        </div>
+        <div class="tech-name">Docker</div>
+    </div>
+
+    <div class="tech-item">
+        <div class="tech-icon">
+            <img src="./src/img/MySQL.jpg" alt="MySQL" />
+        </div>
+        <div class="tech-name">MySQL</div>
+    </div>
+
+    <div class="tech-item">
+        <div class="tech-icon">
+            <img src="./src/img/Mongo.jpg" alt="MongoDB" />
+        </div>
+        <div class="tech-name">MongoDB</div>
+    </div>
+
+    <div class="tech-item">
+        <div class="tech-icon">
+            <img src="./src/img/NodeJS.jpg" alt="NodeJS" />
+        </div>
+        <div class="tech-name">NodeJS</div>
+    </div>
+
+    <div class="tech-item">
+        <div class="tech-icon">
+            <img src="./src/img/DotNet.jpg" alt=".NET" />
+        </div>
+        <div class="tech-name">.NET</div>
+    </div>
+
+    <div class="tech-item">
+        <div class="tech-icon">
+            <img src="./src/img/Unity.jpg" alt="Unity3D" />
+        </div>
+        <div class="tech-name">Unity3D</div>
+    </div>
+
+    <div class="tech-item">
+        <div class="tech-icon">
+            <img src="./src/img/Photoshop.jpg" alt="Photoshop" />
+        </div>
+        <div class="tech-name">Photoshop</div>
+    </div>
+
+
+    <div class="tech-item">
+        <div class="tech-icon">
+            <img src="./src/img/Grafana.jpg" alt="Grafana" />
+        </div>
+        <div class="tech-name">Grafana</div>
+    </div>
+
+</div>
+
+    </section>
+
+    <section class="section" id="experience">
+        <div class="section-header">
+            <div class="section-subtitle">Trayectoria Profesional</div>
+            <h2>Experiencia Laboral</h2>
+            <p class="section-description">Mi experiencia profesional abarca desde la docencia hasta el desarrollo de software, con un enfoque especial en DevOps y automatización de procesos.</p>
+        </div>
+        
+        <div class="experience-item">
+            <div class="experience-title">Desarrollador</div>
+            <div class="experience-period">2024</div>
+            <div class="experience-company">Ñu Soluciones - Córdoba</div>
+            <div class="experience-description">
+                Desarrollador especializado en DevOps, automatización y documentación técnica en consultora tecnológica.
+            </div>
+            <ul class="experience-tasks">
+                <li><strong>DevOps y Automatización:</strong> Implementación y optimización de pipelines CI/CD en GitLab, configuración de políticas de seguridad y gestión de permisos</li>
+                <li><strong>Sistema de Monitoreo:</strong> Implementación de Grafana, Prometheus y Loki con configuración de Traefik como proxy inverso</li>
+                <li><strong>Techwriter:</strong> Documentación técnica de servidores, configuración de GitLab Pages y desarrollo de estrategias de branching en Git</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-title">Tutor de Clases Particulares</div>
+            <div class="experience-period">2020 - 2022</div>
+            <div class="experience-company">Freelance</div>
+            <ul class="experience-tasks">
+                <li>Matemática aplicada y álgebra</li>
+                <li>Inglés conversacional y técnico</li>
+                <li>Programación y lógica computacional</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-title">Tutor de Curso</div>
+            <div class="experience-period">2018 - 2020</div>
+            <div class="experience-company">Instituto SICOS - La Plata, Buenos Aires</div>
+            <ul class="experience-tasks">
+                <li><strong>Programación Inicial con Visual Basic 6.0:</strong> Introducción a la lógica de programación, desarrollo de aplicaciones de escritorio y manejo de ficheros</li>
+                <li><strong>Programación Inicial con .NET & C#:</strong> Fundamentos de C# y .NET, desarrollo con Windows Forms, conexión a bases de datos MySQL y MongoDB</li>
+                <li><strong>Desarrollo de Videojuegos con Unity3D y C#:</strong> Creación de videojuegos 2D y 3D, programación de mecánicas de juego, implementación de físicas y animaciones</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section" id="projects">
+        <div class="section-header">
+            <div class="section-subtitle">Portfolio de Proyectos</div>
+            <h2>Trabajos Destacados</h2>
+        </div>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Proyectos Completados</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Juegos Desarrollados</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Años de Experiencia</div>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <div class="card-number">01</div>
+                <h3>Proyectos Generales</h3>
+                <p>Aplicaciones web y de escritorio con tecnologías modernas como Docker, NodeJS, MySQL y MongoDB.</p>
+            </div>
+            <div class="card">
+                <div class="card-number">02</div>
+                <h3>Desarrollo de Videojuegos</h3>
+                <p>Juegos desarrollados con Unity3D y tecnologías web, disponibles en múltiples plataformas.</p>
+            </div>
+            <div class="card">
+                <div class="card-number">03</div>
+                <h3>DevOps & Automatización</h3>
+                <p>Herramientas para automatización de procesos y generación de scripts para GitLab.</p>
+            </div>
+        </div>
+
+        <div class="projects">
+            <div class="project">
+                <div class="project-title">
+                    <a href="https://github.com/FacuAmelotti/Colegio-Ingenieros" target="_blank" class="project-link">Colegio de Ingenieros</a>
+                </div>
+                <div class="project-details">
+                    Sistema de gestión académica • Docker, NodeJS, MySQL, MongoDB<br>
+                    Aplicación web completa para administración de colegios profesionales
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-title">
+                    <a href="https://facuamelotti.github.io/GitlabScriptGenerator/" target="_blank" class="project-link">GitLab Script Generator</a>
+                </div>
+                <div class="project-details">
+                    Herramienta de automatización • Bash, PowerShell<br>
+                    Generador de scripts para automatización de tareas en GitLab
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-title">
+                    <a href="https://github.com/FacuAmelotti/ChatBot_Assistant" target="_blank" class="project-link">ChatBot Assistant</a>
+                </div>
+                <div class="project-details">
+                    Asistente virtual inteligente • Python<br>
+                    Bot conversacional con capacidades de procesamiento de lenguaje natural
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-title">
+                    <a href="https://techf-studios.itch.io/space-survival" target="_blank" class="project-link">Space Survival</a>
+                </div>
+                <div class="project-details">
+                    Videojuego móvil • Unity3D, C#, Android, iOS<br>
+                    Juego de supervivencia espacial disponible en múltiples plataformas
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-title">
+                    <a href="https://facuamelotti.github.io/Ahorcado-en-linea/" target="_blank" class="project-link">Ahorcado en Línea</a>
+                </div>
+                <div class="project-details">
+                    Juego web interactivo • HTML5, CSS3, JavaScript<br>
+                    Versión digital del clásico juego del ahorcado
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-title">
+                    <a href="https://facuamelotti.github.io/MiMusica/" target="_blank" class="project-link">Mi Música</a>
+                </div>
+                <div class="project-details">
+                    Aplicación de música • FL Studio<br>
+                    Plataforma personal para gestión y reproducción de música
                 </div>
             </div>
         </div>
-    </header>
-    
-    <section>
-        <h2>Perfil Profesional</h2>
-        <p>Estudiante avanzado de la carrera Licenciatura en Sistemas en la Universidad Católica de La Plata, con formación en tecnologías y desarrollo de soluciones informáticas (Enfocado en mejorar procesos).</p>
-        <p>Me considero una persona responsable, respetuosa y con una buena capacidad de adaptación, buscando aprender y crecer en el ámbito profesional y personal.</p>
-    </section>
-    
-    <section>
-        <h2>Formación Académica</h2>
-        <ul>
-            <li>Estudios secundarios completos</li>
-            <li>Estudiante avanzado en la carrera Licenciatura en Sistemas (UCALP)</li>
-            <li>Estudiante avanzado del habla inglesa en Instituto St Patrick (2010 – 2015)</li>
-        </ul>
-    </section>
-    
-    <section>
-        <h2>Experiencia Laboral</h2>
-        <h3>Tutor de Curso | 2018 - 2020</h3>
-        <p>Instituto de capacitación informática SICOS (La Plata, Bs As)</p>
-        <ul>
-            <li><strong>Programación Inicial con Visual Basic 6.0:</strong>
-                <ul>
-                    <li>Introducción a la lógica de programación y desarrollo de aplicaciones de escritorio.</li>
-                    <li>Uso de formularios, controles y eventos en entornos Windows.</li>
-                    <li>Manejo de ficheros: lectura y escritura de archivos de texto y binarios.</li>
-                </ul>
-            </li>
-            <li><strong>Programación Inicial con .NET & C#:</strong>
-                <ul>
-                    <li>Fundamentos de C# y la plataforma .NET.</li>
-                    <li>Desarrollo de aplicaciones con Windows Forms.</li>
-                    <li>Manejo de ficheros: lectura y escritura de archivos con System.IO.</li>
-                    <li>Bases de datos: conexión para interactuar con MySQL y MongoDB.</li>
-                </ul>
-            </li>
-            <li><strong>Desarrollo de Videojuegos con Unity3D y C#:</strong>
-                <ul>
-                    <li>Creación de videojuegos 2D y 3D utilizando Unity.</li>
-                    <li>Programación de mecánicas de juego con C#.</li>
-                    <li>Implementación de físicas, animaciones y UI en Unity.</li>
-                    <li>Exportación y publicación de proyectos en diferentes plataformas.</li>
-                </ul>
-            </li>
-        </ul>
-        
-        <h3>Tutor de Clases Particulares | 2020 – 2021/22</h3>
-        <ul>
-            <li>Matemática</li>
-            <li>Inglés</li>
-            <li>Programación</li>
-        </ul>
-        
-        <h3>Desarrollador | 2024</h3>
-        <p>Desarrollador en consultora Ñu Soluciones (Córdoba)</p>
-        <h4>DevOps y Automatización</h4>
-        <ul>
-            <li>Implementación y optimización de pipelines CI/CD en GitLab.</li>
-            <li>Configuración de políticas de seguridad en GitLab.</li>
-            <li>Gestión de permisos y flujos de trabajo en Git.</li>
-            <li>Despliegues automatizados en entornos de desarrollo, prueba y producción.</li>
-        </ul>
-        <h4>Desarrollo de Sistema de Monitoreo</h4>
-        <ul>
-            <li>Implementación de Grafana, Prometheus y Loki.</li>
-            <li>Configuración de Traefik como proxy inverso y balanceador.</li>
-            <li>Monitoreo de infraestructura con alertas configuradas.</li>
-        </ul>
-        <h4>Techwriter</h4>
-        <ul>
-            <li>Documentación técnica de servidores y despliegue.</li>
-            <li>Configuración de GitLab Pages.</li>
-            <li>Desarrollo de estrategias de branching en Git.</li>
-            <li>Elaboración de guías y manuales.</li>
-        </ul>
-    </section>
-    
-    <section>
-        <h2>Información Adicional</h2>
-        <p>A los 14 años, comencé a desarrollar aplicaciones y juegos en Visual Basic 6.0, y desde entonces he sentido una gran pasión y curiosidad por el mundo de la programación y la tecnología. Este interés me ha llevado a explorar diversas herramientas y áreas dentro de la informática y el desarrollo, ampliando constantemente mis conocimientos y habilidades hasta el día de hoy.</p>
-        <ul>
-            <li>Capacidad para investigar, analizar y resolver problemas de manera autónoma, adaptándome a nuevas tecnologías y entornos de desarrollo.</li>
-            <li>Experiencia en el uso de metodologías ágiles como Scrum, para la productividad y la colaboración en equipo.         </li>
-            <li>Dominio en el uso de Git, con experiencia en plataformas como GitHub y GitLab, implementando estrategias de branching y gestión de repositorios para asegurar un flujo de trabajo eficiente y organizado.            </li>
-            <li>Conocimiento en el uso de Docker para la creación y gestión de contenedores, facilitando la portabilidad y escalabilidad de aplicaciones.            </li>
-            <li>Conocimiento y experiencia en bases de datos relacionales (MySQL) y no relacionales (MongoDB).</li>
-        </ul>
     </section>
 
-    <section class="dynamic-border">
-        <h2>Tecnologias aliadas</h2>
-        <div class="skills-grid">
-            <div class="skill-item">
-                <img src="./src/img/Git.jpg" alt="Git" class="skill-icon">
-                <span class="skill-label">Git</span>
-            </div>
-            <div class="skill-item">
-                <img src="./src/img/Gitlab.jpg" alt="Gitlab" class="skill-icon">
-                <span class="skill-label">Gitlab</span>
-            </div>
-            <div class="skill-item">
-                <img src="./src/img/Github.jpg" alt="Github" class="skill-icon">
-                <span class="skill-label">Github</span>
-            </div>
-            <div class="skill-item">
-                <img src="./src/img/HTML.jpg" alt="HTML" class="skill-icon">
-                <span class="skill-label">HTML</span>
-            </div>
-            <div class="skill-item">
-                <img src="./src/img/CSS.jpg" alt="CSS" class="skill-icon">
-                <span class="skill-label">CSS</span>
-            </div>
-            <div class="skill-item">
-                <img src="./src/img/JavaScript.jpg" alt="JavaScript" class="skill-icon">
-                <span class="skill-label">JavaScript</span>
-            </div>
-            <div class="skill-item">
-                <img src="./src/img/CSharp.jpg" alt="C#" class="skill-icon">
-                <span class="skill-label">C#</span>
-            </div>
-            <div class="skill-item">
-                <img src="./src/img/Python.jpg" alt="Python" class="skill-icon">
-                <span class="skill-label">Python</span>
-            </div>
-            <div class="skill-item">
-                <img src="./src/img/Java.jpg" alt="Java" class="skill-icon">
-                <span class="skill-label">Java</span>
-            </div>
-             <div class="skill-item">
-                <img src="./src/img/Mysql.jpg" alt="MySQL" class="skill-icon">
-                <span class="skill-label">MySQL</span>
-            </div>
-            <div class="skill-item">
-                <img src="./src/img/Mongo.jpg" alt="MongoDB" class="skill-icon">
-                <span class="skill-label">MongoDB</span>
-            </div>
-             <div class="skill-item">
-                <img src="./src/img/NodeJS.jpg" alt="NodeJS" class="skill-icon">
-                <span class="skill-label">NodeJS</span>
-            </div>
-            <div class="skill-item">
-                <img src="./src/img/Docker.jpg" alt="Docker" class="skill-icon">
-                <span class="skill-label">Docker</span>
-            </div>
-            <div class="skill-item">
-                <img src="./src/img/dotNet.jpg" alt=".Net" class="skill-icon">
-                <span class="skill-label">.NET</span>
-            </div>
-            <div class="skill-item">
-                <img src="./src/img/Unity.jpg" alt="Unity3D" class="skill-icon">
-                <span class="skill-label">Unity3D</span>
-            </div>
-            <div class="skill-item">
-                <img src="./src/img/Photoshop.jpg" alt="Photoshop" class="skill-icon">
-                <span class="skill-label">Photoshop</span>
-            </div>
+
+    <section class="section" id="contact">
+        <div class="section-header">
+            <div class="section-subtitle">Contacto</div>
+            <h2>Información de Contacto</h2>
+            <p class="section-description">¿Tenes alguna duda o consulta? No dudes en contactarme a través de cualquiera de estos medios:</p>
         </div>
-   </section>
-
-    <section id="proyectos" >
-        <h2>Proyectos</h2>
-        <div class="projects-container">            
-            <div class="projects-category">
-                <h3 class="category-title"> Proyectos Generales 🛠️ </h3>
-                <ul class="projects-list">
-                    <li class="project-item">
-                        <a href="https://github.com/FacuAmelotti/Colegio-Ingenieros" class="project-link">
-                            <div class="project-logo">
-                                <img src="./src/img/ColegioIng.jpg" alt="Colegio de Ingenieros">
-                            </div>
-                            <div class="project-info">
-                                <div class="project-name">Colegio de Ingenieros</div>
-                                <div class="project-description">Docker, NodeJS, MYSQL, MongoDB</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="project-item">
-                        <a href="https://github.com/FacuAmelotti/ChatBot_Assistant"  class="project-link">
-                            <div class="project-logo">
-                                <img src="./src/img/chatbot.png" alt="ChatBot">
-                            </div>
-                            <div class="project-info">
-                                <div class="project-name">ChatBot Assistant</div>
-                                <div class="project-description">Python</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="project-item">
-                        <a href="https://facuamelotti.github.io/GitlabScriptGenerator/"  class="project-link">
-                            <div class="project-logo">
-                                <img src="./src/img/GLSgenerator.jpg" alt="Gitlab Script Generator">
-                            </div>
-                            <div class="project-info">
-                                <div class="project-name">Gitlab Script Generator</div>
-                                <div class="project-description">Bash, Powershell</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="project-item">
-                        <a href="https://facuamelotti.github.io/MiMusica/"  class="project-link">
-                            <div class="project-logo">
-                                <img src="./src/img/miMusic.png" alt="Mi Musica">
-                            </div>
-                            <div class="project-info">
-                                <div class="project-name">Mi Musica</div>
-                                <div class="project-description">FLS</div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
+        
+        <div class="cards">
+            <div class="card">
+                <div class="card-number"></div>
+                <h3>Email</h3>
+                <p>facuezequielamelotti@gmail.com</p>
             </div>
-            
-            <div class="projects-category">
-                <h3 class="category-title"> Juegos 🎮</h3>
-                <ul class="projects-list">
-                    <li class="project-item">
-                        <a href="https://facuamelotti.github.io/Ahorcado-en-linea/"class="project-link">
-                            <div class="project-logo">
-                                <img src="./src/img/AhoracdoEnLinea.jpg" alt="Ahorcado">
-                            </div>
-                            <div class="project-info">
-                                <div class="project-name">Ahorcado en linea</div>
-                                <div class="project-description">HTML, CSS, JS</div>
-                            </div>
-                        </a>
-                    </li>                
-                    <li class="project-item">
-                        <a href="https://facuamelotti.github.io/Clickeame/" class="project-link">
-                            <div class="project-logo">
-                                <img src="./src/img/Clickme.jpg" alt="Click me!">
-                            </div>
-                            <div class="project-info">
-                                <div class="project-name">Click me!</div>
-                                <div class="project-description">HTML, CSS, JS</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="project-item">
-                        <a href="https://facuamelotti.github.io/Memotest/" class="project-link">
-                            <div class="project-logo">
-                                <img src="./src/img/Memotest.jpg" alt="Memotest">
-                            </div>
-                            <div class="project-info">
-                                <div class="project-name">Memotest</div>
-                                <div class="project-description">HTML, CSS, JS</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="project-item">
-                        <a href="https://facuamelotti.github.io/Laberinto/" class="project-link">
-                            <div class="project-logo">
-                                <img src="./src/img/Laberinto.jpg" alt="Escapa del Laberinto!">
-                            </div>
-                            <div class="project-info">
-                                <div class="project-name">Escapa del Laberinto</div>
-                                <div class="project-description">HTML, CSS, JS</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="project-item">
-                        <a href="https://techf-studios.itch.io/space-survival" class="project-link">
-                            <div class="project-logo">
-                                <img src="./src/img/SpaceSurv.jpg" alt="Space Survival">
-                            </div>
-                            <div class="project-info">
-                                <div class="project-name">Space Survival</div>
-                                <div class="project-description">Unity, C#, Android, IOS</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="project-item">
-                        <a href="https://techf-studios.itch.io/no-escape" class="project-link">
-                            <div class="project-logo">
-                                <img src="./src/img/NoEscape.png" alt="No Escape!">
-                            </div>
-                            <div class="project-info">
-                                <div class="project-name">No escape</div>
-                                <div class="project-description">Unity, C#, WEBGL</div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
+            <div class="card">
+                <div class="card-number"></div>
+                <h3>Teléfono</h3>
+                <p>+54 2262 629367</p>
+            </div>
+            <div class="card">
+                <div class="card-number"></div>
+                <h3>Ubicación</h3>
+                <p>Necochea, Buenos Aires, Argentina</p>
             </div>
         </div>
     </section>
 
+    <footer class="footer">
+        <div class="footer-links">
+            <a target="_blank" href="https://github.com/FacuAmelotti">GitHub</a>
+            <a target="_blank" href="https://www.linkedin.com/in/facundoamelotti/">LinkedIn</a>
+            <a target="_blank" href="https://techf-studios.itch.io/">Itch.io</a>
+            <a target="_blank" href="mailto:facuezequielamelotti@gmail.com">Email</a>
+        </div>
+        <p>&copy; 2023 Facundo Ezequiel Amelotti. Todos los derechos reservados.</p>
+    </footer>
 
-<div class="image-panel" id="image-panel">
-    <div class="panel-content">
-        <button class="close-btn" onclick="closePanel()">X</button>
-        
-
-        <button class="prev-btn" onclick="changeImage(-1)">&#10094;</button>
-
-        <img id="imageDisplay" alt="Imagen de Argentina" class="panel-image">
-
-        <button class="next-btn" onclick="changeImage(1)">&#10095;</button>
-    </div>
-</div>
-
-
-<script src="./src/js/textAnmiStart.js"></script>
-<script src="./src/js/index.js"></script>
-<script src="./src/js/panelArg.js"></script>
-<script src="./src/js/pdfCreator.js"></script>
-<script src="./src/js/snowfall.js"></script>
+    <script src="./src/js/main.js"></script>
+    <script src="./src/js/pdfCreator.js"></script>
 </body>
 </html>
