@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeNexusEffects();
     initializeMobileMenu();
     initializeScrollFadeEffect();
-    initializeAdvancedEffects();
+
 });
 
 function initializeNexusEffects() {
@@ -14,6 +14,10 @@ function initializeNexusEffects() {
     initializeHoverEffects();
     initializeAnimations();
     initializeMatrixBackground();
+
+    console.log("Hola reclutador! Si estás viendo esto, ¡Hablame!");
+    console.log("facuezequielamelotti@gmail.com");
+    console.log(":)");
 }
 
 // NUEVO: Fondo matriz digital
@@ -54,6 +58,7 @@ function initializeMatrixBackground() {
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             
             ctx.fillStyle = '#FFF';
+
             ctx.font = '15px monospace';
             
             for (let i = 0; i < drops.length; i++) {
