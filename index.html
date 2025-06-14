@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Facundo Ezequiel Amelotti | Desarrollador digital</title>
     <link rel="stylesheet" href="./src/css/main.css">
+    
+    <link rel="stylesheet" href="./src/css/custom_scrollbars.css">
+    <link rel="stylesheet" href="./src/css/main_responsive.css">
+    
+    <link rel="stylesheet" href="./src/css/burgerButton.css">
 </head>
 <body>
     <div class="cursor"></div>
@@ -16,6 +21,13 @@
         <nav class="nav">
             <div class="logo">PORTFOLIO</div>           
           
+       
+        <!-- Botón Hamburguesa -->
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
             <ul class="nav-links" id="nav-links">
                 <li><a href="#home">Inicio</a></li>
@@ -28,33 +40,31 @@
         </nav>
     </header>    
 
-<section class="hero" id="home">
-    <div class="hero-content">
+    <section class="hero" id="home">
+        <div class="hero-content">
 
-    <div class="hero-header">
-  <img src="./src/img/Facu.jpeg" alt="Foto" class="profile-photo" title="Facundo Amelotti&#10;Software Engineer">
-  <div class="hero-name">
-    <h1>Facundo Ezequiel</h1>
-    <h1 class="hero-title-accent">Amelotti</h1>
-  </div>
-</div>
-
-        
-
-        <div class="hero-credentials">            
-            Desarrollador digital
-        </div>
-
-        <p class="hero-description">
-      ¡Hola! soy desarrollador digital especializado en aplicaciones, desarrollo web, DevOps, automatización y videojuegos, con experiencia en metodologías ágiles y diversas tecnologías.</p>
-
-        <div class="cta-buttons">
-            <a href="#projects" class="cta-primary">Ver Proyectos</a>
-         <a href="https://www.linkedin.com/in/facundoamelotti/" class="cta-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a onclick="descargarCV()" class="cta-secondary">Descargar Curriculum (PDF)</a>
-        </div>
+        <div class="hero-header">
+    <img src="./src/img/Facu.jpeg" alt="Foto" class="profile-photo" title="Facundo Amelotti&#10;Software Engineer">
+    <div class="hero-name">
+        <h1>Facundo Ezequiel</h1>
+        <h1 class="hero-title-accent">Amelotti</h1>
     </div>
-</section>
+    </div>            
+
+            <div class="hero-credentials">            
+                Desarrollador digital
+            </div>
+
+            <p class="hero-description">
+        ¡Hola! soy desarrollador digital especializado en aplicaciones, desarrollo web, DevOps, automatización y videojuegos, con experiencia en metodologías ágiles y diversas tecnologías.</p>
+
+            <div class="cta-buttons">
+                <a href="#projects" class="cta-primary">Ver Proyectos</a>
+            <a href="https://www.linkedin.com/in/facundoamelotti/" class="cta-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a onclick="descargarCV()" class="cta-secondary">Descargar Curriculum (PDF)</a>
+            </div>
+        </div>
+    </section>
 
 
     <section class="section" id="academic">
@@ -108,14 +118,14 @@
 
     <div class="tech-item">
         <div class="tech-icon">
-            <img src="./src/img/GitLab.jpg" alt="GitLab" />
+            <img src="./src/img/Gitlab.jpg" alt="GitLab" />
         </div>
         <div class="tech-name">GitLab</div>
     </div>
 
     <div class="tech-item">
         <div class="tech-icon">
-            <img src="./src/img/GitHub.jpg" alt="GitHub" />
+            <img src="./src/img/Github.jpg" alt="GitHub" />
         </div>
         <div class="tech-name">GitHub</div>
     </div>
@@ -157,7 +167,7 @@
 
     <div class="tech-item">
         <div class="tech-icon">
-            <img src="./src/img/MySQL.jpg" alt="MySQL" />
+            <img src="./src/img/Mysql.jpg" alt="MySQL" />
         </div>
         <div class="tech-name">MySQL</div>
     </div>
@@ -178,7 +188,7 @@
 
     <div class="tech-item">
         <div class="tech-icon">
-            <img src="./src/img/DotNet.jpg" alt=".NET" />
+            <img src="./src/img/dotNet.jpg" alt=".NET" />
         </div>
         <div class="tech-name">.NET</div>
     </div>

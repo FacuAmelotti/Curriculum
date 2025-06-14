@@ -1,0 +1,206 @@
+/* ========================================
+   CUSTOM SCROLLBAR STYLES
+   Estilo personalizado para el scroll de la página
+   ======================================== */
+
+/* Scrollbar para navegadores WebKit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 8px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(135deg, #0f0f0f 0%, #0c0c0c 100%);
+    border-radius: 0;
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #4a4a4a 0%, #5a5a5a 50%, #3a3a3a 100%);
+    border-radius: 4px;
+    border: 1px solid rgba(160, 160, 160, 0.1);
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5a5a5a 0%, #6a6a6a 50%, #4a4a4a 100%);
+    border-color: rgba(160, 160, 160, 0.2);
+    box-shadow: 
+        0 3px 6px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    transform: scaleX(1.1);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(135deg, #6a6a6a 0%, #7a7a7a 50%, #5a5a5a 100%);
+    box-shadow: 
+        0 1px 2px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Esquinas del scrollbar */
+::-webkit-scrollbar-corner {
+    background: linear-gradient(135deg, #0f0f0f 0%, #0c0c0c 100%);
+}
+
+/* Botones del scrollbar (flechas) - ocultos para diseño minimalista */
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+/* Estilos para Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #4a4a4a #0f0f0f;
+}
+
+/* Estilo académico mejorado para Firefox */
+@supports (scrollbar-color: #4a4a4a #0f0f0f) {
+    html {
+        scrollbar-color: #4a4a4a rgba(15, 15, 15, 0.8);
+        scrollbar-width: thin;
+    }
+}
+
+/* Efectos adicionales para el scroll */
+body {
+    /* Asegura que el scroll sea suave */
+    scroll-behavior: smooth;
+    /* Optimiza el rendering del scroll */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Animación sutil del thumb cuando aparece */
+@keyframes scrollThumbAppear {
+    from {
+        opacity: 0;
+        transform: scaleY(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+::-webkit-scrollbar-thumb {
+    animation: scrollThumbAppear 0.3s ease-out;
+}
+
+/* Hover effect para toda la scrollbar */
+::-webkit-scrollbar:hover {
+    width: 10px;
+    transition: width 0.2s ease;
+}
+
+/* Estilo para cuando el scrollbar está inactivo */
+::-webkit-scrollbar-thumb:window-inactive {
+    background: linear-gradient(135deg, #3a3a3a 0%, #4a4a4a 50%, #2a2a2a 100%);
+    opacity: 0.7;
+}
+
+/* Responsive scrollbar */
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        border-radius: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        border: none;
+    }
+    
+    ::-webkit-scrollbar:hover {
+        width: 6px;
+    }
+}
+
+/* Scrollbar para elementos con scroll interno */
+.scrollable-element::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.scrollable-element::-webkit-scrollbar-track {
+    background: rgba(74, 74, 74, 0.1);
+    border-radius: 3px;
+}
+
+.scrollable-element::-webkit-scrollbar-thumb {
+    background: rgba(160, 160, 160, 0.3);
+    border-radius: 3px;
+    border: none;
+}
+
+.scrollable-element::-webkit-scrollbar-thumb:hover {
+    background: rgba(160, 160, 160, 0.5);
+}
+
+/* Efecto de brillo sutil en el scroll */
+::-webkit-scrollbar-thumb::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(
+        90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.1) 50%, 
+        transparent 100%
+    );
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover::before {
+    opacity: 1;
+}
+
+/* Compatibility para navegadores más antiguos */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+}
+
+/* Para sistemas con tema oscuro */
+@media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-track {
+        background: linear-gradient(135deg, #0a0a0a 0%, #080808 100%);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #555555 0%, #666666 50%, #444444 100%);
+    }
+}
+
+/* Para sistemas con tema claro */
+@media (prefers-color-scheme: light) {
+    ::-webkit-scrollbar-track {
+        background: linear-gradient(135deg, #f5f5f5 0%, #f0f0f0 100%);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #888888 0%, #999999 50%, #777777 100%);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #777777 0%, #888888 50%, #666666 100%);
+    }
+}

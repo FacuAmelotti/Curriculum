@@ -609,63 +609,65 @@
             font-size: 14px;
             transition: color 0.3s ease;
         }
-
-        .footer-links a:hover {
+      .footer-links a:hover {
             color: #e5e5e5;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header, .hero, .section, .footer {
-                padding-left: 30px;
-                padding-right: 30px;
-            }
-            
-            .nav-links {
-                gap: 25px;
-            }
-            
-            .cards {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
-            }
 
-            .tech-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
+        /*
+                /* Responsive /
+@media (max-width: 768px) {
+    .header, .hero, .section, .footer {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    .nav-links {
 
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .section h2 {
-                font-size: 1.8rem;
-            }
+            gap: 25px;
+    }
+    
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
 
-            .tech-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+    .tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 
-        /* Estilo base oculto en móviles */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .section h2 {
+        font-size: 1.8rem;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+        /* Estilo base oculto en móviles /
 .nav-links {
   display: flex;
   gap: 1rem;
 }
 
-/* En móviles, ocultar por defecto */
+/* En móviles, ocultar por defecto /
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -683,17 +685,8 @@
     display: flex;
   }
 }
+*/
 
-/* Animación del botón hamburguesa (opcional) */
-.hamburger.is-active .hamburger-bar:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
-}
-.hamburger.is-active .hamburger-bar:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.is-active .hamburger-bar:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
-}
 
 
 .tech-icon img {

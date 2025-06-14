@@ -125,44 +125,84 @@ function initializeScrollFadeEffect() {
 function initializeMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
-    const navLinksItems = document.querySelectorAll('.nav-links a');
 
     if (!hamburger || !navLinks) return;
 
-    // Toggle del menú hamburguesa
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
-    });
-
-    // Cerrar menú al hacer click en un enlace
-    navLinksItems.forEach(link => {
-        link.addEventListener('click', () => {
+    const toggleMenu = () => {
+        const isActive = hamburger.classList.contains('active');
+        if (isActive) {
             hamburger.classList.remove('active');
             navLinks.classList.remove('active');
             document.body.classList.remove('menu-open');
-        });
+        } else {
+            hamburger.classList.add('active');
+            navLinks.classList.add('active');
+            document.body.classList.add('menu-open');
+        }
+    };
+
+    const closeMenu = () => {
+        navLinks.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        // Nota: no tocamos hamburger.classList aquí
+    };
+
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
     });
 
-    // Cerrar menú al hacer click fuera de él
+    navLinks.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+            closeMenu();
+            hamburger.classList.remove('active'); // Solo aquí si fue click en enlace
+        }
+    });
+
     document.addEventListener('click', (e) => {
         if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+            closeMenu();
             hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-            document.body.classList.remove('menu-open');
         }
     });
 
-    // Cerrar menú al hacer scroll
     window.addEventListener('scroll', () => {
-        if (navLinks.classList.contains('active')) {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-            document.body.classList.remove('menu-open');
-        }
+        closeMenu();
+        hamburger.classList.remove('active');
     });
 }
+
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+const navItems = document.querySelectorAll('.nav-links a');
+
+// Toggle menú con el botón hamburguesa
+hamburger.addEventListener('click', (e) => {
+    e.stopPropagation(); // Evita que el click se propague al documento
+    hamburger.classList.toggle('is-active');
+    navLinks.classList.toggle('nav-active');
+});
+
+// Cierra el menú al hacer clic en cualquier link del menú
+navItems.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('is-active');
+        navLinks.classList.remove('nav-active');
+    });
+});
+
+// Cierra el menú si se hace clic fuera del menú y del botón
+document.addEventListener('click', (event) => {
+    const isClickInsideNav = navLinks.contains(event.target);
+    const isClickOnHamburger = hamburger.contains(event.target);
+
+    if (!isClickInsideNav && !isClickOnHamburger) {
+        hamburger.classList.remove('is-active');
+        navLinks.classList.remove('nav-active');
+    }
+});
+
+
 
 
 // MEJORADO: Cursor más fluido y reactivo
