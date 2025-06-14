@@ -380,8 +380,6 @@ function startAnim() {
                 particles.style.animation = 'elementSlideUp 1s ease-out';
             }
             
-            // Crear partículas de celebración
-            createCelebrationParticles();
         }, 400);
         
         // Limpieza final

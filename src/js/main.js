@@ -18,12 +18,7 @@ function initializeNexusEffects() {
 
 // NUEVO: Efectos visuales avanzados
 function initializeAdvancedEffects() {
-    createFloatingElements();
-    initializeParallaxLayers();
-    initializeGlitchEffects();
-    initializeMorphingShapes();
-    initializeInteractiveGrid();
-    initializeColorWaveEffect();
+ 
 }
 
 // NUEVO: Fondo matriz digital
