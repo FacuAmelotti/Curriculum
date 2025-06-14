@@ -1,5 +1,102 @@
 // startAnim.js - Animación de introducción épica y elegante
 function startAnim() {
+    // Array de frases tecnológicas aleatorias
+    const techFacts = [
+    "La vida es muy simple, pero insistimos en hacerla complicada. — Confucio",
+    "La verdadera sabiduría está en reconocer la propia ignorancia. — Sócrates",
+    "El sabio puede cambiar de opinión. El necio, nunca. — Immanuel Kant",
+    "La paciencia es la compañera de la sabiduría. — San Agustín",
+    "La sabiduría comienza en la maravilla. — Sócrates",
+    "La educación es el encendido de una llama, no el llenado de un recipiente. — Sócrates",
+    "Donde hay amor, hay vida. — Mahatma Gandhi",
+    "No basta tener buen ingenio; lo principal es aplicarlo bien. — René Descartes",
+    "La sabiduría es evitar todos los pensamientos que nos debilitan. — Wayne Dyer",
+    "Aprender sin reflexionar es malgastar energía. — Confucio",
+    "Conócete a ti mismo. — Templo de Apolo en Delfos",
+    "La sabiduría no viene por edad, sino por entendimiento. — William Shakespeare",
+    "No se trata de saber mucho, sino de comprender bien. — Demócrito",
+    "El conocimiento habla, pero la sabiduría escucha. — Jimi Hendrix",
+    "Piensa como un sabio, pero habla como la gente común. — W. B. Yeats",
+    "La humildad es la base de toda verdadera grandeza. — James Allen",
+    "Vive como si fueras a morir mañana. Aprende como si fueras a vivir siempre. — Mahatma Gandhi",
+    "La duda es el principio de la sabiduría. — Aristóteles",
+    "Saber y saberlo demostrar es valer dos veces. — Baltasar Gracián",
+    "El ignorante afirma, el sabio duda y reflexiona. — Aristóteles",
+    "Nadie es más esclavo que quien se cree libre sin serlo. — Goethe",
+    "El que tiene imaginación sin instrucción tiene alas sin pies. — Joseph Joubert",
+    "Solo sé que no sé nada. — Sócrates",
+    "No hay camino hacia la verdad, la verdad es el camino. — Mahatma Gandhi",
+    "Un libro abierto es un cerebro que habla. — Proverbio árabe",
+    "El sentido común no es tan común. — Voltaire",
+    "La mente es como un paracaídas: solo funciona si se abre. — Albert Einstein",
+    "La sabiduría viene de escuchar, no de hablar. — Proverbio japonés",
+    "Quien domina a otros es fuerte; quien se domina a sí mismo es poderoso. — Lao Tsé",
+    "No hay riqueza como el conocimiento, ni pobreza como la ignorancia. — Ali ibn Abi Talib",
+    "Pensar es fácil, actuar es difícil, y poner los pensamientos en acción es lo más difícil del mundo. — Goethe",
+    "El arte de ser sabio es saber qué pasar por alto. — William James",
+    "El que no sabe es como el que no ve. — Proverbio popular",
+    "El sabio no dice todo lo que piensa, pero siempre piensa todo lo que dice. — Aristóteles",
+    "El alma que hablar puede con los ojos, también puede besar con la mirada. — Gustavo A. Bécquer",
+    "Escoge una ocupación que ames y no tendrás que trabajar ni un día de tu vida. — Confucio",
+    "Hay más sabiduría en una lágrima sincera que en mil palabras vacías. — Anónimo",
+    "La reflexión es el camino hacia la inmortalidad; la falta de reflexión, el camino hacia la muerte. — Buda",
+    "La experiencia no es lo que te sucede, sino lo que haces con lo que te sucede. — Aldous Huxley",
+    "No hay camino para la paz, la paz es el camino. — Mahatma Gandhi",
+    "Lo esencial es invisible a los ojos. — Antoine de Saint-Exupéry",
+    "La disciplina es la parte más importante del éxito. — Truman Capote",
+    "El silencio es un amigo que nunca traiciona. — Confucio",
+    "La libertad no consiste en tener un buen amo, sino en no tener ninguno. — Cicerón",
+    "El hombre sabio no acumula. Cuanto más ayuda a los demás, más se beneficia él. — Lao Tsé",
+    "El que busca la verdad corre el riesgo de encontrarla. — Manuel Vicent",
+    "La sabiduría es saber cuál es el siguiente paso; la virtud es llevarlo a cabo. — David Starr Jordan",
+    "No es pobre el que tiene poco, sino el que mucho desea. — Séneca",
+    "Haz lo que puedas, con lo que tengas, donde estés. — Theodore Roosevelt",
+    "Cuando el sabio señala la luna, el necio mira el dedo. — Proverbio chino",
+    "La verdad se corrompe tanto con la mentira como con el silencio. — Cicerón",
+    "El sentido de la vida es darle sentido a la vida. — Viktor Frankl",
+    "No llores porque terminó, sonríe porque sucedió. — Dr. Seuss",
+    "La mente lo es todo. En lo que piensas, te conviertes. — Buda",
+    "La felicidad no es algo hecho. Proviene de tus propias acciones. — Dalai Lama",
+    "El pasado no se puede cambiar. El futuro aún está en tu poder. — Mary Pickford",
+    "No cuentes los días, haz que los días cuenten. — Muhammad Ali",
+    "El hombre que se conquista a sí mismo es más grande que quien conquista a mil hombres en batalla. — Buda",
+    "No vemos las cosas como son, las vemos como somos. — Anaïs Nin",
+    "El conocimiento es poder. — Francis Bacon",
+    "No se puede desatar un nudo sin saber cómo está hecho. — Aristóteles",
+    "El mayor enemigo del conocimiento no es la ignorancia, sino la ilusión del conocimiento. — Stephen Hawking",
+    "Cuando cambias la forma en que miras las cosas, las cosas que miras cambian. — Wayne Dyer",
+    "Un viaje de mil millas comienza con un solo paso. — Lao Tsé",
+    "No hay mayor riqueza que una mente tranquila. — Anónimo",
+     "Sé tú el cambio que quieres ver en el mundo. — Mahatma Gandhi",
+    "El que no puede cambiar su mente no puede cambiar nada. — George Bernard Shaw",
+    "Quien en verdad sabe de qué habla, no encuentra razones para levantar la voz. — Leonardo da Vinci",
+    "El tiempo es el mejor maestro, desgraciadamente mata a todos sus alumnos. — Louis Hector Berlioz",
+    "Prefiero molestar con la verdad que complacer con adulaciones. — Séneca",
+    "Nada en la vida debe ser temido, solo comprendido. — Marie Curie",
+    "El sabio no enseña con palabras, sino con actos. — Lao Tsé",
+    "La libertad es el derecho de hacer lo que no perjudica a los demás. — Montesquieu",
+    "Una vida sin reflexión no merece ser vivida. — Sócrates",
+    "No esperes por una crisis para descubrir lo que es importante en tu vida. — Platón",
+    "La imaginación es más importante que el conocimiento. — Albert Einstein",
+    "La vida no se mide por las veces que respiras, sino por los momentos que te dejan sin aliento. — Maya Angelou",
+    "Un hombre con una idea nueva es un loco hasta que la idea triunfa. — Mark Twain",
+    "El mayor poder es el dominio de uno mismo. — Séneca",
+    "La recompensa del trabajo bien hecho es la oportunidad de hacer más trabajo bien hecho. — Jonas Salk",
+    "No hay viento favorable para el que no sabe a dónde va. — Séneca",
+    "La sabiduría es hija de la experiencia. — Leonardo da Vinci",
+    "El conocimiento te dará poder, pero el carácter te dará respeto. — Bruce Lee",
+    "Cuida tus pensamientos, se convierten en palabras. — Lao Tsé",
+    "Es mejor encender una vela que maldecir la oscuridad. — Proverbio chino",
+    "La adversidad no construye el carácter, lo revela. — James Lane Allen",
+    "Solo quienes se arriesgan a ir demasiado lejos pueden descubrir qué tan lejos se puede llegar. — T. S. Eliot",
+    "No busques los errores, busca un remedio. — Henry Ford",
+    "La verdadera inteligencia consiste en saber que no se sabe nada. — Sócrates",
+    "La lectura es para la mente lo que el ejercicio es para el cuerpo. — Joseph Addison"
+    ];
+    
+    // Seleccionar frase aleatoria
+    const randomFact = techFacts[Math.floor(Math.random() * techFacts.length)];
+    
     // Crear overlay principal con efecto de cristal
     const overlay = document.createElement('div');
     overlay.id = 'intro-overlay';
@@ -130,10 +227,11 @@ function startAnim() {
         text-align: center;
         opacity: 0;
         animation: centerReveal 1s ease-out 0.3s forwards;
+        max-width: 90vw;
     `;
     
     const logoText = document.createElement('div');
-    logoText.textContent = 'MI PORTFOLIO';
+    logoText.textContent = 'CARGANDO';
     logoText.style.cssText = `
         font-family: 'JetBrains Mono', monospace;
         font-size: clamp(2rem, 6vw, 4rem);
@@ -153,27 +251,31 @@ function startAnim() {
                    textGlow 3s ease-in-out infinite alternate;
         filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
         text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        margin-bottom: 20px;
     `;
     
     const subtitle = document.createElement('div');
-    subtitle.textContent = 'Bienvenidos!';
+    subtitle.textContent = randomFact;
     subtitle.style.cssText = `
         font-family: 'Inter', sans-serif;
-        font-size: 14px;
+        font-size: clamp(11px, 2.5vw, 14px);
         font-weight: 300;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.7);
+        letter-spacing: 1px;
+        color: rgba(255, 255, 255, 0.8);
         margin-top: 20px;
         animation: subtitleFade 1s ease-out 0.8s forwards;
         opacity: 0;
+        line-height: 1.4;
+        max-width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
     `;
     
     // Crear barra de progreso futurista
     const progressContainer = document.createElement('div');
     progressContainer.style.cssText = `
         position: relative;
-        width: 300px;
+        width: min(300px, 80vw);
         height: 4px;
         background: rgba(255, 255, 255, 0.1);
         border-radius: 2px;
@@ -388,7 +490,7 @@ function startAnim() {
             animationStyles.remove();
         }, 1200);
         
-    }, 2000); // Duración total aumentada para el drama
+    }, 4500); // Duración total aumentada para el drama
     
     // Inicializar efectos complementarios
     if (!document.querySelector('.cursor')) {
