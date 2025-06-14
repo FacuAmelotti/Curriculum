@@ -7,12 +7,15 @@
 ::-webkit-scrollbar {
     width: 8px;
     background: rgba(0, 0, 0, 0.1);
+     cursor: url('../img/cursor.png'), auto;
+    
 }
 
 ::-webkit-scrollbar-track {
     background: linear-gradient(135deg, #0f0f0f 0%, #0c0c0c 100%);
     border-radius: 0;
     box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+     cursor: url('../img/cursor.png'), auto;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -23,6 +26,7 @@
         0 2px 4px rgba(0, 0, 0, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
+     cursor: url('../img/cursor.png'), auto;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -32,6 +36,7 @@
         0 3px 6px rgba(0, 0, 0, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.15);
     transform: scaleX(1.1);
+     cursor: url('../img/cursor.png'), auto;
 }
 
 ::-webkit-scrollbar-thumb:active {
@@ -39,22 +44,26 @@
     box-shadow: 
         0 1px 2px rgba(0, 0, 0, 0.5),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
+         cursor: url('../img/cursor.png'), auto;
 }
 
 /* Esquinas del scrollbar */
 ::-webkit-scrollbar-corner {
     background: linear-gradient(135deg, #0f0f0f 0%, #0c0c0c 100%);
+     cursor: url('../img/cursor.png'), auto;
 }
 
 /* Botones del scrollbar (flechas) - ocultos para diseño minimalista */
 ::-webkit-scrollbar-button {
     display: none;
+     cursor: url('../img/cursor.png'), auto;
 }
 
 /* Estilos para Firefox */
 html {
     scrollbar-width: thin;
     scrollbar-color: #4a4a4a #0f0f0f;
+     cursor: url('../img/cursor.png'), auto;
 }
 
 /* Estilo académico mejorado para Firefox */
@@ -62,6 +71,7 @@ html {
     html {
         scrollbar-color: #4a4a4a rgba(15, 15, 15, 0.8);
         scrollbar-width: thin;
+         cursor: url('../img/cursor.png'), auto;
     }
 }
 
@@ -71,6 +81,8 @@ body {
     scroll-behavior: smooth;
     /* Optimiza el rendering del scroll */
     -webkit-overflow-scrolling: touch;
+     cursor: url('../img/cursor.png'), auto;
+      cursor: url('../img/cursor.png'), auto;
 }
 
 /* Animación sutil del thumb cuando aparece */
@@ -87,18 +99,21 @@ body {
 
 ::-webkit-scrollbar-thumb {
     animation: scrollThumbAppear 0.3s ease-out;
+     cursor: url('../img/cursor.png'), auto;
 }
 
 /* Hover effect para toda la scrollbar */
 ::-webkit-scrollbar:hover {
     width: 10px;
     transition: width 0.2s ease;
+     cursor: url('../img/cursor.png'), auto;
 }
 
 /* Estilo para cuando el scrollbar está inactivo */
 ::-webkit-scrollbar-thumb:window-inactive {
     background: linear-gradient(135deg, #3a3a3a 0%, #4a4a4a 50%, #2a2a2a 100%);
     opacity: 0.7;
+     cursor: url('../img/cursor.png'), auto;
 }
 
 /* Responsive scrollbar */
@@ -131,21 +146,25 @@ body {
 .scrollable-element::-webkit-scrollbar {
     width: 6px;
     height: 6px;
+     cursor: url('../img/cursor.png'), auto;
 }
 
 .scrollable-element::-webkit-scrollbar-track {
     background: rgba(74, 74, 74, 0.1);
     border-radius: 3px;
+     cursor: url('../img/cursor.png'), auto;
 }
 
 .scrollable-element::-webkit-scrollbar-thumb {
     background: rgba(160, 160, 160, 0.3);
     border-radius: 3px;
     border: none;
+     cursor: url('../img/cursor.png'), auto;
 }
 
 .scrollable-element::-webkit-scrollbar-thumb:hover {
     background: rgba(160, 160, 160, 0.5);
+     cursor: url('../img/cursor.png'), auto;
 }
 
 /* Efecto de brillo sutil en el scroll */
@@ -165,6 +184,7 @@ body {
     border-radius: inherit;
     opacity: 0;
     transition: opacity 0.3s ease;
+     cursor: url('../img/cursor.png'), auto;
 }
 
 ::-webkit-scrollbar-thumb:hover::before {

@@ -5,6 +5,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            cursor: url('../img/cursor.png'), auto;
         }
 
         body {
@@ -101,7 +102,7 @@
             font-weight: 600;
             color: #e5e5e5;
             letter-spacing: 2px;
-            cursor: default;
+             cursor: url('../img/cursor.png'), auto;
         }
 
         .nav-links {
@@ -201,7 +202,7 @@
             -webkit-text-fill-color: transparent;
             letter-spacing: -2px;
             line-height: 1.05;
-            cursor: default;
+             cursor: url('../img/cursor.png'), auto;
             text-shadow: 0 0 30px rgba(244, 244, 245, 0.1);
         }
 
@@ -211,7 +212,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 700;
-            cursor: default;
+             cursor: url('../img/cursor.png'), auto;
             filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
         }
 
@@ -225,7 +226,7 @@
             -webkit-text-fill-color: transparent;
             letter-spacing: -2px;
             line-height: 1.05;
-            cursor: default;
+             cursor: url('../img/cursor.png'), auto;
         }
 
         .hero-name .hero-title-accent {
@@ -244,7 +245,7 @@
             color: #a0a0a0;
             max-width: 550px;
             line-height: 1.6;
-                      cursor: default;
+                       cursor: url('../img/cursor.png'), auto;
         }
 
         .hero-credentials {
@@ -253,14 +254,14 @@
             color: #8a8a8a;
             margin-bottom: 40px;
             line-height: 1.8;
-            cursor: default;
+             cursor: url('../img/cursor.png'), auto;
         }
 
         .cta-buttons {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
-            cursor: pointer;
+            cursor: url('../img/cursor.png'), auto;
         }
 
         .cta-primary {
@@ -314,7 +315,7 @@
 
         .section-header {
             margin-bottom: 60px;
-            cursor: default;
+             cursor: url('../img/cursor.png'), auto;
         }
 
         .section-subtitle {
@@ -529,7 +530,7 @@
             background: rgba(74, 74, 74, 0.05);
             border: 1px solid rgba(160, 160, 160, 0.1);
             border-radius: 8px;
-               cursor: default;
+                cursor: url('../img/cursor.png'), auto;
         }
 
         .experience-title {
@@ -557,13 +558,13 @@
             color: #a0a0a0;
             line-height: 1.6;
             margin-bottom: 15px;
-               cursor: default;
+                cursor: url('../img/cursor.png'), auto;
         }
 
         .experience-tasks {
             list-style: none;
             padding: 0;
-               cursor: default;
+                cursor: url('../img/cursor.png'), auto;
         }
 
         .experience-tasks li {

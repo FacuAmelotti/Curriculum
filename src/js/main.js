@@ -16,11 +16,6 @@ function initializeNexusEffects() {
     initializeMatrixBackground();
 }
 
-// NUEVO: Efectos visuales avanzados
-function initializeAdvancedEffects() {
- 
-}
-
 // NUEVO: Fondo matriz digital
 function initializeMatrixBackground() {
     const matrixContainer = document.createElement('div');
