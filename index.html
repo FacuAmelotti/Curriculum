@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./src/css/custom_scrollbars.css">
     <link rel="stylesheet" href="./src/css/main_responsive.css">
     
-
+    <link rel="stylesheet" href="./src/css/consolaSecreta.css">
     <link rel="stylesheet" href="./src/css/burgerButton.css">
 </head>
 <body>
@@ -40,6 +40,18 @@
         </nav>
     </header>    
 
+    <div id="secretConsole" class="console-hidden">
+    <div class="console-header">
+        <span>💻 F4.K1.T0</span>
+        <a onclick="closeConsole()">X</a>
+    </div>
+    <div id="consoleOutput" class="console-output"></div>
+    <div class="console-input">
+        <input type="text" id="consoleInput" placeholder="Escribe un comando..." autocomplete="off">
+        <button onclick="sendConsoleCommand()">Enviar</button>
+    </div>
+    </div>
+
     <section class="hero" id="home">
         <div class="hero-content">
 
@@ -62,6 +74,7 @@
                 <a href="#projects" class="cta-primary">Ver Proyectos</a>
             <a href="https://www.linkedin.com/in/facundoamelotti/" class="cta-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a onclick="descargarCV()" class="cta-secondary">Descargar Curriculum (PDF)</a>
+                <a onclick="showConsole()" class="cta-secondary">🤖 Hablar con F4.K1.T0</a>
             </div>
         </div>
     </section>
@@ -407,7 +420,7 @@
     <script src="./src/js/main.js"></script>
     <script src="./src/js/pdfCreator.js"></script>  
         <script src="./src/js/dark-light-mode.js"></script>
-  
+      <script src="./src/js/consolaSecreta.js"></script>
     <script src="./src/js/startAnim.js"></script>
 </body>
 </html>

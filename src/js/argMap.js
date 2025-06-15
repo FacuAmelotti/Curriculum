@@ -8,12 +8,16 @@
                 y: 52,
                 photos: [
                     {
-                           src: '../img/necocheaFacu_1.jpg',                           
+                           src: '../img/necocheaFacu_3.jpg',                           
                         description: 'Necochea es mar, médanos y viento. Es ese lugar donde el río se encuentra con el océano y los atardeceres se pintan de fuego.'
                     },
                                         {
                            src: '../img/necocheaFacu_2.jpg',                           
                         description: 'Con sus playas anchas, el Parque Miguel Lillo y ese aroma a sal y eucalipto, es un rincón tranquilo pero lleno de vida. Ideal para desconectar, caminar sin apuro y dejar que el sonido de las olas te acompañe.'
+                    },
+                                                            {
+                           src: '../img/necocheaFacu_1.jpg',                           
+                        description: 'El Parque Miguel Lillo es un bosque vivo, lleno de senderos, eucaliptos y paz.'
                     }
                 ]
             } ,
@@ -57,7 +61,7 @@
                 y: 46,
                 photos: [
                     {
-                        src: '../img/mendozaFacu_2.jpg',
+                        src: '../img/lpFacu_1.jpg',
                         description: 'La Plata es una ciudad pensada, trazada con compás y corazón. Es joven, universitaria, llena de cultura, historia y ciencia. Tiene una energía única: entre diagonales, plazas y edificios majestuosos, se respira movimiento.'
                     },
                     {
@@ -73,12 +77,12 @@
                 y: 57,
                 photos: [
                     {
-                        src: '../img/mendozaFacu_2.jpg',
-                        description: 'Bariloche es como un pedacito de cuento entre montañas, lagos y bosques. Tiene ese olor a chocolate y a pino, esa paz que solo te da mirar el Nahuel Huapi al atardecer.'
+                        src: '../img/barilocheFacu_1.jpg',
+                        description: 'Bariloche es como un pedacito de cuento entre montañas, lagos y bosques.'
                     },
                                         {
-                       src: '../img/mendozaFacu_2.jpg',
-                        description: 'En invierno es nieve y aventura; en verano, senderos, colores y agua cristalina. Es un lugar que te abraza con su naturaleza y te invita a quedarte un rato más… o para siempre.'
+                       src: '../img/barilocheFacu_2.jpg',
+                        description: ' Tiene ese olor a chocolate y a pino, esa paz que solo te da mirar el Nahuel Huapi al atardecer.'
                     }
                 ]
             }  
