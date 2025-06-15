@@ -11,6 +11,7 @@
     
     <link rel="stylesheet" href="./src/css/consolaSecreta.css">
     <link rel="stylesheet" href="./src/css/burgerButton.css">
+        <link rel="stylesheet" href="./src/css/fxeffects.css">
 </head>
 <body>
     <div class="cursor"></div>
@@ -40,11 +41,48 @@
         </nav>
     </header>    
 
+<div id="fxeffectcontainer" style="position: relative;"></div>
+
     <div id="secretConsole" class="console-hidden">
     <div class="console-header">
         <span>💻 F4.K1.T0</span>
         <a onclick="closeConsole()">X</a>
     </div>
+    <div class="console-nav">
+                    <button class="nav-button" onclick="executeNavCommand('info')" title="Información">
+                <span class="icon">ℹ️</span>
+            </button>
+            <button class="nav-button" onclick="executeNavCommand('help')" title="Ayuda">
+                <span class="icon">❓</span>
+            </button>
+            <button class="nav-button" onclick="executeNavCommand('hora')" title="Hora actual">
+                <span class="icon">🕐</span>
+            </button>
+            <button class="nav-button" onclick="executeNavCommand('fecha')" title="Fecha completa">
+                <span class="icon">📅</span>
+            </button>
+            <button class="nav-button" onclick="executeNavCommand('chiste')" title="Chiste random">
+                <span class="icon">😂</span>
+            </button>
+            <button class="nav-button" onclick="executeNavCommand('dado')" title="Tirar dado">
+                <span class="icon">🎲</span>
+            </button>
+            <button class="nav-button" onclick="executeNavCommand('moneda')" title="Tirar moneda">
+                <span class="icon">🟡</span>
+            </button>
+            <button class="nav-button" onclick="executeNavCommand('creator')" title="Sobre Facundo">
+                <span class="icon">👨‍💻</span>
+            </button>
+            <button class="nav-button" onclick="executeNavCommand('mapa')" title="Abrir mapa">
+                <span class="icon">🗺️</span>
+            </button>
+            <button class="nav-button" onclick="executeNavCommand('memoria')" title="Uso de memoria">
+                <span class="icon">🧠</span>
+            </button>
+            <button class="nav-button" onclick="executeNavCommand('clear')" title="Limpiar consola">
+                <span class="icon">🧹</span>
+            </button>
+        </div>
     <div id="consoleOutput" class="console-output"></div>
     <div class="console-input">
         <input type="text" id="consoleInput" placeholder="Escribe un comando..." autocomplete="off">
@@ -74,7 +112,7 @@
                 <a href="#projects" class="cta-primary">Ver Proyectos</a>
             <a href="https://www.linkedin.com/in/facundoamelotti/" class="cta-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a onclick="descargarCV()" class="cta-secondary">Descargar Curriculum (PDF)</a>
-                <a onclick="showConsole()" class="cta-secondary">🤖 Hablar con F4.K1.T0</a>
+                <a onclick="showConsole()" class="btn-fakito">🤖 Hablar con F4.K1.T0</a>
             </div>
         </div>
     </section>
@@ -421,6 +459,7 @@
     <script src="./src/js/pdfCreator.js"></script>  
         <script src="./src/js/dark-light-mode.js"></script>
       <script src="./src/js/consolaSecreta.js"></script>
+            <script src="./src/js/fxeffects.js"></script>
     <script src="./src/js/startAnim.js"></script>
 </body>
 </html>
