@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facundo Ezequiel Amelotti</title>
+        <link rel="stylesheet" href="../css//custom_scrollbars.css">
+    <link rel="stylesheet" href="../css/argMap.css">
+</head>
+<body>
+    <!-- Partículas -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Cursor personalizado -->
+    <div class="cursor" id="cursor"></div>
+
+    <div class="container">
+     <button class="back-btn" id="backBtn" onclick="window.location.href='../../index.html'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m12 19-7-7 7-7"/>
+                <path d="M19 12H5"/>
+            </svg>
+            <span>Volver</span>
+        </button>
+        <div class="subtitle">Explorando el país</div>
+            <p class="title">
+            Mis Viajes por <img src="../img/arg.png" alt="Argentina" class="flag-inline">
+            </p>
+        
+        <div class="map-container" id="mapContainer">
+            <!--
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDQwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMDAgNTBMMzUwIDUwTDM4MCAyMDBMMzIwIDM1MEwzNTAgNTAwTDI4MCA1NDBMMjAwIDUyMEwxNTAgNDgwTDEwMCA0MDBMODAgMzAwTDkwIDIwMEwxMDAgNTBaIiBzdHJva2U9IiNhMGEwYTAiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiYSgxNjAsIDE2MCwgMTYwLCAwLjEpIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjYTBhMGEwIiBmb250LWZhbWlseT0iSW50ZXIiIGZvbnQtc2l6ZT0iMTgiPkFyZ2VudGluYTwvdGV4dD4KPC9zdmc+" 
+                 alt="Mapa de Argentina" 
+                 class="map-image" 
+                 id="mapImage"> -->
+                  <img src="../img/ArgMap.png" 
+                 alt="Mapa de Argentina" 
+                 class="map-image" 
+                 id="mapImage">
+        </div>
+    </div>
+
+    <!-- Panel de fotos -->
+    <div class="photo-panel" id="photoPanel">
+        <div class="panel-content">
+            <button class="close-btn" id="closeBtn">&times;</button>
+            <div class="location-subtitle" id="locationSubtitle">Lugar:</div>
+            <h2 class="location-title" id="locationTitle">Título del Lugar</h2>
+            <div class="photo-gallery" id="photoGallery">
+                <!-- Las fotos se cargarán aquí dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../js/startAnimArg.js"></script>
+     <script src="../js/argMap.js"></script>
+</body>
+</html>
