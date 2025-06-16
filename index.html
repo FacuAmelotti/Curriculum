@@ -55,23 +55,20 @@
             <button class="nav-button" onclick="(() => { executeNavCommand('clear'); executeNavCommand('help'); })()" title="Ayuda">
                 <span class="icon">❓</span>
             </button>
-            <button class="nav-button" onclick="executeNavCommand('hora')" title="Hora actual">
+            <button class="nav-button" onclick="(() => { executeNavCommand('clear'); executeNavCommand('hora'); })()" title="Hora actual">
                 <span class="icon">🕐</span>
             </button>
-            <button class="nav-button" onclick="executeNavCommand('fecha')" title="Fecha completa">
+            <button class="nav-button" onclick="(() => { executeNavCommand('clear'); executeNavCommand('fecha'); })()" title="Fecha y Hora actual">
                 <span class="icon">📅</span>
             </button>
-            <button class="nav-button" onclick="executeNavCommand('chiste')" title="Chiste random">
-                <span class="icon">😂</span>
-            </button>
             <button class="nav-button" onclick="(() => { executeNavCommand('clear'); executeNavCommand('creator'); })()" title="Sobre Facundo">
-                <span class="icon">👨‍💻</span>
-            </button>
-            <button class="nav-button" onclick="executeNavCommand('mapa')" title="Abrir mapa">
-                <span class="icon">🗺️</span>
+                <span class="icon">👦</span>
             </button>
             <button class="nav-button"  onclick="(() => { executeNavCommand('clear'); executeNavCommand('frase'); })()" title="Frase reflexiva">
                 <span class="icon">🧠</span>
+            </button>
+             <button class="nav-button"  onclick="(() => { executeNavCommand('clear'); executeNavCommand('chiste'); })()" title="Chiste random">
+                <span class="icon">😂</span>
             </button>
             <button class="nav-button" onclick="executeNavCommand('clear')" title="Limpiar consola">
                 <span class="icon">🧹</span>
@@ -313,7 +310,7 @@
     <section class="section" id="projects">
         <div class="section-header">
             <div class="section-subtitle">Portfolio de Proyectos</div>
-            <h2>Algunos Trabajos</h2>
+            <h2>Proyectos & Trabajos</h2>
         </div>
         
         <div class="stats">
@@ -350,6 +347,7 @@
         </div>
 
         <div class="projects">
+        <h2>Algunos Proyectos personales</h2>
             <div class="project">
                 <div class="project-title">
                     <a href="https://github.com/FacuAmelotti/Colegio-Ingenieros" target="_blank" class="project-link">Colegio de Ingenieros</a>
@@ -386,24 +384,25 @@
                     Juego de supervivencia espacial disponible en múltiples plataformas
                 </div>
             </div>
-            <div class="project">
+                        <div class="project">
                 <div class="project-title">
-                    <a href="https://facuamelotti.github.io/Ahorcado-en-linea/" target="_blank" class="project-link">Ahorcado en Línea</a>
+                    <a href="https://techf-studios.itch.io/space-survival" target="_blank" class="project-link">No Escape</a>
                 </div>
                 <div class="project-details">
-                    Juego web interactivo • HTML5, CSS3, JavaScript<br>
-                    Versión digital del clásico juego del ahorcado
+                    Videojuego • Unity3D, C#, WebGL, iOS<br>
+                    Juego de supervivencia y disparos para ordenador en WebGL
                 </div>
-            </div>
+            </div>            
             <div class="project">
                 <div class="project-title">
-                    <a href="https://facuamelotti.github.io/MiMusica/" target="_blank" class="project-link">Mi Música</a>
+                    <a href="https://facuamelotti.github.io/Laberinto/" target="_blank" class="project-link">El Laberinto</a>
                 </div>
                 <div class="project-details">
-                    Aplicación de música • FL Studio<br>
-                    Plataforma personal para gestión y reproducción de música
+                    Minijuego web interactivo • HTML5, CSS3, JavaScript<br>
+                    Que no te atrape el enemigo y llega rapido a la meta!
                 </div>
             </div>
+                    
         </div>
     </section>
 

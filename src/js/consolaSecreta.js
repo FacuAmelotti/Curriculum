@@ -285,6 +285,7 @@ const knowledge = {
     responses: [
       "¿Por qué los programadores prefieren el modo oscuro? ¡Porque la luz atrae bugs! 🐛💡",
       "—¡Camarero! Este filete tiene muchos nervios. —Pues normal, es la primera vez que se lo comen. 😅",
+      "—¿Por que un programador que llega tarde al trabajo va en colectivo? —Porque se quedo sintaxis 😅",
       "—Doctor, tengo todo el cuerpo cubierto de pelo. ¿Qué padezco? —Padece un oso. 🐻😄",
       "—¿Cuál es el animal más antiguo? —La cebra, porque está en blanco y negro. 🦓🕰️",
       "Hay 10 tipos de personas: las que entienden binario y las que no 😄💻",
@@ -419,7 +420,7 @@ const knowledge = {
 
 // Comandos específicos expandidos y actualizados
 const commands = {
-  help: "📜 LISTA COMPLETA DE COMANDOS:\n\n🔹 INFORMACIÓN BÁSICA:\n• /help - Mostrar ayuda principal\n• /info - Información detallada sobre mí\n• /clear - Limpiar la consola\n• /clima - Info meteorológica (simulada)\n• /mapa - Abrir mapa interactivo de Argentina\n• /changemode - Cambiar entre tema claro/oscuro\n• /version - Ver mi versión\n• /creator - Info sobre Facundo\n• /estado - Estado del sistema\n\n🔹 TIEMPO Y FECHA:\n• /hora - Ver la hora actual\n• /fecha - Ver fecha y hora completas\n• /dia - Saber qué día es hoy\n• /uptime - Tiempo que llevo activo\n\n🔹 DIVERSIÓN Y JUEGOS:\n• /saludo - Recibir un saludo amigable\n• /chiste - Escuchar un chiste de programación\n• /dado - Tirar un dado (1-6)\n• /moneda - Tirar una moneda (cara/cruz)\n• /pregunta - Respuesta mágica tipo 8-ball\n• /random - Generar número aleatorio\n• /fxeffect - Crea un efecto visual aleatorio\n\n",
+  help: "📜 LISTA COMPLETA DE COMANDOS:\n\n🔹 INFORMACIÓN BÁSICA:\n• /help - Mostrar ayuda principal\n• /info - Información detallada sobre mí\n• /clear - Limpiar la consola\n• /clima - Info meteorológica (simulada)\n• /mapa - Abrir mapa interactivo de Argentina\n• /changemode - Cambiar entre tema claro/oscuro\n• /version - Ver mi versión\n• /creator - Info sobre Facundo\n• /estado - Estado del sistemaF\n\n🔹 TIEMPO Y ECHA:\n• /hora - Ver la hora actual\n• /fecha - Ver fecha y hora completas\n• /dia - Saber qué día es hoy\n• /uptime - Tiempo que llevo activo\n\n🔹 DIVERSIÓN Y JUEGOS:\n• /saludo - Recibir un saludo amigable\n• /chiste - Escuchar un chiste de programación\n• /dado - Tirar un dado (1-6)\n• /moneda - Tirar una moneda (cara/cruz)\n• /pregunta - Respuesta mágica tipo 8-ball\n• /random - Generar número aleatorio\n• /fxeffect - Crea un efecto visual aleatorio\n\n• /juego_1 - Juego del Laberinto\n• /juego_2 - Juego del Memotest\n• /juego_3 - Juego 'Click Me!'",
 
   info: "👋 ¡Hola! Soy F4.K1.T0 (Fakito)\n🧠 ChatBot semi-inteligente.\n👨💻 Fui creado por: Facundo Ezequiel Amelotti\n🌟 Versión: 2.0 (Sigo en desarrollo!)\n💬 Lenguaje: JavaScript puro\n\n¡Pregúntame lo que quieras! 🚀",
   
@@ -563,6 +564,26 @@ rendimiento: () => {
     return "🗺️ Abriendo el mapa...";
   },
 
+    musica_fakito: () => {
+    window.open('https://facuamelotti.github.io/MiMusica/', '_blank');
+    return "🎧 Abriendo reproductor de musica personalizado...";
+  },
+
+  juego_1: () => {
+    window.open('https://facuamelotti.github.io/Laberinto/', '_blank');
+    return "🎮 Abriendo juego 'El Laberinto'...";
+  },
+
+  
+  juego_2: () => {
+    window.open('https://facuamelotti.github.io/Memotest/', '_blank');
+    return "🎮 Abriendo juego 'Memotest'...";
+  },
+  
+  juego_3: () => {
+    window.open('https://facuamelotti.github.io/Clickeame/', '_blank');
+    return "🎮 Abriendo juego 'Click Me'...";
+  },
   // Ejecuta un efecto visual (explosión)
   fxeffect: () => {
     createExplosion(); // Asegurate de que esta función esté definida en tu código

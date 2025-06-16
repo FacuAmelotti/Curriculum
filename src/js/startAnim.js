@@ -422,6 +422,7 @@ function startAnim() {
     
     const subtitle = document.createElement('div');
     subtitle.textContent = randomFact;
+    //subtitle.textContent = '';
     subtitle.style.cssText = `
         font-family: 'Inter', sans-serif;
         font-size: clamp(11px, 2.5vw, 14px);
@@ -656,7 +657,7 @@ function startAnim() {
             animationStyles.remove();
         }, 1200);
         
-    }, 4500); // Duración total aumentada para el drama
+    }, 4000); // Duración total aumentada para el drama
     
     // Inicializar efectos complementarios
     if (!document.querySelector('.cursor')) {
