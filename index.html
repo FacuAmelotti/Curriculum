@@ -18,6 +18,7 @@
     <div class="cursor-outline"></div>
     
     <div class="particles"></div>
+      <div id="consoleOverlay" class="console-overlay"></div>
 
     <header class="header">
         <nav class="nav">
@@ -44,15 +45,14 @@
 <div id="fxeffectcontainer" style="position: relative;"></div>
 
     <div id="secretConsole" class="console-hidden">
+      
+
     <div class="console-header">
         <span>💻 F4.K1.T0</span>
         <a onclick="closeConsole()">X</a>
     </div>
     <div class="console-nav">
-                    <button class="nav-button" onclick="executeNavCommand('info')" title="Información">
-                <span class="icon">ℹ️</span>
-            </button>
-            <button class="nav-button" onclick="executeNavCommand('help')" title="Ayuda">
+            <button class="nav-button" onclick="(() => { executeNavCommand('clear'); executeNavCommand('help'); })()" title="Ayuda">
                 <span class="icon">❓</span>
             </button>
             <button class="nav-button" onclick="executeNavCommand('hora')" title="Hora actual">
@@ -64,19 +64,13 @@
             <button class="nav-button" onclick="executeNavCommand('chiste')" title="Chiste random">
                 <span class="icon">😂</span>
             </button>
-            <button class="nav-button" onclick="executeNavCommand('dado')" title="Tirar dado">
-                <span class="icon">🎲</span>
-            </button>
-            <button class="nav-button" onclick="executeNavCommand('moneda')" title="Tirar moneda">
-                <span class="icon">🟡</span>
-            </button>
-            <button class="nav-button" onclick="executeNavCommand('creator')" title="Sobre Facundo">
+            <button class="nav-button" onclick="(() => { executeNavCommand('clear'); executeNavCommand('creator'); })()" title="Sobre Facundo">
                 <span class="icon">👨‍💻</span>
             </button>
             <button class="nav-button" onclick="executeNavCommand('mapa')" title="Abrir mapa">
                 <span class="icon">🗺️</span>
             </button>
-            <button class="nav-button" onclick="executeNavCommand('memoria')" title="Uso de memoria">
+            <button class="nav-button"  onclick="(() => { executeNavCommand('clear'); executeNavCommand('frase'); })()" title="Frase reflexiva">
                 <span class="icon">🧠</span>
             </button>
             <button class="nav-button" onclick="executeNavCommand('clear')" title="Limpiar consola">

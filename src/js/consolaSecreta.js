@@ -2,6 +2,265 @@ const consoleBox = document.getElementById("secretConsole");
 const consoleOutput = document.getElementById("consoleOutput");
 const consoleInput = document.getElementById("consoleInput");
 
+    const techFacts = [
+    "La vida es muy simple, pero insistimos en hacerla complicada. — Confucio",
+    "La verdadera sabiduría está en reconocer la propia ignorancia. — Sócrates",
+    "El sabio puede cambiar de opinión. El necio, nunca. — Immanuel Kant",
+    "La paciencia es la compañera de la sabiduría. — San Agustín",
+    "La sabiduría comienza en la maravilla. — Sócrates",
+    "La educación es el encendido de una llama, no el llenado de un recipiente. — Sócrates",
+    "Donde hay amor, hay vida. — Mahatma Gandhi",
+    "No basta tener buen ingenio; lo principal es aplicarlo bien. — René Descartes",
+    "La sabiduría es evitar todos los pensamientos que nos debilitan. — Wayne Dyer",
+    "Aprender sin reflexionar es malgastar energía. — Confucio",
+    "Conócete a ti mismo. — Templo de Apolo en Delfos",
+    "La sabiduría no viene por edad, sino por entendimiento. — William Shakespeare",
+    "No se trata de saber mucho, sino de comprender bien. — Demócrito",
+    "El conocimiento habla, pero la sabiduría escucha. — Jimi Hendrix",
+    "Piensa como un sabio, pero habla como la gente común. — W. B. Yeats",
+    "La humildad es la base de toda verdadera grandeza. — James Allen",
+    "Vive como si fueras a morir mañana. Aprende como si fueras a vivir siempre. — Mahatma Gandhi",
+    "La duda es el principio de la sabiduría. — Aristóteles",
+    "Saber y saberlo demostrar es valer dos veces. — Baltasar Gracián",
+    "El ignorante afirma, el sabio duda y reflexiona. — Aristóteles",
+    "Nadie es más esclavo que quien se cree libre sin serlo. — Goethe",
+    "El que tiene imaginación sin instrucción tiene alas sin pies. — Joseph Joubert",
+    "Solo sé que no sé nada. — Sócrates",
+    "No hay camino hacia la verdad, la verdad es el camino. — Mahatma Gandhi",
+    "Un libro abierto es un cerebro que habla. — Proverbio árabe",
+    "El sentido común no es tan común. — Voltaire",
+    "La mente es como un paracaídas: solo funciona si se abre. — Albert Einstein",
+    "La sabiduría viene de escuchar, no de hablar. — Proverbio japonés",
+    "Quien domina a otros es fuerte; quien se domina a sí mismo es poderoso. — Lao Tsé",
+    "No hay riqueza como el conocimiento, ni pobreza como la ignorancia. — Ali ibn Abi Talib",
+    "Pensar es fácil, actuar es difícil, y poner los pensamientos en acción es lo más difícil del mundo. — Goethe",
+    "El arte de ser sabio es saber qué pasar por alto. — William James",
+    "El sabio no dice todo lo que piensa, pero siempre piensa todo lo que dice. — Aristóteles",
+    "El alma que hablar puede con los ojos, también puede besar con la mirada. — Gustavo A. Bécquer",
+    "Escoge una ocupación que ames y no tendrás que trabajar ni un día de tu vida. — Confucio",
+    "Hay más sabiduría en una lágrima sincera que en mil palabras vacías. — Anónimo",
+    "La reflexión es el camino hacia la inmortalidad; la falta de reflexión, el camino hacia la muerte. — Buda",
+    "La experiencia no es lo que te sucede, sino lo que haces con lo que te sucede. — Aldous Huxley",
+    "No hay camino para la paz, la paz es el camino. — Mahatma Gandhi",
+    "Lo esencial es invisible a los ojos. — Antoine de Saint-Exupéry",
+    "La disciplina es la parte más importante del éxito. — Truman Capote",
+    "El silencio es un amigo que nunca traiciona. — Confucio",
+    "La libertad no consiste en tener un buen amo, sino en no tener ninguno. — Cicerón",
+    "El hombre sabio no acumula. Cuanto más ayuda a los demás, más se beneficia él. — Lao Tsé",
+    "El que busca la verdad corre el riesgo de encontrarla. — Manuel Vicent",
+    "La sabiduría es saber cuál es el siguiente paso; la virtud es llevarlo a cabo. — David Starr Jordan",
+    "No es pobre el que tiene poco, sino el que mucho desea. — Séneca",
+    "Haz lo que puedas, con lo que tengas, donde estés. — Theodore Roosevelt",
+    "Cuando el sabio señala la luna, el necio mira el dedo. — Proverbio chino",
+    "La verdad se corrompe tanto con la mentira como con el silencio. — Cicerón",
+    "El sentido de la vida es darle sentido a la vida. — Viktor Frankl",
+    "No llores porque terminó, sonríe porque sucedió. — Dr. Seuss",
+    "La mente lo es todo. En lo que piensas, te conviertes. — Buda",
+    "La felicidad no es algo hecho. Proviene de tus propias acciones. — Dalai Lama",
+    "El pasado no se puede cambiar. El futuro aún está en tu poder. — Mary Pickford",
+    "No cuentes los días, haz que los días cuenten. — Muhammad Ali",
+    "El hombre que se conquista a sí mismo es más grande que quien conquista a mil hombres en batalla. — Buda",
+    "No vemos las cosas como son, las vemos como somos. — Anaïs Nin",
+    "El conocimiento es poder. — Francis Bacon",
+    "No se puede desatar un nudo sin saber cómo está hecho. — Aristóteles",
+    "El mayor enemigo del conocimiento no es la ignorancia, sino la ilusión del conocimiento. — Stephen Hawking",
+    "Cuando cambias la forma en que miras las cosas, las cosas que miras cambian. — Wayne Dyer",
+    "Un viaje de mil millas comienza con un solo paso. — Lao Tsé",
+    "No hay mayor riqueza que una mente tranquila. — Anónimo",
+     "Sé tú el cambio que quieres ver en el mundo. — Mahatma Gandhi",
+    "El que no puede cambiar su mente no puede cambiar nada. — George Bernard Shaw",
+    "Quien en verdad sabe de qué habla, no encuentra razones para levantar la voz. — Leonardo da Vinci",
+    "El tiempo es el mejor maestro, desgraciadamente mata a todos sus alumnos. — Louis Hector Berlioz",
+    "Prefiero molestar con la verdad que complacer con adulaciones. — Séneca",
+    "Nada en la vida debe ser temido, solo comprendido. — Marie Curie",
+    "El sabio no enseña con palabras, sino con actos. — Lao Tsé",
+    "La libertad es el derecho de hacer lo que no perjudica a los demás. — Montesquieu",
+    "Una vida sin reflexión no merece ser vivida. — Sócrates",
+    "No esperes por una crisis para descubrir lo que es importante en tu vida. — Platón",
+    "La imaginación es más importante que el conocimiento. — Albert Einstein",
+    "La vida no se mide por las veces que respiras, sino por los momentos que te dejan sin aliento. — Maya Angelou",
+    "Un hombre con una idea nueva es un loco hasta que la idea triunfa. — Mark Twain",
+    "El mayor poder es el dominio de uno mismo. — Séneca",
+    "La recompensa del trabajo bien hecho es la oportunidad de hacer más trabajo bien hecho. — Jonas Salk",
+    "No hay viento favorable para el que no sabe a dónde va. — Séneca",
+    "La sabiduría es hija de la experiencia. — Leonardo da Vinci",
+    "El conocimiento te dará poder, pero el carácter te dará respeto. — Bruce Lee",
+    "Cuida tus pensamientos, se convierten en palabras. — Lao Tsé",
+    "Es mejor encender una vela que maldecir la oscuridad. — Proverbio chino",
+    "La adversidad no construye el carácter, lo revela. — James Lane Allen",
+    "Solo quienes se arriesgan a ir demasiado lejos pueden descubrir qué tan lejos se puede llegar. — T. S. Eliot",
+    "No busques los errores, busca un remedio. — Henry Ford",
+    "La verdadera inteligencia consiste en saber que no se sabe nada. — Sócrates",
+    "La lectura es para la mente lo que el ejercicio es para el cuerpo. — Joseph Addison",
+     "El sabio no se sienta para lamentarse, sino que se pone alegremente a su tarea de reparar el daño. — William Shakespeare",
+    "No hay nada repartido de modo más equitativo que la razón: todo el mundo está convencido de tener suficiente. — René Descartes",
+    "Es mejor ser odiado por lo que eres que amado por lo que no eres. — André Gide",
+    "La madurez es tener el coraje de vivir la vida según tus propios valores. — Ayn Rand",
+    "La lectura nos regala mucha compañía, libertad para ser de otra manera y ser más. — Pedro Laín Entralgo",
+    "No hay que apagar la luz del otro para lograr que brille la nuestra. — Mahatma Gandhi",
+    "Ningún copo de nieve cae jamás en el lugar equivocado. — Proverbio japonés",
+    "La sabiduría consiste en saber cuál es el siguiente paso; la virtud, en llevarlo a cabo. — David Starr Jordan",
+    "La gente olvidará lo que dijiste, pero nunca cómo los hiciste sentir. — Maya Angelou",
+    "No es el más fuerte de las especies el que sobrevive, ni el más inteligente, sino el que responde mejor al cambio. — Charles Darwin",
+    "La mente que se abre a una nueva idea jamás vuelve a su tamaño original. — Albert Einstein",
+    "Solo en la oscuridad puedes ver las estrellas. — Martin Luther King Jr.",
+    "La confianza en uno mismo es el primer secreto del éxito. — Ralph Waldo Emerson",
+       "Divide y vencerás. — Julio César",
+    "Piensa menos, siente más. — Anónimo",
+    "Actúa, no reacciones. — Anónimo",
+    "Domina tus miedos o ellos te dominarán. — Anónimo",
+    "Escucha más de lo que hablas. — Proverbio popular",
+    "Hazlo simple. — Leonardo da Vinci",
+    "Menos es más. — Ludwig Mies van der Rohe",
+    "Primero lo difícil, luego lo imposible. — Anónimo",
+    "Lo que no se mide, no se mejora. — Peter Drucker",
+    "Conócelo todo, pero aférrate a lo esencial. — Voltaire",
+    "El poder real es autocontrol. — Marco Aurelio",
+    "Primero ordena tu mente, luego el mundo. — Anónimo",
+    "No luches contra el río, aprende a fluir. — Lao Tsé",
+     "La felicidad de tu vida depende de la calidad de tus pensamientos. — Marco Aurelio",
+    "Lo que perturba al hombre no son los hechos, sino la opinión que tiene de ellos. — Epicteto",
+    "Elige no ser dañado, y no lo serás. — Marco Aurelio",
+    "El primer paso hacia la grandeza es ser honesto con uno mismo. — Séneca",
+    "La suerte es lo que sucede cuando la preparación se encuentra con la oportunidad. — Séneca",
+    "Aquel que teme la muerte nunca hará nada digno de un hombre vivo. — Séneca",
+    "No es que tengamos poco tiempo, sino que perdemos mucho. — Séneca",
+    "El valor no es la ausencia del miedo, sino el juicio de que hay algo más importante que el miedo. — Marco Aurelio",
+    "El que no ha aprendido a obedecer no puede ser un buen comandante. — Aristóteles",
+    "La victoria pertenece al más perseverante. — Napoleón Bonaparte",
+    "No hay imposibles, solo hombres débiles. — Alejandro Magno",
+    "Un líder es un comerciante de esperanza. — Napoleón Bonaparte",
+    "El miedo es el enemigo de la lógica. — Alejandro Magno",
+    "La voluntad es el poder supremo del alma. — Platón",
+    "No se puede enseñar nada a un hombre; solo se le puede ayudar a encontrar la respuesta dentro de sí mismo. — Galileo Galilei",
+    "No hay deber que descuidemos tanto como el deber de ser felices. — Robert Louis Stevenson",
+    "Las palabras son como hojas; cuando abundan, poco fruto hay entre ellas. — Alexander Pope",
+    "El conocimiento no es suficiente, debemos aplicarlo. — Johann W. Goethe",
+    "La virtud no habita en la soledad: debe tener vecinos. — Confucio",
+    "El mundo es un libro y aquellos que no viajan leen solo una página. — San Agustín",
+    "Prefiero los errores del entusiasmo que la indiferencia de la sabiduría. — Anatole France",
+    "Un día sin risa es un día perdido. — Charles Chaplin",
+    "La libertad es el oxígeno del alma. — Moshe Dayan",
+    "La sabiduría es la recompensa que obtienes por una vida de escucha. — Doug Larson",
+    "Un objetivo sin un plan es solo un deseo. — Antoine de Saint-Exupéry",
+    "El verdadero viaje del descubrimiento no consiste en buscar nuevos paisajes, sino en tener nuevos ojos. — Marcel Proust",
+     "La libertad comienza donde termina la ignorancia. — Víctor Hugo",
+    "Pensar es difícil, por eso la mayoría prefiere juzgar. — Carl Gustav Jung",
+    "La imaginación gobierna el mundo. — Napoleón Bonaparte",
+    "El futuro pertenece a quienes creen en la belleza de sus sueños. — Eleanor Roosevelt",
+    "No esperes por una señal, sé la señal. — Anónimo",
+    "La acción es la clave fundamental para todo éxito. — Pablo Picasso",
+    "El entusiasmo mueve el mundo. — Arthur Balfour",
+    "El conocimiento habla, pero la sabiduría escucha. — Jimi Hendrix",
+    "El fracaso es la oportunidad de comenzar de nuevo con más inteligencia. — Henry Ford",
+    "Sé como el agua: adáptate, fluye, sé fuerte o suave según se requiera. — Bruce Lee",
+    "El hombre que mueve montañas comienza cargando pequeñas piedras. — Confucio",
+    "No hay revolución sin evolución interior. — Krishnamurti",
+    "Cuando no se puede lograr lo que se quiere, mejor cambiar de actitud. — Terencio",
+    "No tomar una decisión ya es una decisión. — William James",
+    "En cada momento estás decidiendo quién eres. — Neale Donald Walsch",
+    "El sabio no dice todo lo que piensa, pero siempre piensa todo lo que dice. — Aristóteles",
+    "El mayor error es no hacer nada porque solo puedes hacer un poco. — Edmund Burke",
+    "La vida es la suma de todas tus decisiones. — Albert Camus",
+    "Una buena decisión se basa en conocimiento, no en números. — Platón",
+    "Decidir no arriesgarse ya es un riesgo. — Anónimo",
+    "Los sabios son los que buscan la sabiduría; los necios piensan haberla encontrado. — Napoleón Bonaparte",
+    "Quien tiene por qué vivir puede soportar casi cualquier cómo. — Friedrich Nietzsche",
+    "No hay viento favorable para el que no sabe a qué puerto va. — Séneca",
+    "Tu mente es tu arma más poderosa; aprende a usarla bien. — Anónimo",
+    "A veces el silencio es la decisión más sabia. — Anónimo",
+    "La claridad viene con la acción, no con la espera. — Marie Forleo",
+     "El sabio habla porque tiene algo que decir; el necio, porque tiene que decir algo. — Platón",
+    "No se puede cruzar el mar simplemente mirando el agua. — Rabindranath Tagore",
+    "El sentido común no es tan común. — Voltaire",
+    "Una mente tranquila trae fuerza interior y confianza en uno mismo. — Dalái Lama",
+    "Si quieres conocer a una persona, no escuches sus palabras, observa su comportamiento. — Dalái Lama",
+    "Quien tiene un porqué para vivir puede soportar casi cualquier cómo. — Friedrich Nietzsche",
+    "Solo los que se atreven a tener grandes fracasos terminan logrando grandes éxitos. — Robert F. Kennedy",
+    "El árbol más fuerte crece en el viento más fuerte. — Anónimo",
+    "El río alcanza sus metas porque ha aprendido a sortear los obstáculos. — Proverbio zen",
+    "El conocimiento te da poder, pero el carácter te da respeto. — Bruce Lee",
+    "La inteligencia consiste no solo en el conocimiento, sino también en la destreza de aplicar los conocimientos en la práctica. — Aristóteles",
+    "No cuentes los días, haz que los días cuenten. — Muhammad Ali",
+    "El que domina a otros es fuerte; el que se domina a sí mismo es poderoso. — Lao Tsé",
+     "El éxito no es la clave de la felicidad. La felicidad es la clave del éxito. — Albert Schweitzer",
+    "El mayor descubrimiento de todos los tiempos es que una persona puede cambiar su futuro cambiando su actitud. — Oprah Winfrey",
+    "La única forma de hacer un gran trabajo es amar lo que haces. — Steve Jobs",
+    "No tengas miedo de renunciar a lo bueno para perseguir lo grandioso. — John D. Rockefeller",
+    "El arte de ser sabio es saber qué pasar por alto. — William James",
+    "La disciplina es el puente entre metas y logros. — Jim Rohn",
+    "No busques errores, busca soluciones. — Henry Ford",
+    "Haz lo que puedas, con lo que tengas, donde estés. — Theodore Roosevelt",
+    "La libertad es nada más que una oportunidad para ser mejor. — Albert Camus",
+    "Cuanto más sudes en el entrenamiento, menos sangrarás en la batalla. — Proverbio espartano",
+    "El éxito es aprender a ir de fracaso en fracaso sin desesperarse. — Winston Churchill",
+    "El destino mezcla las cartas, pero tú las juegas. — Jean-Paul Sartre",
+    "Nada en la vida debe ser temido, solo comprendido. — Marie Curie",
+    "La ciencia no es solo conocimiento, es una manera de pensar. — Carl Sagan",
+    "Lo importante es no dejar de hacerse preguntas. — Albert Einstein",
+    "Pienso, luego existo. — René Descartes",
+    "Lo que sabemos es una gota de agua; lo que ignoramos es el océano. — Isaac Newton",
+    "El mayor enemigo del conocimiento no es la ignorancia, sino la ilusión del conocimiento. — Stephen Hawking",
+    "La ciencia es el gran antídoto contra el veneno del entusiasmo y la superstición. — Adam Smith",
+    "La curiosidad es más importante que el conocimiento. — Albert Einstein",
+    "No hay nada en la vida que deba ser temido, solo comprendido. — Marie Curie",
+    "Prefiero una pregunta que no se pueda responder que una respuesta que no se pueda cuestionar. — Richard Feynman",
+    "Toda verdad pasa por tres etapas: se ridiculiza, se opone violentamente, y luego se acepta como evidente. — Arthur Schopenhauer",
+    "La naturaleza nunca se apresura, pero todo se logra. — Lao Tsé",
+    "La ciencia sin religión está coja, la religión sin ciencia está ciega. — Albert Einstein",
+    "La física es como el sexo: seguro que tiene alguna utilidad, pero no es por eso que lo hacemos. — Richard Feynman",
+     "No le temo a la muerte; simplemente no quiero estar allí cuando suceda. — Woody Allen",
+    "La muerte no es el opuesto de la vida, sino una parte de ella. — Haruki Murakami",
+    "Vivir es nacer a cada instante. — Erich Fromm",
+    "No morimos el día que dejamos de respirar, sino cuando dejamos de ser recordados. — Anónimo",
+    "La vida no se mide por las veces que respiras, sino por los momentos que te dejan sin aliento. — Maya Angelou",
+    "La vida es una obra teatral que no importa cuánto haya durado, sino lo bien que haya sido representada. — Séneca",
+    "La muerte es dulce cuando la vida ha sido amarga. — Johann W. Goethe",
+    "El miedo a la muerte nace del miedo a la vida. — Mark Twain",
+    "Morir no es nada; no vivir es aterrador. — Victor Hugo",
+    "El día que comprendí que morir es parte de vivir, dejé de temer. — Jorge Luis Borges",
+    "Solo se muere cuando se olvida. — Anónimo",
+    "Cada hombre muere. No todos viven realmente. — William Wallace",
+    "La vida es un relámpago entre dos oscuridades. — Platón",
+     "La fortuna favorece a los audaces. — Julio César",
+    "La guerra es el arte de destruir hombres. — Napoleón Bonaparte",
+    "Un ejército marcha sobre su estómago. — Napoleón Bonaparte",
+    "Prefiero la gloria en la batalla a una vida larga y aburrida. — Alejandro Magno",
+    "El valor sin estrategia es un ruido antes de la derrota. — Sun Tzu",
+    "Los obstáculos no pueden detenerme. Cada obstáculo se convierte en una oportunidad para mejorar mi habilidad. — Bruce Lee",
+    "La disciplina es la alma de un ejército. — George Washington",
+    "Si quieres paz, prepárate para la guerra. — Vegetius",
+    "El que no sabe conquistar a sí mismo nunca conquistará a otros. — Napoleón Bonaparte",
+    "La rapidez es la esencia de la guerra. — Napoleón Bonaparte",
+    "El arte de la guerra es de vital importancia para el Estado. — Sun Tzu",
+    "Más vale ser temido que amado, si no puedes ser ambos. — Maquiavelo",
+    "La única manera de manejar la guerra es hacerla corta. — Napoleón Bonaparte",
+     "El liderazgo es la capacidad de transformar la visión en realidad. — Warren Bennis",
+    "Un líder es mejor cuando la gente apenas sabe que existe. — Lao Tsé",
+    "El poder no corrompe; el miedo corrompe. — John Steinbeck",
+    "La innovación distingue a un líder de un seguidor. — Steve Jobs",
+    "El arte de la comunicación es el lenguaje del liderazgo. — James Humes",
+    "No sigas donde el camino te pueda llevar. Ve donde no hay camino y deja un rastro. — Ralph Waldo Emerson",
+    "La grandeza no consiste en recibir honores, sino en merecerlos. — Aristóteles",
+    "Un buen líder lleva a la gente donde quieren ir. Un gran líder lleva a la gente donde no necesariamente quieren ir, pero deberían estar. — Rosalynn Carter",
+    "El liderazgo es acción, no posición. — Donald McGannon",
+    "El éxito de un líder se mide por el éxito de sus seguidores. — John C. Maxwell",
+    "Un líder es un comerciante de esperanza. — Napoleón Bonaparte",
+    "El poder reside en la gente, no en la autoridad. — Abraham Lincoln",
+     "Un líder lleva a la gente donde quiere ir. Un gran líder lleva a la gente donde no necesariamente quieren ir, pero deberían estar. — Rosalynn Carter",
+    "El éxito es aprender a ir de fracaso en fracaso sin desesperarse. — Winston Churchill",
+    "Quien conquista a otros es fuerte; quien se conquista a sí mismo es poderoso. — Lao Tsé",
+    "El que quiere permanentemente 'llegar más alto' tiene que contar con que algún día le invadirá el vértigo. — Milan Kundera",
+    "La guerra es la continuación de la política por otros medios. — Carl von Clausewitz",
+    "En la batalla, como en la vida, quien persevera alcanza la gloria. — Alejandro Magno",
+    "El hombre valiente conquista primero sus miedos, luego a sus enemigos. — Publilio Siro",
+    "Quien controla el presente, controla el pasado. Quien controla el pasado, controla el futuro. — George Orwell",
+    "Nadie ha ganado una batalla siendo cobarde. — Anónimo",
+    "Los grandes líderes no se imponen, se inspiran. — Anónimo",
+    "La estrategia sin tácticas es el camino más lento hacia la victoria. — Sun Tzu",
+    "Prefiero morir de pie que vivir siempre arrodillado. — Emiliano Zapata"
+    ];
+
 let greeted = false;
 
 // Base de conocimiento expandida con sinónimos
@@ -91,7 +350,7 @@ const knowledge = {
     synonyms: ["que podes hacer", "que sabes hacer", "para que servis", "funciones", "habilidades", "que haces"],
     responses: [
       "¡Puedo hacer muchas cosas! 🤖\n• Contar chistes de programación\n• Hablar sobre tecnología\n• Responder sobre mi creador Facundo\n• Ejecutar comandos útiles (/hora, /fecha, etc.)",
-      "Mis superpoderes incluyen: detectar palabras clave, contar chistes, dar información sobre programación, y ser tu compañero de charla virtual. ¡Escribí 'comandos' para ver todo lo que puedo hacer!",
+      "Mis superpoderes incluyen: detectar palabras clave, contar chistes, dar información sobre programación, y ser tu compañero de charla virtual. ¡Escribí '/help' para ver todo lo que puedo hacer!",
       "Soy tu asistente virtual inteligente. Puedo ayudarte con información, entretenerte con chistes, hablar de tecnología y ejecutar comandos útiles. ¡Soy como Alexa pero más divertido! 😄"
     ]
   },
@@ -157,15 +416,14 @@ const knowledge = {
   },
 };
 
+
 // Comandos específicos expandidos y actualizados
 const commands = {
-  // Comandos de ayuda actualizados
-  help: " COMANDOS DISPONIBLES:\n\n📋 INFORMACIÓN:\n• /help - Esta ayuda\n• /info - Información sobre mí\n• /comandos - Lista completa\n• /version - Mi versión actual\n• /creator - Info sobre Facundo\n\n🕐 TIEMPO:\n• /hora - Hora actual\n• /fecha - Fecha completa\n• /dia - Día de la semana\n• /uptime - Tiempo activo\n• /fxeffect - Crea un efecto visual aleatorio\n• /temporizador [seg] - Crear alarma\n\n🎮 DIVERSIÓN:\n• /chiste - Chiste random\n• /saludo - Saludarme\n• /dado - Tirar un dado\n• /moneda - Tirar una moneda\n• /pregunta - Respuesta mágica\n\n🛠️ UTILIDADES:\n• /clear - Limpiar consola\n• /clima - Info del clima (simulado)\n• /mapa - Abrir mapa de Argentina\n• /changemode - Cambiar tema\n• /estado - Estado del sistema\n• /memoria - Uso de memoria\n• /random [1] [100] - Número aleatorio\n\n¡También puedes charlar conmigo normalmente! 😊",
+  help: "📜 LISTA COMPLETA DE COMANDOS:\n\n🔹 INFORMACIÓN BÁSICA:\n• /help - Mostrar ayuda principal\n• /info - Información detallada sobre mí\n• /clear - Limpiar la consola\n• /clima - Info meteorológica (simulada)\n• /mapa - Abrir mapa interactivo de Argentina\n• /changemode - Cambiar entre tema claro/oscuro\n• /version - Ver mi versión\n• /creator - Info sobre Facundo\n• /estado - Estado del sistema\n\n🔹 TIEMPO Y FECHA:\n• /hora - Ver la hora actual\n• /fecha - Ver fecha y hora completas\n• /dia - Saber qué día es hoy\n• /uptime - Tiempo que llevo activo\n\n🔹 DIVERSIÓN Y JUEGOS:\n• /saludo - Recibir un saludo amigable\n• /chiste - Escuchar un chiste de programación\n• /dado - Tirar un dado (1-6)\n• /moneda - Tirar una moneda (cara/cruz)\n• /pregunta - Respuesta mágica tipo 8-ball\n• /random - Generar número aleatorio\n• /fxeffect - Crea un efecto visual aleatorio\n\n",
 
-  comandos: "📜 LISTA COMPLETA DE COMANDOS:\n\n🔹 INFORMACIÓN BÁSICA:\n• /help - Mostrar ayuda principal\n• /info - Información detallada sobre mí\n• /version - Ver mi versión\n• /creator - Info sobre Facundo\n• /estado - Estado del sistema\n\n🔹 TIEMPO Y FECHA:\n• /hora - Ver la hora actual\n• /fecha - Ver fecha y hora completas\n• /dia - Saber qué día es hoy\n• /uptime - Tiempo que llevo activo\n• /temporizador [segundos] - Crear temporizador\n\n🔹 DIVERSIÓN Y JUEGOS:\n• /saludo - Recibir un saludo amigable\n• /chiste - Escuchar un chiste de programación\n• /dado - Tirar un dado (1-6)\n• /moneda - Tirar una moneda (cara/cruz)\n• /pregunta - Respuesta mágica tipo 8-ball\n• /fxeffect - Crea un efecto visual aleatorio\n\n🔹 UTILIDADES DINÁMICAS:\n• /clear - Limpiar la consola\n• /clima - Info meteorológica (simulada)\n• /mapa - Abrir mapa interactivo de Argentina\n• /changemode - Cambiar entre tema claro/oscuro\n• /memoria - Ver uso actual de memoria\n• /random [min] [max] - Generar número aleatorio\n• /calculadora [operación] - Realizar cálculos\n• /qr [texto] - Generar código QR\n• /password [longitud] - Generar contraseña segura\n• /ip - Obtener tu IP pública\n• /navegador - Info de tu navegador\n• /pantalla - Resolución de pantalla\n\n💬 TEMAS DE CONVERSACIÓN:\n• Facundo (mi creador)\n• Programación y JavaScript\n• Chistes y humor\n• Informática y tecnología\n• Vida, amor, trabajo\n• ¡Y mucho más!\n\n¡Simplemente escribe y yo entenderé! 🎯",
-
-  info: " INFORMACIÓN DETALLADA:\n\n👋 Soy F4.K1.T0 (Fakito)\n🧠 ChatBot semi-inteligente con IA básica\n👨‍💻 Creado por: Facundo Ezequiel Amelotti\n🌟 Versión: 2.0 Enhanced\n💬 Lenguaje: JavaScript puro\n\n🎯 CARACTERÍSTICAS:\n• Detección inteligente de palabras clave\n• Respuestas contextuales\n• Comandos útiles integrados\n• Base de conocimientos amplia\n• Personalidad divertida\n• Datos dinámicos en tiempo real\n\n¡Pregúntame lo que quieras! 🚀",
-
+  info: "👋 ¡Hola! Soy F4.K1.T0 (Fakito)\n🧠 ChatBot semi-inteligente.\n👨💻 Fui creado por: Facundo Ezequiel Amelotti\n🌟 Versión: 2.0 (Sigo en desarrollo!)\n💬 Lenguaje: JavaScript puro\n\n¡Pregúntame lo que quieras! 🚀",
+  
+  comandos_avanzados: "🔹 UTILIDADES AVANZADAS\n• /memoria - Ver uso actual de memoria\n• /ip - Obtener tu IP pública\n• /ping - Obtener ping de respuesta\n• /navegador - Info de tu navegador\n• /pantalla - Resolución de pantalla\n• /ubicacion - Obtiene una aproximacion a tu ubicacion\n• /rendimiento - Obtiene una lista de capacidades del navegador\n• /monitor - Tiempos de navegación detallados\n• /seguridad - Verifica HTTPS, CSP, cookies seguras, etc.",
   // Comandos de tiempo existentes
   hora: () => {
     const now = new Date();
@@ -177,6 +435,84 @@ const commands = {
     });
     return `🕐 Hora actual: ${hora}`;
   },
+
+monitor: () => {
+  const perf = performance;
+  const timing = perf.timing;
+  const nav = perf.navigation;
+  
+  return `🌡️ MONITOR DEL SISTEMA:
+• Tipo de navegación: ${nav.type === 0 ? 'Navegación normal' : nav.type === 1 ? 'Recarga' : 'Navegación desde caché'}
+• Redirecciones: ${nav.redirectCount}
+• Tiempo de DNS: ${timing.domainLookupEnd - timing.domainLookupStart}ms
+• Tiempo de conexión: ${timing.connectEnd - timing.connectStart}ms
+• Tiempo de respuesta: ${timing.responseEnd - timing.responseStart}ms
+• Tiempo DOM ready: ${timing.domContentLoadedEventEnd - timing.navigationStart}ms`;
+},
+
+seguridad: () => {
+  const isHTTPS = location.protocol === 'https:';
+  const hasCSP = !!document.querySelector('meta[http-equiv="Content-Security-Policy"]');
+  const mixedContent = !isHTTPS && document.querySelectorAll('img[src^="https"], script[src^="https"]').length > 0;
+  
+  return `🔒 ANÁLISIS DE SEGURIDAD:
+• Conexión: ${isHTTPS ? '🔒 HTTPS Segura' : '⚠️ HTTP No segura'}
+• Content Security Policy: ${hasCSP ? '✅ Presente' : '❌ Ausente'}
+• Contenido mixto: ${mixedContent ? '⚠️ Detectado' : '✅ No detectado'}
+• Cookies seguras: ${document.cookie.includes('Secure') ? '✅ Sí' : '❌ No'}
+• SameSite cookies: ${document.cookie.includes('SameSite') ? '✅ Configurado' : '❌ No configurado'}
+• Referrer Policy: ${document.querySelector('meta[name="referrer"]')?.content || 'No especificada'}`;
+},
+
+rendimiento: () => {
+  const perf = performance;
+  const memoria = perf.memory;
+  const conexion = navigator.connection;
+  
+  let info = `⚡ RENDIMIENTO:
+• Tiempo de carga: ${Math.round(perf.timing.loadEventEnd - perf.timing.navigationStart)}ms
+• Tiempo hasta primer byte: ${Math.round(perf.timing.responseStart - perf.timing.requestStart)}ms`;
+
+  if (memoria) {
+    info += `
+• Memoria JS usada: ${Math.round(memoria.usedJSHeapSize / 1048576)}MB
+• Memoria JS total: ${Math.round(memoria.totalJSHeapSize / 1048576)}MB
+• Límite de memoria: ${Math.round(memoria.jsHeapSizeLimit / 1048576)}MB`;
+  }
+
+  if (conexion) {
+    info += `
+• Tipo de conexión: ${conexion.effectiveType || 'Desconocido'}
+• Velocidad estimada: ${conexion.downlink || 'N/A'} Mbps`;
+  }
+
+  return info;
+},
+
+  ubicacion: () => {
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const idioma = navigator.language;
+  
+  // Mapeo básico de zonas horarias a regiones
+  const regiones = {
+    'America/Argentina/Buenos_Aires': '🇦🇷 Argentina (Buenos Aires)',
+    'America/Sao_Paulo': '🇧🇷 Brasil (São Paulo)',
+    'America/New_York': '🇺🇸 Estados Unidos (Costa Este)',
+    'America/Los_Angeles': '🇺🇸 Estados Unidos (Costa Oeste)',
+    'Europe/Madrid': '🇪🇸 España',
+    'Europe/London': '🇬🇧 Reino Unido',
+    'Asia/Tokyo': '🇯🇵 Japón',
+    'Australia/Sydney': '🇦🇺 Australia'
+  };
+  
+  const region = regiones[timezone] || `🌍 ${timezone}`;
+  
+  return `📍 UBICACIÓN APROXIMADA:
+• Región: ${region}
+• Zona horaria: ${timezone}
+• Idioma del navegador: ${idioma}
+• Configuración regional: ${Intl.DateTimeFormat().resolvedOptions().locale}`;
+},
 
   fecha: () => {
     const now = new Date();
@@ -193,6 +529,11 @@ const commands = {
     });
     return `📅 ${fecha} - ${hora}`;
   },
+
+  frase: () => {
+  const index = Math.floor(Math.random() * techFacts.length);
+  return `🧠 "${techFacts[index]}"`;
+},
 
   dia: () => {
     const now = new Date();
@@ -369,7 +710,7 @@ const commands = {
       setTimeout(() => {
         const end = performance.now();
         const latencia = Math.round(end - start);
-        resolve(`📡 Ping simulado: ~${latencia}ms`);
+        resolve(`📡 Ping: ~${latencia}ms`);
       }, Math.random() * 100 + 50);
     });
   }
@@ -382,12 +723,9 @@ function getRandomResponse(responses) {
 
 // Respuestas por defecto mejoradas y más naturales
 const defaultResponses = [
-  "🤔 mmm... no estoy seguro de cómo responder a eso. ¿Podés ser más específico?",
-  "Hmm, esa me la dejaste difícil. ¿Te refieres a algo sobre programación, chistes, o Facundo?",
-  "¡No capto! 😅 Probá escribiendo '/help' para ver qué puedo hacer, o charlame de otra cosa.",
-  "Me perdí ahí... ¿podrías explicarme mejor?",
-  "🎯 No te entendí del todo, pero puedo ayudarte con programación, chistes, comandos útiles, o simplemente charlar.",
-  "Esa está complicada para mi cerebrito de bot 🤖 ¿Probamos con otra pregunta?"
+  "🤔 mmm... no estoy seguro de cómo responder a eso. ¿Podés ser más específico?\n[Escribe /help ante cualquier duda]",
+  "Disculpa... ¡No capto! 😅\n[Probá escribiendo '/help']",
+  "Me perdí ahí... ¿podrías explicarme mejor?\n[Escribe /help ante cualquier duda]",
 ];
 
 // Función auxiliar para obtener respuesta aleatoria
@@ -398,12 +736,14 @@ function getRandomResponse(responses) {
 // Función para cerrar consola
 function closeConsole() {
   consoleBox.classList.add("console-hidden");
+  document.getElementById('consoleOverlay').style.display = 'none';
 }
 
 // Función para mostrar/abrir la consola
 function showConsole() {
   // Remover la clase que oculta la consola
   consoleBox.classList.remove("console-hidden");
+  document.getElementById('consoleOverlay').style.display = 'block';
   
   // Enfocar el input para que el usuario pueda escribir inmediatamente
   consoleInput.focus();
@@ -450,7 +790,7 @@ function detectKeywords(input) {
 }
 
 // Función principal de respuesta del bot
-function botResponse(input) {
+async function botResponse(input) {
   const text = input.trim().toLowerCase();
 
   // Verificar comandos específicos primero (con soporte para / y sin /)
@@ -462,10 +802,17 @@ function botResponse(input) {
       return "";
     }
     
-    // Si es una función, ejecutarla
-    if (typeof commands[command] === 'function') {
-      return commands[command]();
+  // Si es una función, ejecutarla
+  if (typeof commands[command] === 'function') {
+    const result = commands[command]();
+    
+    // Si el resultado es una promesa, manejarlo de forma especial
+    if (result instanceof Promise) {
+      return await result;
     }
+    
+    return result;
+  }
     
     return commands[command];
   }
@@ -595,44 +942,84 @@ function appendToConsole(text, isUser = false) {
 }
 
 // Función para enviar comando
-function sendConsoleCommand() {
+async function sendConsoleCommand() {
   const input = consoleInput.value;
   if (!input.trim()) return;
   
   appendToConsole(input, true);
-  const response = botResponse(input);
-  if (response) appendToConsole(response);
+  
+  // Detectar comandos asíncronos y mostrar loading
+  const command = input.trim().toLowerCase().replace('/', '');
+  const asyncCommands = ['ip', 'ping', 'bateria'];
+  
+  if (asyncCommands.includes(command)) {
+    showLoading("⏳ Obteniendo información...");
+    try {
+      const response = await botResponse(input);
+      if (response) {
+        updateLastMessage(response);
+      }
+    } catch (error) {
+      updateLastMessage("❌ Error al procesar el comando");
+    }
+  } else {
+    const response = await botResponse(input);
+    if (response) appendToConsole(response);
+  }
+  
   consoleInput.value = '';
 }
 
 // Función para ejecutar comandos desde los botones de navegación
-function executeNavCommand(command) {
+async function executeNavCommand(command) {
   // Mostrar la consola si está oculta
   if (consoleBox.classList.contains("console-hidden")) {
     showConsole();
   }
   
-  // Ejecutar el comando y obtener la respuesta
-  const response = botResponse('/' + command);
-  
   // Agregar el comando como mensaje del usuario
   appendToConsole('/' + command, true);
   
-  // Agregar la respuesta del bot
-  if (response) {
-    appendToConsole(response);
-  }
+  // Detectar comandos asíncronos
+  const asyncCommands = ['ip', 'ping', 'bateria'];
   
-  // Enfocar el input para continuar la conversación
-  consoleInput.focus();
+  if (asyncCommands.includes(command)) {
+    showLoading("⏳ Obteniendo información...");
+    try {
+      const response = await botResponse('/' + command);
+      if (response) {
+        updateLastMessage(response);
+      }
+    } catch (error) {
+      updateLastMessage("❌ Error al procesar el comando");
+    }
+  } else {
+    const response = await botResponse('/' + command);
+    if (response) appendToConsole(response);
+  }
+}
+
+// Función auxiliar para mostrar "Cargando..." mientras se procesa un comando asíncrono
+function showLoading(message = "⏳ Procesando...") {
+  appendToConsole(message);
+}
+
+// Función auxiliar para actualizar el último mensaje de la consola
+function updateLastMessage(newText) {
+  const messages = consoleOutput.querySelectorAll('.bot-message');
+  if (messages.length > 0) {
+    const lastMessage = messages[messages.length - 1];
+    lastMessage.textContent = " " + newText;
+  }
 }
 
 // Event listeners
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     consoleBox.classList.toggle("console-hidden");
-
+      document.getElementById('consoleOverlay').style.display = 'none';
     if (!consoleBox.classList.contains("console-hidden")) {
+        document.getElementById('consoleOverlay').style.display = 'block';
       consoleInput.focus();
     }
   }
