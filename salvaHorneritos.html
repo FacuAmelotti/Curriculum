@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salva a los Horneritos!</title>
     <link rel="stylesheet" href="./src/css/juegoDisparo.css">
-    
+    <link rel="stylesheet" href="./src/css/juegoDisparo_responsive.css">    
 </head>
 <body>
     <!-- Partículas de fondo -->
@@ -57,6 +57,59 @@
             <div class="game-overlay"></div>
         </div>
     </div>
+
+    
+    <!-- Panel de Control de Audio 
+    <div class="audio-control-panel" id="audioControlPanel">
+        <button class="audio-toggle-btn" id="audioToggleBtn" title="Mostrar/Ocultar controles de audio">
+            🎵
+        </button>
+        
+        <div class="audio-controls" id="audioControls">
+     
+            <div class="audio-control-group">
+                <div class="audio-control-label">Efectos</div>
+                <div class="slider-container">
+                    <button class="mute-btn" id="sfxMuteBtn" title="Mutear efectos de sonido">
+                        🔊
+                    </button>
+                    <input 
+                        type="range" 
+                        class="audio-slider sfx-slider" 
+                        id="sfxVolumeSlider" 
+                        min="0" 
+                        max="100" 
+                        value="70"
+                        title="Volumen de efectos"
+                    />
+                    <div class="volume-indicator" id="sfxVolumeIndicator">70%</div>
+                </div>
+            </div>
+
+            <div class="audio-separator"></div>
+
+ 
+            <div class="audio-control-group">
+                <div class="audio-control-label">Música</div>
+                <div class="slider-container">
+                    <button class="mute-btn" id="musicMuteBtn" title="Mutear música">
+                        🎵
+                    </button>
+                    <input 
+                        type="range" 
+                        class="audio-slider music-slider" 
+                        id="musicVolumeSlider" 
+                        min="0" 
+                        max="100" 
+                        value="50"
+                        title="Volumen de música"
+                    />
+                    <div class="volume-indicator" id="musicVolumeIndicator">50%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
 
     <!-- Pantalla Game Over -->
     <div class="screen" id="gameOverScreen">

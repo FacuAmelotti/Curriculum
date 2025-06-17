@@ -1,0 +1,453 @@
+/* Responsive Design - Mobile First Approach */
+
+/* Extra small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+    body {
+        cursor: pointer;
+    }
+
+    .hud {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        flex-direction: row; /* Cambiado de column a row */
+        flex-wrap: wrap; /* Permite que se envuelvan si es necesario */
+        justify-content: space-between; /* Distribuye el espacio */
+        gap: 6px; /* Reducido el gap */
+        padding: 8px 12px; /* Reducido el padding */
+        border-radius: 6px;
+    }
+
+    .hud-item {
+        font-size: 10px; /* Reducido el tamaño de fuente */
+        gap: 4px; /* Reducido el gap interno */
+        flex: 1; /* Hace que cada item tome el mismo espacio */
+        min-width: 0; /* Permite que se contraigan */
+        text-align: center; /* Centra el texto */
+    }
+
+    .target {
+        width: 50px;
+        height: 50px;
+    }
+
+    .target-timer {
+        width: 70px;
+        height: 70px;
+        top: -10px;
+        left: -10px;
+        border-width: 2px;
+    }
+
+    .screen h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .screen h2 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+
+    .screen p {
+        font-size: 14px;
+        margin-bottom: 20px;
+        padding: 0 15px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 13px;
+        margin: 8px;
+        width: calc(100% - 30px);
+        max-width: 280px;
+    }
+
+    #welcomeScreen > div {
+        width: 90%;
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    #welcomeScreen h1 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+    }
+
+    #welcomeScreen p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    #instructionsScreen .instructions {
+        width: 90%;
+        padding: 20px;
+        border-radius: 12px;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    #instructionsScreen h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    #nextLevelScreen > div {
+        width: 90%;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    #nextLevelScreen h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    #gameOverScreen > div {
+        margin-bottom: 8px;
+        padding: 4px;
+        border-radius: 8px;
+    }
+
+    .back-btn {
+        top: 15px;
+        left: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .instructions li {
+        margin: 10px 0;
+        padding-left: 20px;
+        font-size: 0.9rem;
+    }
+
+    .instructions ul ul {
+        margin-left: 15px;
+        margin-top: 8px;
+    }
+
+    .particle {
+        width: 1px;
+        height: 1px;
+    }
+}
+
+/* Small devices (landscape phones, 481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .hud {
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        flex-direction: row; /* Cambiado de column a row */
+        flex-wrap: wrap; /* Permite que se envuelvan si es necesario */
+        justify-content: space-around; /* Distribuye el espacio */
+        gap: 8px; /* Reducido el gap */
+        padding: 10px 15px; /* Ajustado el padding */
+    }
+
+    .hud-item {
+        font-size: 12px; /* Reducido ligeramente */
+        gap: 6px; /* Reducido el gap interno */
+        flex: 1; /* Hace que cada item tome el mismo espacio */
+        min-width: 0; /* Permite que se contraigan */
+        text-align: center; /* Centra el texto */
+    }
+
+    .target {
+        width: 60px;
+        height: 60px;
+    }
+
+    .target-timer {
+        width: 80px;
+        height: 80px;
+        top: -10px;
+        left: -10px;
+    }
+
+    .screen h1 {
+        font-size: 2.5rem;
+        margin-bottom: 18px;
+    }
+
+    .screen h2 {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+
+    .screen p {
+        font-size: 15px;
+        margin-bottom: 25px;
+        padding: 0 20px;
+    }
+
+    .btn {
+        padding: 13px 24px;
+        font-size: 14px;
+        margin: 9px;
+    }
+
+    #welcomeScreen > div {
+        width: 85%;
+        padding: 25px;
+    }
+
+    #welcomeScreen h1 {
+        font-size: 2.5rem;
+        margin-bottom: 18px;
+    }
+
+    #welcomeScreen p {
+        font-size: 1.1rem;
+        margin-bottom: 28px;
+    }
+
+    #instructionsScreen .instructions {
+        width: 85%;
+        padding: 22px 28px;
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    #instructionsScreen h2 {
+        font-size: 2rem;
+        margin-bottom: 18px;
+    }
+
+    #nextLevelScreen > div {
+        width: 80%;
+        padding: 25px;
+    }
+
+    #nextLevelScreen h2 {
+        font-size: 2.3rem;
+        margin-bottom: 18px;
+    }
+
+    .back-btn {
+        top: 18px;
+        left: 18px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .instructions {
+        max-width: 90%;
+        padding: 0 20px;
+    }
+}
+
+/* Medium devices (tablets, 769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hud {
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 15px;
+        padding: 15px 25px;
+    }
+
+    .target {
+        width: 70px;
+        height: 70px;
+    }
+
+    .target-timer {
+        width: 90px;
+        height: 90px;
+        top: -10px;
+        left: -10px;
+    }
+
+    .screen h1 {
+        font-size: 3rem;
+    }
+
+    .screen h2 {
+        font-size: 1.7rem;
+    }
+
+    #welcomeScreen > div {
+        width: 80%;
+    }
+
+    #instructionsScreen .instructions {
+        width: 80%;
+        max-width: 700px;
+    }
+
+    #nextLevelScreen > div {
+        width: 75%;
+        max-width: 550px;
+    }
+
+    .instructions {
+        max-width: 85%;
+    }
+}
+
+/* Large devices (desktops, 1025px to 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .target {
+        width: 75px;
+        height: 75px;
+    }
+
+    .target-timer {
+        width: 95px;
+        height: 95px;
+        top: -10px;
+        left: -10px;
+    }
+
+    #welcomeScreen > div {
+        width: 75%;
+        max-width: 800px;
+    }
+
+    #instructionsScreen .instructions {
+        width: 75%;
+        max-width: 750px;
+    }
+
+    #nextLevelScreen > div {
+        width: 70%;
+        max-width: 600px;
+    }
+}
+
+/* Extra large devices (large desktops, 1441px and up) */
+@media (min-width: 1441px) {
+    .hud {
+        max-width: 1400px;
+        margin: 0 auto;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+
+    .target {
+        width: 85px;
+        height: 85px;
+    }
+
+    .target-timer {
+        width: 105px;
+        height: 105px;
+        top: -10px;
+        left: -10px;
+    }
+
+    .screen h1 {
+        font-size: 4.5rem;
+    }
+
+    #welcomeScreen > div {
+        width: 65%;
+        max-width: 900px;
+    }
+
+    #instructionsScreen .instructions {
+        width: 65%;
+        max-width: 800px;
+    }
+
+    #nextLevelScreen > div {
+        width: 60%;
+        max-width: 650px;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .particle {
+        width: 1.5px;
+        height: 1.5px;
+    }
+
+    .target-timer {
+        border-width: 2px;
+    }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hud {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        right: auto;
+        flex-direction: row;
+        gap: 15px;
+        padding: 8px 15px;
+        font-size: 12px;
+        max-width: 70%;
+    }
+
+    .screen h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .screen h2 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .screen p {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 12px;
+        margin: 5px;
+    }
+
+    #welcomeScreen > div,
+    #instructionsScreen .instructions,
+    #nextLevelScreen > div {
+        padding: 15px;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .target {
+        width: 45px;
+        height: 45px;
+    }
+
+    .target-timer {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    .particles,
+    .game-area,
+    .target,
+    .hud,
+    .back-btn {
+        display: none;
+    }
+
+    .screen {
+        position: static;
+        opacity: 1;
+        transform: none;
+        visibility: visible;
+    }
+}

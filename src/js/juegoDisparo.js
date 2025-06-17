@@ -10,6 +10,67 @@ let gameState = {
     spawnTimer: null
 };
 
+// Sistema de Audio
+const audioSystem = {
+    sounds: {},
+    muted: false,
+    
+    // Inicializar todos los sonidos
+    init() {
+        const soundFiles = {
+            shoot: './src/audio/gameHornerito/game_shoot.mp3',
+            levelUp: './src/audio/gameHornerito/game_lvlUp.mp3',
+            point: './src/audio/gameHornerito/game_point.mp3',
+            victory: './src/audio/gameHornerito/game_victory.mp3',
+            error: './src/audio/gameHornerito/game_error.mp3',
+            gameOver: './src/audio/gameHornerito/game_gameover.mp3'
+        };
+        
+        // Precargar todos los audios
+        Object.keys(soundFiles).forEach(key => {
+            this.sounds[key] = new Audio(soundFiles[key]);
+            this.sounds[key].preload = 'auto';
+            this.sounds[key].volume = 0.7; // Volumen por defecto
+            
+            // Manejo de errores de carga
+            this.sounds[key].onerror = () => {
+                console.warn(`No se pudo cargar el audio: ${soundFiles[key]}`);
+            };
+        });
+        
+        console.log('Sistema de audio inicializado');
+    },
+    
+    // Reproducir un sonido específico
+    play(soundName) {
+        if (this.muted) return;
+        
+        const sound = this.sounds[soundName];
+        if (sound) {
+            // Reiniciar el audio si ya se está reproduciendo
+            sound.currentTime = 0;
+            sound.play().catch(error => {
+                console.warn(`Error al reproducir ${soundName}:`, error);
+            });
+        } else {
+            console.warn(`Sonido no encontrado: ${soundName}`);
+        }
+    },
+    
+    // Alternar mute
+    toggleMute() {
+        this.muted = !this.muted;
+        console.log('Audio', this.muted ? 'silenciado' : 'activado');
+    },
+    
+    // Ajustar volumen general
+    setVolume(volume) {
+        Object.values(this.sounds).forEach(sound => {
+            sound.volume = Math.max(0, Math.min(1, volume));
+        });
+    }
+};
+
 const damageStyles = `
     @keyframes damageFlash {
         0% {
@@ -68,8 +129,8 @@ document.head.appendChild(damageStyleSheet);
 const levels = {
     1: {
         background: 'url("./src/img/juegoHornerito_nivel_1.png")',
-        spawnRate: 1200,
-        targetDuration: 2000,
+        spawnRate: 1000,
+        targetDuration: 3000,
         timeLimit: 30,
         enemyImages: [
             './src/img/enemigo_1.jpg',
@@ -85,8 +146,8 @@ const levels = {
     },
     2: {
         background: 'url("./src/img/juegoHornerito_nivel_2.png")',
-        spawnRate: 1500,
-        targetDuration: 1000,
+        spawnRate: 800,
+        targetDuration: 2000,
         timeLimit: 45,
         enemyImages: [
             './src/img/enemigo_4.jpg',
@@ -102,8 +163,8 @@ const levels = {
     },
     3: {
         background: 'url("./src/img/juegoHornerito_nivel_3.png")',
-        spawnRate: 1200,
-        targetDuration: 1000,
+        spawnRate: 700,
+        targetDuration: 1500,
         timeLimit: 60,
         enemyImages: [
             './src/img/enemigo_8.jpg',
@@ -120,7 +181,7 @@ const levels = {
 // Configuración de fondos para cada pantalla
 const screenBackgrounds = {
     welcomeScreen: './src/img/hornerito_inicio.png',
-    instructionsScreen: './src/img/hornerito_instrucciones.png',
+    instructionsScreen: './src/img/hornerito_Instrucciones.png',
     nextLevelScreen: './src/img/hornerito_nextLevel.png',
     gameOverScreen: './src/img/hornerito_GameOver.png'
 };
@@ -133,6 +194,7 @@ const badMessages = ['¡Mal!', '¡Cuidado!', '¡Error!', '¡No dispares a los am
 document.addEventListener('DOMContentLoaded', function() {
     try {
         console.log('Inicializando juego...');
+        audioSystem.init(); // Inicializar sistema de audio
         createParticles();
         setupEventListeners();
         showWelcome();
@@ -472,12 +534,19 @@ function hitTarget(target) {
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
     
+    // ¡NUEVO! Reproducir sonido de disparo siempre
+    audioSystem.play('shoot');
+    
     if (isEnemy) {
         // Buen disparo - eliminar enemigo
         gameState.score += 10;
         const goodMessage = goodMessages[Math.floor(Math.random() * goodMessages.length)];
         createScoreMessage(centerX, centerY, goodMessage, true);
         createHitEffect(centerX, centerY, 'good');
+        
+        // ¡NUEVO! Reproducir sonido de punto
+        audioSystem.play('point');
+        
         vibrate([50]);
     } else {
         // Mal disparo - disparaste al amigo
@@ -497,6 +566,8 @@ function handleGameAreaClick(e) {
     
     // Crear efecto de disparo si no se clickeó un objetivo
     if (!e.target.closest('.target')) {
+        // ¡NUEVO! Reproducir sonido de disparo también para disparos al vacío
+        audioSystem.play('shoot');
         createHitEffect(e.clientX, e.clientY, 'miss');
         vibrate([20]);
     }
@@ -556,7 +627,10 @@ function loseLife(reason) {
     gameState.lives--;
     updateHUD();
     
-    // ¡NUEVO! Crear el efecto de daño de pantalla completa
+    // ¡NUEVO! Reproducir sonido de error
+    audioSystem.play('error');
+    
+    // Crear el efecto de daño de pantalla completa
     createDamageScreenEffect();
     
     if (gameState.lives <= 0) {
@@ -580,6 +654,9 @@ function levelComplete() {
     console.log('Nivel completado:', gameState.level);
     stopGame();
     
+    // ¡NUEVO! Reproducir sonido de nivel completado
+    audioSystem.play('levelUp');
+    
     const messageEl = document.getElementById('levelCompleteMessage');
     if (messageEl) {
         messageEl.textContent = `¡Completaste el nivel ${gameState.level}! Puntuación: ${gameState.score}`;
@@ -596,7 +673,8 @@ function nextLevel() {
         console.log('Iniciando nivel:', gameState.level);
         startGame(); // Usar startGame() que ya maneja todo correctamente
     } else {
-        // Juego completado
+        // Juego completado - ¡NUEVO! Reproducir sonido de victoria
+        audioSystem.play('victory');
         gameOver("¡Felicitaciones! ¡Completaste todos los niveles!");
     }
 }
@@ -604,6 +682,11 @@ function nextLevel() {
 function gameOver(reason) {
     console.log('Game Over:', reason);
     stopGame();
+    
+    // ¡NUEVO! Reproducir sonido de game over solo si no es victoria
+    if (!reason.includes('Felicitaciones')) {
+        audioSystem.play('gameOver');
+    }
     
     const messageEl = document.getElementById('gameOverMessage');
     const scoreEl = document.getElementById('finalScore');
@@ -729,4 +812,5 @@ style.textContent = `
 document.head.appendChild(style);
 
 // Debug
-console.log('Script cargado correctamente');
+console.log('Script cargado correctamente con sistema de audio');
+
