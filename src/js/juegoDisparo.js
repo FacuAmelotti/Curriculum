@@ -559,6 +559,23 @@ const levels = {
         ]
     },
     2: {
+        background: 'url("./src/img/juegoHornerito_nivel_1_2.png")',
+        spawnRate: 1000,
+        targetDuration: 3000,
+        timeLimit: 30,
+        enemyImages: [
+            './src/img/enemigo_1.jpg',
+            './src/img/enemigo_2.jpg',
+            './src/img/enemigo_3.jpg'
+        ],
+        friendlyImages: [
+            './src/img/hornerito_1.png',
+            './src/img/hornerito_2.png',
+            './src/img/hornerito_3.png',
+            './src/img/hornerito_4.png'
+        ]
+    },
+    3: {
         background: 'url("./src/img/juegoHornerito_nivel_2.png")',
         spawnRate: 800,
         targetDuration: 2000,
@@ -575,8 +592,40 @@ const levels = {
             './src/img/hornerito_7.png'
         ]
     },
-    3: {
+    4: {
+        background: 'url("./src/img/juegoHornerito_nivel_2_1.png")',
+        spawnRate: 800,
+        targetDuration: 2000,
+        timeLimit: 45,
+        enemyImages: [
+            './src/img/enemigo_4.jpg',
+            './src/img/enemigo_5.jpg',
+            './src/img/enemigo_6.jpg',
+            './src/img/enemigo_7.jpg'
+        ],
+        friendlyImages: [
+            './src/img/hornerito_5.png',
+            './src/img/hornerito_6.png',
+            './src/img/hornerito_7.png'
+        ]
+    },
+    5: {
         background: 'url("./src/img/juegoHornerito_nivel_3.png")',
+        spawnRate: 700,
+        targetDuration: 1500,
+        timeLimit: 60,
+        enemyImages: [
+            './src/img/enemigo_8.jpg',
+            './src/img/enemigo_9.jpg',
+            './src/img/enemigo_10.jpg'
+        ],
+        friendlyImages: [
+            './src/img/hornerito_8.png',
+            './src/img/hornerito_9.png'
+        ]
+    },
+    6: {
+        background: 'url("./src/img/juegoHornerito_nivel_3_1.png")',
         spawnRate: 700,
         targetDuration: 1500,
         timeLimit: 60,
@@ -707,12 +756,14 @@ function showScreen(screenId) {
     }
 }
 
+// Función showWelcome modificada para resetear el juego
 function showWelcome() {
+    console.log('Volviendo al menú principal');
     stopGame();
+    resetGame(); // ¡AGREGADO! Resetear el estado
     showScreen('welcomeScreen');
-    audioSystem.startWelcomeMusic(); // Música de bienvenida
+    audioSystem.startWelcomeMusic();
 }
-
 
 function showInstructions() {
     console.log('Mostrando instrucciones');
@@ -720,15 +771,29 @@ function showInstructions() {
     audioSystem.startWelcomeMusic(); // Música de bienvenida también en instrucciones
 }
 
+// Función startGame modificada para asegurar que se inicie correctamente
 function startGame() {
     console.log('Iniciando juego - Nivel:', gameState.level);
+    
+    // Asegurar que el estado esté limpio antes de empezar
+    if (gameState.level === 1 && gameState.lives <= 0) {
+        resetGame();
+        console.log('Estado reseteado automáticamente');
+    }
+    
     showScreen('gameScreen');
     initializeLevel();
     gameState.isPlaying = true;
     
-    audioSystem.startGameMusic(); // ¡MÚSICA DE JUEGO!
-    
+    audioSystem.startGameMusic();
     startGameLoop();
+}
+
+// Función adicional para reiniciar desde el botón "Jugar de nuevo" en Game Over
+function playAgain() {
+    console.log('Jugando de nuevo');
+    resetGame();
+    startGame();
 }
 
 // Nueva función para reiniciar completamente el juego
@@ -736,6 +801,37 @@ function restartFromBeginning() {
     console.log('Reiniciando juego desde el principio');
     resetGame();
     startGame();
+}
+
+function resetGame() {
+    console.log('Reseteando estado del juego');
+    
+    // Resetear estado del juego a valores iniciales
+    gameState.lives = 3;
+    gameState.score = 0;
+    gameState.level = 1;
+    gameState.timeLeft = 60;
+    gameState.isPlaying = false;
+    gameState.targets = [];
+    
+    // Limpiar timers si existen
+    if (gameState.gameTimer) {
+        clearInterval(gameState.gameTimer);
+        gameState.gameTimer = null;
+    }
+    
+    if (gameState.spawnTimer) {
+        clearTimeout(gameState.spawnTimer);
+        gameState.spawnTimer = null;
+    }
+    
+    // Limpiar objetivos existentes
+    clearTargets();
+    
+    // Actualizar HUD
+    updateHUD();
+    
+    console.log('Estado del juego reseteado');
 }
 
 function stopGame() {

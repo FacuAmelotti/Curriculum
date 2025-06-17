@@ -3,7 +3,7 @@
 /* Extra small devices (phones, 480px and down) */
 @media (max-width: 480px) {
     body {
-        cursor: pointer;
+                                   cursor: url('../img/cursor.png'), auto;
     }
 
     .hud {
@@ -29,6 +29,7 @@
     .target {
         width: 50px;
         height: 50px;
+            cursor: url('../img/aim.png'), auto;
     }
 
     .target-timer {
@@ -158,6 +159,7 @@
     .target {
         width: 60px;
         height: 60px;
+                    cursor: url('../img/aim.png'), auto;
     }
 
     .target-timer {
@@ -255,6 +257,7 @@
     .target {
         width: 70px;
         height: 70px;
+                    cursor: url('../img/aim.png'), auto;
     }
 
     .target-timer {
@@ -296,6 +299,7 @@
     .target {
         width: 75px;
         height: 75px;
+                    cursor: url('../img/aim.png'), auto;
     }
 
     .target-timer {
@@ -334,6 +338,7 @@
     .target {
         width: 85px;
         height: 85px;
+                    cursor: url('../img/aim.png'), auto;
     }
 
     .target-timer {
@@ -421,6 +426,7 @@
     .target {
         width: 45px;
         height: 45px;
+                    cursor: url('../img/aim.png'), auto;
     }
 
     .target-timer {
@@ -496,7 +502,6 @@
     align-items: center;
     justify-content: center;
     color: #e5e5e5;
-    cursor: pointer;
     transition: all 0.3s ease;
     font-size: 18px;
     flex-shrink: 0;
@@ -552,7 +557,6 @@
     align-items: center;
     justify-content: center;
     color: #e5e5e5;
-    cursor: pointer;
     transition: all 0.2s ease;
     font-size: 14px;
     flex-shrink: 0;
@@ -578,7 +582,6 @@
     border-radius: 3px;
     background: rgba(255, 255, 255, 0.1);
     outline: none;
-    cursor: pointer;
     transition: all 0.2s ease;
 }
 
@@ -589,7 +592,6 @@
     height: 16px;
     border-radius: 50%;
     background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
-    cursor: pointer;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     transition: all 0.2s ease;
 }
@@ -604,7 +606,6 @@
     height: 16px;
     border-radius: 50%;
     background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
-    cursor: pointer;
     border: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
@@ -853,4 +854,11 @@
     .audio-control-group {
         min-width: 110px;
     }
+}
+
+.target,
+.target *,
+.target img,
+.target div {
+    cursor: url('../img/aim.png'), crosshair !important;
 }
