@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salva a los Horneritos!</title>
+    <link rel="stylesheet" href="./src/css/juegoDisparo.css">
+    
+</head>
+<body>
+    <!-- Partículas de fondo -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Pantalla de Bienvenida -->
+    <div class="screen active" id="welcomeScreen">
+        <div>
+        <h1 class="fade-in">Salva a los Horneritos!</h1>
+        <p class="fade-in">Un juego de reflejos y precisión donde cada disparo cuenta</p>
+        <button class="btn fade-in" id="startBtn">Iniciar juego</button>
+         <button class="btn fade-in" onclick="window.location.href='./index.html'">Salir</button>
+         </div>
+    </div>
+
+    <!-- Pantalla de Instrucciones -->
+    <div class="screen" id="instructionsScreen">
+        <h2>INSTRUCCIONES</h2>
+        <div class="instructions">
+            <ul>
+                <li><strong>Objetivo:</strong> Elimina a los enemigos y protege a los horneritos</li>
+                <li><strong>Enemigos:</strong> Dispárales antes de que desaparezcan (círculo rojo)</li>
+                <li><strong>Horneritos:</strong> NO les dispares, son amigos (círculo verde)</li>
+                <li><strong>Tiempo:</strong> Cada objetivo tiene un temporizador limitado</li>
+                <li><strong>Vidas:</strong> Tienes 3 vidas. Pierdes una vida si:</li>
+                <ul>
+                    <li>Disparas a un hornerito</li>
+                    <li>No eliminas a un enemigo a tiempo</li>
+                </ul>
+                <li><strong>Victoria:</strong> Sobrevive el tiempo requerido para pasar de nivel</li>
+            </ul>
+        </div>
+        <div>
+            <button class="btn" id="continueBtn">CONTINUAR</button>
+            <button class="btn btn-secondary" id="backToWelcomeBtn">VOLVER</button>
+        </div>
+    </div>
+
+    <!-- Área de Juego -->
+    <div class="screen" id="gameScreen">
+        <button class="back-btn" id="backToMenuBtn">←</button>
+        <div class="hud">
+            <div class="hud-item lives">❤️ <span id="livesCount">3</span></div>
+            <div class="hud-item score">🎯 <span id="score">0</span></div>
+            <div class="hud-item timer">⏱️ <span id="timeLeft">60</span>s</div>
+            <div class="hud-item level">📊 Nivel <span id="currentLevel">1</span></div>
+        </div>
+        <div class="game-area" id="gameArea">
+            <div class="game-overlay"></div>
+        </div>
+    </div>
+
+    <!-- Pantalla Game Over -->
+    <div class="screen" id="gameOverScreen">
+        <div>
+            <h2>GAME OVER</h2>
+            <p id="gameOverMessage">¡Tu aventura ha terminado!</p>
+            <p>Puntuación final: <span id="finalScore">0</span></p>
+            <div>
+                <button class="btn" id="playAgainBtn">JUGAR DE NUEVO</button>
+                <button class="btn btn-secondary" id="backToMainMenuBtn">MENÚ PRINCIPAL</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pantalla Siguiente Nivel -->
+    <div class="screen" id="nextLevelScreen">
+        <h2>¡NIVEL COMPLETADO!</h2>
+        <p id="levelCompleteMessage">¡Excelente trabajo!</p>
+        <div>
+            <button class="btn" id="nextLevelBtn">SIGUIENTE NIVEL</button>
+            <button class="btn btn-secondary" id="backToMainMenu2Btn">MENÚ PRINCIPAL</button>
+        </div>
+    </div>
+
+    <script src="./src/js/juegoDisparo.js"></script>
+</body>
+</html>

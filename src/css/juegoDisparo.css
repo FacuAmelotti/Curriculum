@@ -1,0 +1,628 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #0c0c0c 100%);
+            color: #e5e5e5;
+            overflow: hidden;
+            height: 100vh;
+            line-height: 1.6;
+            cursor: crosshair;
+        }
+
+        /* Partículas de fondo */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(248, 250, 252, 0.1) 100%);
+            border-radius: 50%;
+            animation: particleFloat 20s infinite linear;
+        }
+
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-50px) translateX(15px); opacity: 0; }
+        }
+
+
+
+        /* Pantallas del juego */
+        .screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+            visibility: hidden;
+        }
+
+        #gameOverScreen > div {
+                background-color: rgba(0, 0, 0, 0.82);
+                margin-bottom: 12px;
+                padding: 6px;
+                border-radius: 12px;
+                box-shadow: 0 0 20px rgba(0,0,0,0.5);
+                text-align: center;
+            }
+
+#welcomeScreen {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+}
+
+#welcomeScreen > div {
+    background: rgba(20, 20, 20, 0.7);
+    padding: 30px;
+    border-radius: 20px;
+    width: 70%;
+    height: auto;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeInScale 1s ease-in-out;
+}
+
+#welcomeScreen h1 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+#welcomeScreen p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#welcomeScreen .btn {
+    padding: 12px 24px;
+    margin: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #c2b57a, #a5892c);
+    color: rgb(19, 10, 3);
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#welcomeScreen .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#instructionsScreen > h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+#instructionsScreen .instructions {
+    background-color: rgba(20, 20, 20, 0.7);
+    padding: 25px 35px;
+    border-radius: 16px;
+    width: 75%;
+    max-width: 800px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    text-align: left;
+    color: #e0e0e0;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+#instructionsScreen ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#instructionsScreen ul > li {
+    margin-bottom: 12px;
+}
+
+#instructionsScreen ul ul {
+    margin-top: 8px;
+    margin-left: 20px;
+}
+
+#instructionsScreen strong {
+    color: #ffffff;
+}
+
+#instructionsScreen .btn {
+    padding: 14px 28px;
+    margin: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: 2px solid #d6aa52; /* Borde más visible y decorativo */
+    border-radius: 12px;
+    background: linear-gradient(145deg, #cc9c43, #ac7420);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+#instructionsScreen .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(145deg, #d6aa52, #bd8432); /* Un poco más brillante al hacer hover */
+}
+
+
+#instructionsScreen .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+#instructionsScreen .btn-secondary {
+    background: linear-gradient(145deg, #6d6d6d, #525252);
+}
+
+#nextLevelScreen {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+}
+
+#nextLevelScreen h2 {
+    font-size: 2.8rem;
+    color: #ffd700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    animation: popIn 0.6s ease-in-out;
+}
+
+#nextLevelScreen p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+}
+
+#nextLevelScreen > div {
+    background-color: rgba(30, 30, 30, 0.7);
+    padding: 30px;
+    border-radius: 16px;
+    width: 70%;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+#nextLevelScreen .btn {
+    padding: 14px 28px;
+    margin: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: 2px solid #f7c851;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #ffd700, #e0a800);
+    color: #2e2e2e;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#nextLevelScreen .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(145deg, #ffea70, #e6b937);
+}
+
+#nextLevelScreen .btn-secondary {
+    background: linear-gradient(145deg, #999999, #666666);
+    border-color: #aaa;
+    color: #fff;
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+
+        .screen.active {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+        
+
+        .screen h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e2e8f0 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            letter-spacing: -1px;
+        }
+
+        .screen h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #e5e5e5;
+            text-align: center;
+        }
+
+        .screen p {
+            font-size: 16px;
+            color: #a0a0a0;
+            max-width: 600px;
+            text-align: center;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            background: #4a4a4a;
+            color: #e5e5e5;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+            transition: all 0.3s ease;
+            border: 1px solid #5a5a5a;
+            cursor: pointer;
+            margin: 10px;
+            user-select: none;
+        }
+
+        .btn:hover {
+            background: #5a5a5a;
+            transform: translateY(-1px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #a0a0a0;
+            border: 1px solid rgba(160, 160, 160, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(160, 160, 160, 0.05);
+            border-color: rgba(160, 160, 160, 0.5);
+            color: #e5e5e5;
+        }
+
+        /* Área de juego */
+        .game-area {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-image 0.5s ease;
+        }
+
+        .game-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+
+        /* HUD del juego */
+        .hud {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 20;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 25px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hud-item {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: #e5e5e5;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .lives {
+            color: #ff6b6b;
+        }
+
+        .score {
+            color: #51cf66;
+        }
+
+        .timer {
+            color: #74c0fc;
+        }
+
+        .level {
+            color: #ffd43b;
+        }
+
+        /* Objetivos en el juego */
+        .target {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            cursor: crosshair;
+            z-index: 15;
+            transition: transform 0.1s ease;
+            animation: targetAppear 0.3s ease-out;
+        }
+
+        @keyframes targetAppear {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .target:hover {
+            transform: scale(1.1);
+        }
+
+        .target img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .target-timer {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 100px;
+            height: 100px;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: countdown linear;
+        }
+
+        @keyframes countdown {
+            from {
+                transform: rotate(0deg);
+                border-top-color: #ff6b6b;
+            }
+            to {
+                transform: rotate(360deg);
+                border-top-color: transparent;
+            }
+        }
+
+        /* Efectos */
+        .hit-effect {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 25;
+            animation: hitExpand 0.6s ease-out forwards;
+        }
+
+        .hit-effect.good {
+            background: radial-gradient(circle, #51cf66 0%, transparent 70%);
+        }
+
+        .hit-effect.bad {
+            background: radial-gradient(circle, #ff6b6b 0%, transparent 70%);
+        }
+
+        .hit-effect.miss {
+            background: radial-gradient(circle, #94a3b8 0%, transparent 70%);
+        }
+
+        @keyframes hitExpand {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(10);
+                opacity: 0;
+            }
+        }
+
+        /* Instrucciones */
+        .instructions {
+            max-width: 800px;
+            text-align: left;
+        }
+
+        .instructions ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .instructions li {
+            margin: 15px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #a0a0a0;
+        }
+
+        .instructions li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #8a8a8a;
+        }
+
+        .instructions ul ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        /* Botón de regreso */
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 30;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e5e5e5;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.1);
+        }
+
+        /* Animación de entrada */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Loading indicator */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hud {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px 15px;
+            }
+            
+            .target {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .target-timer {
+                width: 80px;
+                height: 80px;
+                top: -10px;
+                left: -10px;
+            }
+
+            .screen h1 {
+                font-size: 2.5rem;
+            }
+
+            .instructions {
+                max-width: 90%;
+                padding: 0 20px;
+            }
+        }
+
+
+        
