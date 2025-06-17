@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas sobre Argentina</title>
+    <link rel="stylesheet" href="./src/css/pregyresp.css">
+        <link rel="icon" href="./src/img/arg.png" type="image/png">
+</head>
+<body>
+    <!-- Partículas flotantes -->
+    <div class="particles" id="particles"></div>
+
+    <audio id="backgroundMusic" loop>
+        <source src="../audio/background.mp3" type="audio/mpeg">
+        <source src="../audio/background.ogg" type="audio/ogg">
+        <source src="../audio/background.wav" type="audio/wav">
+        Tu navegador no soporta el elemento audio.
+    </audio>
+
+    <!-- Control de música -->
+    <div class="music-control">
+        <button class="music-btn" id="muteBtn" title="Silenciar/Activar música">
+            🔊
+        </button>
+        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.1" value="0.5" title="Volumen">
+    </div>
+
+    <!-- Cursor personalizado -->
+    <div class="cursor" id="cursor"></div>
+
+    <!-- Botón de retroceso -->
+    <button class="back-btn" id="backBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span>Volver</span>
+    </button>
+
+    <div class="container">
+        <!-- Pantalla inicial -->
+        <div class="screen active" id="homeScreen">
+            <h1 class="title">Preguntas sobre Argentina</h1>
+            <p class="subtitle">Pon a prueba tus conocimientos</p>
+            
+            <button class="btn primary" onclick="showScreen('difficultyScreen')">Iniciar Juego</button>
+            <button class="btn" onclick="showModal('howToPlayModal')">¿Cómo Jugar?</button>
+            <button class="btn" onclick="goToMainPage()">Salir</button>
+        </div>
+
+        <!-- Pantalla de dificultad -->
+        <div class="screen" id="difficultyScreen">
+            <h1 class="title">Seleccionar Dificultad</h1>
+            <p class="subtitle">Elige el nivel que prefieras</p>
+            
+            <button class="btn primary" onclick="startGame('facil')">Fácil</button>
+            <button class="btn primary" onclick="startGame('normal')">Normal</button>
+            <button class="btn primary" onclick="startGame('dificil')">Difícil</button>
+        </div>
+
+        <!-- Pantalla de juego -->
+        <div class="screen" id="gameScreen">
+            <div class="game-container">
+                <div class="game-header">
+                    <span>Pregunta <span id="questionNumber">1</span> de 20</span>
+                    <span>Puntuación: <span id="currentScore">0</span>/10</span>
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                
+                <div class="question-container">
+                    <div class="question-text" id="questionText"></div>
+                    <img class="question-image" id="questionImage" style="display: none;">
+                </div>
+                
+                <div class="options-container" id="optionsContainer"></div>
+                <div id="justificationContainer" style="
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+">
+    <div style="display: flex; align-items: flex-start; gap: 10px;">
+        <span id="justificationIcon" style="font-size: 20px; margin-top: 2px;"></span>
+        <div id="justificationText" style="
+            flex: 1;
+            color: white;
+            line-height: 1.6;
+            font-size: 14px;
+        "></div>
+    </div>
+</div>
+                
+                <button class="btn primary" id="nextBtn" onclick="nextQuestion()" style="display: none;">Siguiente Pregunta</button>
+            </div>
+        </div>
+
+        <!-- Pantalla de calificación -->
+        <div class="screen" id="scoreScreen">
+            <div class="score-container">
+                <h1 class="score-title" id="scoreTitle">¡Juego Terminado!</h1>
+                <p class="score-subtitle" id="scoreSubtitle"></p>
+                
+                <div class="score-details">
+                    <div class="score-item">
+                        <span>Respuestas Correctas:</span>
+                        <span id="correctAnswers">0</span>
+                    </div>
+                    <div class="score-item">
+                        <span>Respuestas Incorrectas:</span>
+                        <span id="incorrectAnswers">0</span>
+                    </div>
+                    <div class="score-item">
+                        <span>Calificación Final:</span>
+                        <span id="finalScore">0/10</span>
+                    </div>
+                </div>
+                
+                <button class="btn primary" onclick="showScreen('homeScreen')">Volver al Inicio</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Cómo Jugar -->
+    <div class="modal" id="howToPlayModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('howToPlayModal')">&times;</button>
+            <h2 style="color: #e5e5e5; margin-bottom: 20px;">¿Cómo Jugar?</h2>
+            <div style="color: #a0a0a0; line-height: 1.8;">
+                <p><strong>Objetivo:</strong> Responde correctamente el mayor número de preguntas posibles.</p>
+                <br>
+                <p><strong>Reglas:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Tendrás 20 preguntas por juego</li>
+                    <li>Cada pregunta correcta vale 0.5 puntos</li>
+                    <li>Puedes elegir entre 3 niveles de dificultad</li>
+                    <li>Algunas preguntas pueden incluir imágenes</li>
+                    <li>Las opciones de respuesta varían entre 4 y 8 alternativas</li>
+                </ul>
+                <br>
+                <p><strong>Calificación:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Aprobado: 6.0 puntos o más</li>
+                    <li>Reprobado: Menos de 6.0 puntos</li>
+                </ul>
+                <br>
+                <p>¡Buena suerte y que disfrutes el juego!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./src/js/pregyresp_juego.js"></script>
+</body>
+</html>

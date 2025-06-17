@@ -1,0 +1,427 @@
+[
+{
+    "Text": "¿Quién fue el arquitecto que diseñó la Casa Rosada tal como la conocemos hoy?",
+    "Options": [
+        "Alejandro Bustillo",
+        "Francesco Tamburini",
+        "Ernesto de la Cárcova",
+        "Carlos Thays",
+        "Víctor Meano",
+        "Juan Antonio Buschiazzo",
+        "Mario Palanti",
+        "Clorindo Testa"
+    ],
+    "CorrectAnswerIndex": 1,
+    "Topic": "Arquitectura Argentina",
+    "Difficult": "Difícil",
+    "Justification": "**Francesco Tamburini** fue el arquitecto italiano que diseñó la Casa Rosada en su forma actual durante la presidencia de Julio A. Roca, unificando dos edificios preexistentes entre 1882-1898."
+},
+{
+    "Text": "¿Cuál fue el primer sindicato argentino en adherir a la CGT en 1930?",
+    "Options": [
+        "Unión Ferroviaria",
+        "Federación Obrera Nacional de la Construcción",
+        "Sindicato de Luz y Fuerza",
+        "Unión Obrera Metalúrgica",
+        "Asociación Obrera Textil",
+        "Sindicato de Empleados de Commerce",
+        "Fraternidad",
+        "Federación Gráfica Bonaerense"
+    ],
+    "CorrectAnswerIndex": 6,
+    "Topic": "Historia Sindical Argentina",
+    "Difficult": "Difícil",
+    "Justification": "**Fraternidad** (La Fraternidad), el sindicato de maquinistas y foguistas ferroviarios fundado en 1887, fue el primer sindicato en adherir a la CGT cuando esta se fundó en 1930."
+},
+{
+    "Text": "¿En qué año se estableció el Banco Central de la República Argentina?",
+    "Options": [
+        "1931",
+        "1935",
+        "1929",
+        "1943",
+        "1938",
+        "1940",
+        "1933",
+        "1946"
+    ],
+    "CorrectAnswerIndex": 1,
+    "Topic": "Historia Económica Argentina",
+    "Difficult": "Difícil",
+    "Justification": "El **Banco Central de la República Argentina** fue creado en **1935** durante la presidencia de Agustín P. Justo, como parte del Plan Pinedo para estabilizar la economía tras la crisis de 1929."
+},
+{
+    "Text": "¿Cuál es el nombre del acuífero subterráneo más importante de Argentina?",
+    "Options": [
+        "Acuífero Puelche",
+        "Sistema Acuífero Guaraní",
+        "Acuífero Pampeano",
+        "Acuífero Epipuelche",
+        "Sistema Acuífero Yrenda-Toba-Tarijeño",
+        "Acuífero Terciario",
+        "Sistema Acuífero del Noroeste",
+        "Acuífero Quaternario"
+    ],
+    "CorrectAnswerIndex": 1,
+    "Topic": "Geografía Argentina",
+    "Difficult": "Difícil",
+    "Justification": "El **Sistema Acuífero Guaraní** es el acuífero más importante de Argentina, compartido con Brasil, Paraguay y Uruguay, con una superficie de 45.000 km² en territorio argentino."
+},
+{
+    "Text": "¿Quién fue el primer director del Instituto Nacional de Tecnología Agropecuaria (INTA)?",
+    "Options": [
+        "Ángel Cabrera",
+        "Lorenzo Parodi",
+        "Jorge Boerger",
+        "Arturo Burkart",
+        "Miguel Lillo",
+        "Eduardo Holmberg",
+        "Carlos Spegazzini",
+        "Cristóbal Hicken"
+    ],
+    "CorrectAnswerIndex": 2,
+    "Topic": "Ciencia y Tecnología Argentina",
+    "Difficult": "Difícil",
+    "Justification": "**Jorge Boerger** fue el primer director del INTA cuando se creó en 1956, siendo un reconocido ingeniero agrónomo de origen alemán que modernizó la investigación agropecuaria argentina."
+},
+{
+    "Text": "¿Cuál fue la primera película sonora argentina?",
+    "Options": [
+        "Tango!",
+        "¡Tango!",
+        "Muñequitas porteñas",
+        "Los Tres Berretines",
+        "Dancing",
+        "Noches de Buenos Aires",
+        "El Alma del Bandoneón",
+        "Adiós Argentina"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Cine Argentino",
+    "Difficult": "Difícil",
+    "Justification": "**'Tango!'** (1933), dirigida por Luis Moglia Barth, fue la primera película sonora argentina, marcando el inicio del cine sonoro nacional y el auge del cine de tango."
+},
+{
+    "Text": "¿En qué provincia argentina se encuentra el punto más bajo del país?",
+    "Options": [
+        "Mendoza",
+        "Península Valdés, Chubut",
+        "San Juan",
+        "Santa Cruz",
+        "La Rioja",
+        "Catamarca",
+        "Salta",
+        "Jujuy"
+    ],
+    "CorrectAnswerIndex": 1,
+    "Topic": "Geografía Argentina",
+    "Difficult": "Difícil",
+    "Justification": "El punto más bajo de Argentina continental se encuentra en **Península Valdés, Chubut**, a 40 metros bajo el nivel del mar en la laguna del Carbón."
+},
+{
+    "Text": "¿Quién fue el creador de la revista literaria 'Sur'?",
+    "Options": [
+        "Jorge Luis Borges",
+        "Victoria Ocampo",
+        "Adolfo Bioy Casares",
+        "Silvina Ocampo",
+        "Eduardo Mallea",
+        "María Rosa Oliver",
+        "Norah Lange",
+        "Ezequiel Martínez Estrada"
+    ],
+    "CorrectAnswerIndex": 1,
+    "Topic": "Literatura Argentina",
+    "Difficult": "Difícil",
+    "Justification": "**Victoria Ocampo** fundó la revista **'Sur'** en 1931, que se convirtió en la publicación literaria más influyente de Argentina y América Latina durante el siglo XX."
+},
+{
+    "Text": "¿Cuál fue el primer partido político argentino en obtener personería jurídica?",
+    "Options": [
+        "Partido Autonomista Nacional",
+        "Unión Cívica Radical",
+        "Partido Socialista",
+        "Partido Demócrata Progresista",
+        "Partido Conservador",
+        "Unión Democrática",
+        "Partido Laborista",
+        "Concentración Nacional Universitaria"
+    ],
+    "CorrectAnswerIndex": 2,
+    "Topic": "Historia Política Argentina",
+    "Difficult": "Difícil",
+    "Justification": "El **Partido Socialista**, fundado por Juan B. Justo en 1896, fue el primer partido político argentino en constituirse formalmente con estatutos y obtener personería jurídica."
+},
+{
+    "Text": "¿En qué año se produjo la masacre de Napalpí?",
+    "Options": [
+        "1919",
+        "1924",
+        "1921",
+        "1922",
+        "1920",
+        "1925",
+        "1918",
+        "1923"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Historia Argentina",
+    "Difficult": "Difícil",
+    "Justification": "La **masacre de Napalpí** ocurrió el 19 de julio de **1924** en Chaco, cuando fuerzas policiales y civiles atacaron una reducción indígena, asesinando a cientos de qom y moqoit."
+},
+{
+    "Text": "¿Cuál es el nombre científico del hornero, ave nacional argentina?",
+    "Options": [
+        "Furnarius cristatus",
+        "Furnarius rufus",
+        "Furnarius figulus",
+        "Furnarius leucopus",
+        "Furnarius minor",
+        "Cinclodes fuscus",
+        "Pseudoseisura lophotes",
+        "Anumbius annumbi"
+    ],
+    "CorrectAnswerIndex": 1,
+    "Topic": "Fauna Argentina",
+    "Difficult": "Difícil",
+    "Justification": "El nombre científico del hornero, ave nacional argentina, es **Furnarius rufus**. Fue declarado ave nacional en 1928 por su laboriosidad y porque habita en todo el territorio argentino."
+},
+{
+    "Text": "¿Quién fue el primer argentino en ganar una medalla olímpica?",
+    "Options": [
+        "Luis Brunetto",
+        "Francisco Camet",
+        "Alberto Demiddi",
+        "Arturo Rodríguez Jurado",
+        "Juan Carlos Zabala",
+        "Pascual Pérez",
+        "Delfo Cabrera",
+        "Alberto Zorrilla"
+    ],
+    "CorrectAnswerIndex": 1,
+    "Topic": "Deporte Argentino",
+    "Difficult": "Difícil",
+    "Justification": "**Francisco Camet** fue el primer argentino en ganar una medalla olímpica, obteniendo el bronce en salto de longitud en los Juegos Olímpicos de París 1900."
+},
+{
+    "Text": "¿Cuál fue la primera estación de radio en transmitir en Argentina?",
+    "Options": [
+        "Radio Argentina",
+        "Radio Cultura",
+        "LOR Radio Argentina",
+        "Radio Nacional",
+        "Radio Belgrano",
+        "Radio El Mundo",
+        "Radio Splendid",
+        "LR1 Radio El Mundo"
+    ],
+    "CorrectAnswerIndex": 2,
+    "Topic": "Medios de Comunicación Argentina",
+    "Difficult": "Difícil",
+    "Justification": "**LOR Radio Argentina** fue la primera estación de radio en transmitir en Argentina, realizando su primera emisión el 27 de agosto de 1920 desde la azotea del Teatro Coliseo."
+},
+{
+    "Text": "¿En qué año se fundó la Biblioteca Nacional Argentina?",
+    "Options": [
+        "1810",
+        "1812",
+        "1821",
+        "1825",
+        "1816",
+        "1819",
+        "1814",
+        "1835"
+    ],
+    "CorrectAnswerIndex": 1,
+    "Topic": "Cultura Argentina",
+    "Difficult": "Difícil",
+    "Justification": "La **Biblioteca Nacional** fue fundada el 7 de septiembre de **1812** por decreto de la Primera Junta, siendo una de las primeras instituciones culturales del país independiente."
+},
+{
+    "Text": "¿Cuál es el nombre del fósil de dinosaurio más completo encontrado en Argentina?",
+    "Options": [
+        "Giganotosaurus carolinii",
+        "Carnotaurus sastrei",
+        "Amargasaurus cazaui",
+        "Argentinosaurus huinculensis",
+        "Gasparinisaura cincosaltensis",
+        "Eoraptor lunensis",
+        "Herrerasaurus ischigualastensis",
+        "Saltasaurus loricatus"
+    ],
+    "CorrectAnswerIndex": 4,
+    "Topic": "Paleontología Argentina",
+    "Difficult": "Difícil",
+    "Justification": "**Gasparinisaura cincosaltensis** es considerado el fósil de dinosaurio más completo encontrado en Argentina, descubierto en Río Negro en 1992, con un 90% del esqueleto preservado."
+},
+{
+    "Text": "¿Quién fue el primer ministro de Relaciones Exteriores de Argentina?",
+    "Options": [
+        "Bernardino Rivadavia",
+        "Juan Martín de Pueyrredón",
+        "Tomás Guido",
+        "Carlos María de Alvear",
+        "Juan Gregorio de Las Heras",
+        "Manuel José García",
+        "Valentín Gómez",
+        "Diego de Alvear"
+    ],
+    "CorrectAnswerIndex": 5,
+    "Topic": "Historia Diplomática Argentina",
+    "Difficult": "Difícil",
+    "Justification": "**Manuel José García** fue el primer ministro de Relaciones Exteriores de Argentina, designado en 1826 durante la presidencia de Bernardino Rivadavia."
+},
+{
+    "Text": "¿En qué provincia se encuentra el Parque Nacional más antiguo de Argentina?",
+    "Options": [
+        "Neuquén",
+        "Río Negro",
+        "Chubut",
+        "Santa Cruz",
+        "Mendoza",
+        "San Juan",
+        "Córdoba",
+        "Misiones"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Áreas Protegidas Argentina",
+    "Difficult": "Difícil",
+    "Justification": "El **Parque Nacional Nahuel Huapi**, ubicado principalmente en **Neuquén** (y parte en Río Negro), fue el primer parque nacional de Argentina, creado en 1934."
+},
+{
+    "Text": "¿Cuál fue el primer diario argentino en utilizar la rotativa?",
+    "Options": [
+        "La Prensa",
+        "La Nación",
+        "El Cronista Comercial",
+        "La Razón",
+        "Crítica",
+        "El Mundo",
+        "La Capital",
+        "Los Andes"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Historia del Periodismo Argentino",
+    "Difficult": "Difícil",
+    "Justification": "**La Prensa** fue el primer diario argentino en utilizar la rotativa en 1899, revolucionando la industria gráfica nacional y aumentando significativamente su tirada."
+},
+{
+    "Text": "¿Quién fue el compositor de la zamba 'La López Pereyra'?",
+    "Options": [
+        "Atahualpa Yupanqui",
+        "Andrés Chazarreta",
+        "Carlos Guastavino",
+        "Buenaventura Luna",
+        "Hilario Cuadros",
+        "Manuel Gómez Carrillo",
+        "Felipe Boero",
+        "Juan Draghi Lucero"
+    ],
+    "CorrectAnswerIndex": 1,
+    "Topic": "Música Folklórica Argentina",
+    "Difficult": "Difícil",
+    "Justification": "**Andrés Chazarreta** compuso la zamba **'La López Pereyra'** en 1911, considerada una de las primeras zambas documentadas y pieza fundamental del folclore argentino."
+},
+{
+    "Text": "¿En qué año se estableció el servicio de conscripción obligatoria en Argentina?",
+    "Options": [
+        "1901",
+        "1902",
+        "1905",
+        "1910",
+        "1895",
+        "1898",
+        "1907",
+        "1912"
+    ],
+    "CorrectAnswerIndex": 1,
+    "Topic": "Historia Militar Argentina",
+    "Difficult": "Difícil",
+    "Justification": "El servicio de **conscripción obligatoria** se estableció en Argentina en **1902** durante la presidencia de Julio A. Roca, mediante la Ley Riccheri (Ley N° 4.031)."
+},
+{
+    "Text": "¿Cuál es el nombre del primer satélite artificial argentino?",
+    "Options": [
+        "Lusat-1",
+        "Víctor-1",
+        "Condor-1",
+        "Nahuel-1A",
+        "SAC-A",
+        "Ñusat-1",
+        "Arsat-1",
+        "Pehuensat-1"
+    ],
+    "CorrectAnswerIndex": 1,
+    "Topic": "Tecnología Espacial Argentina",
+    "Difficult": "Difícil",
+    "Justification": "**Víctor-1** fue el primer satélite artificial argentino, lanzado el 29 de octubre de 1990, desarrollado por el Instituto Universitario Aeronáutico como parte del proyecto Víctor."
+},
+{
+    "Text": "¿Quién fue el fundador de la Universidad Tecnológica Nacional?",
+    "Options": [
+        "Manuel Sadosky",
+        "Otto Krause",
+        "Juan Domingo Perón",
+        "Ángel Gallardo",
+        "José Babini",
+        "Teófilo Tabanera",
+        "Luis Huergo",
+        "Eduardo Braun Menéndez"
+    ],
+    "CorrectAnswerIndex": 2,
+    "Topic": "Educación Técnica Argentina",
+    "Difficult": "Difícil",
+    "Justification": "**Juan Domingo Perón** fundó la Universidad Obrera Nacional (actual UTN) en 1948, como parte de su política de democratización de la educación técnica superior."
+},
+{
+    "Text": "¿Cuál fue la primera empresa argentina en cotizar en la Bolsa de Nueva York?",
+    "Options": [
+        "YPF",
+        "Pérez Companc",
+        "Techint",
+        "Grupo Clarín",
+        "Arcor",
+        "Molinos Río de la Plata",
+        "Bunge y Born",
+        "Alpargatas"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Historia Empresarial Argentina",
+    "Difficult": "Difícil",
+    "Justification": "**YPF** fue la primera empresa argentina en cotizar en la Bolsa de Nueva York (NYSE) en 1993, durante el proceso de privatización del gobierno de Carlos Menem."
+},
+{
+    "Text": "¿En qué año se estableció el Código Civil argentino redactado por Dalmacio Vélez Sarsfield?",
+    "Options": [
+        "1869",
+        "1871",
+        "1864",
+        "1873",
+        "1865",
+        "1870",
+        "1868",
+        "1872"
+    ],
+    "CorrectAnswerIndex": 1,
+    "Topic": "Historia Jurídica Argentina",
+    "Difficult": "Difícil",
+    "Justification": "El **Código Civil** redactado por Dalmacio Vélez Sarsfield entró en vigencia el 1 de enero de **1871**, siendo uno de los más avanzados de su época y modelo para otros países latinoamericanos."
+},
+{
+    "Text": "¿Cuál es el nombre del primer campo petrolífero descubierto en Argentina?",
+    "Options": [
+        "Comodoro Rivadavia",
+        "Plaza Huincul",
+        "Cerro Dragón",
+        "Puesto Hernández",
+        "El Tordillo",
+        "Río Turbio",
+        "Cañadón Seco",
+        "Rincón de los Sauces"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Historia Petrolera Argentina",
+    "Difficult": "Difícil",
+    "Justification": "**Comodoro Rivadavia** fue el primer yacimiento petrolífero descubierto en Argentina el 13 de diciembre de 1907, mientras se perforaba en busca de agua para la población local."
+}
+]

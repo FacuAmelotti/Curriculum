@@ -1,0 +1,903 @@
+[
+{
+    "Text": "¿En qué año se produjo la Revolución de Mayo, uno de los acontecimientos más importantes de la historia argentina?",
+    "Options": [
+        "1812",
+        "1810",
+        "1806",
+        "1816",
+        "1820",
+        "1807",
+        "1799",
+        "1814"
+    ],
+    "CorrectAnswerIndex": 1,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "La Revolución de Mayo ocurrió en **1810** y marcó el inicio del proceso de independencia de Argentina respecto del dominio colonial español."
+},
+{
+    "Text": "¿Quién fue el principal líder del Cruce de los Andes, una de las campañas más importantes por la independencia sudamericana?",
+    "Options": [
+        "Manuel Belgrano",
+        "José de San Martín",
+        "Juan Martín de Pueyrredón",
+        "Martín Miguel de Güemes",
+        "Domingo Faustino Sarmiento",
+        "Juan Manuel de Rosas",
+        "Cornelio Saavedra",
+        "Bernardino Rivadavia"
+    ],
+    "CorrectAnswerIndex": 1,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "El **General José de San Martín** fue el principal líder del Cruce de los Andes, realizado en 1817, con el objetivo de liberar Chile del dominio español y continuar la lucha por la independencia de América del Sur."
+},
+{
+    "Text": "¿Qué sucedió el 9 de julio de 1816 en Tucumán?",
+    "Options": [
+        "La Revolución de Mayo",
+        "La creación de la Bandera",
+        "La Batalla de San Lorenzo",
+        "La Declaración de la Independencia Argentina",
+        "El Cruce de los Andes",
+        "La formación del Primer Triunvirato",
+        "El Éxodo Jujeño",
+        "El Combate de San Martín con los realistas"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "El **9 de julio de 1816**, el Congreso reunido en Tucumán declaró oficialmente la **Independencia de las Provincias Unidas del Río de la Plata** del dominio español."
+},
+{
+    "Text": "¿Quién fue el creador de la escarapela nacional argentina?",
+    "Options": [
+        "Bernardino Rivadavia",
+        "Juan José Castelli",
+        "Manuel Belgrano",
+        "Cornelio Saavedra",
+        "José de San Martín",
+        "Juan Martín de Pueyrredón",
+        "Esteban de Luca",
+        "Domingo French"
+    ],
+    "CorrectAnswerIndex": 2,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "**Manuel Belgrano** propuso la creación de la **escarapela nacional argentina** en 1812 como símbolo distintivo de las tropas patriotas."
+},
+{
+    "Text": "¿Qué acontecimiento dio origen a la formación del Primer Gobierno Patrio en 1810?",
+    "Options": [
+        "La llegada de José de San Martín",
+        "La expulsión de los ingleses",
+        "La revolución francesa",
+        "La Revolución de Mayo",
+        "La declaración de la independencia",
+        "La invasión napoleónica a España",
+        "La Asamblea del Año XIII",
+        "La destitución del virrey Sobremonte"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "La **Revolución de Mayo**, ocurrida el 25 de mayo de 1810, dio origen al **Primer Gobierno Patrio**, desplazando al virrey y marcando el inicio del proceso independentista."
+},
+{
+    "Text": "¿Qué batalla libró San Martín en 1813 y fue su primera victoria militar destacada?",
+    "Options": [
+        "Batalla de Ayacucho",
+        "Batalla de Maipú",
+        "Batalla de San Lorenzo",
+        "Batalla de Salta",
+        "Batalla de Ituzaingó",
+        "Batalla de Tucumán",
+        "Batalla de Vilcapugio",
+        "Batalla de Chacabuco"
+    ],
+    "CorrectAnswerIndex": 2,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "La **Batalla de San Lorenzo**, librada el 3 de febrero de 1813, fue la primera victoria destacada de **San Martín** al mando del Regimiento de Granaderos a Caballo."
+},
+{
+    "Text": "¿Quién fue el creador de la bandera argentina?",
+    "Options": [
+        "José de San Martín",
+        "Juan José Paso",
+        "Domingo Faustino Sarmiento",
+        "Manuel Belgrano",
+        "Martín Miguel de Güemes",
+        "Cornelio Saavedra",
+        "Esteban Echeverría",
+        "Juan Manuel de Rosas"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "**Manuel Belgrano** creó la **bandera argentina** en 1812, inspirándose en los colores de la escarapela nacional."
+},
+{
+    "Text": "¿Qué fue el Cabildo Abierto del 22 de mayo de 1810?",
+    "Options": [
+        "Una sesión secreta entre militares",
+        "Una reunión para firmar la independencia",
+        "Una celebración religiosa",
+        "Una asamblea popular que debatió el futuro del virreinato",
+        "La jura del primer presidente",
+        "Un acuerdo entre las Provincias Unidas",
+        "Un tratado con Gran Bretaña",
+        "Una sublevación del ejército"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "El **Cabildo Abierto del 22 de mayo de 1810** fue una asamblea clave donde se debatió si el virrey debía continuar en el poder, lo que desembocó en la Revolución de Mayo."
+},
+{
+    "Text": "¿Qué prócer argentino lideró el éxodo jujeño en 1812?",
+    "Options": [
+        "Martín Miguel de Güemes",
+        "José de San Martín",
+        "Juan José Castelli",
+        "Manuel Belgrano",
+        "Domingo Matheu",
+        "Cornelio Saavedra",
+        "Juan Martín de Pueyrredón",
+        "Esteban de Luca"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "**Manuel Belgrano** lideró el **Éxodo Jujeño**, una retirada estratégica en 1812 donde se evacuó la ciudad de Jujuy para evitar que los realistas obtuvieran recursos."
+},
+{
+    "Text": "¿Qué significó la Asamblea del Año XIII para la historia argentina?",
+    "Options": [
+        "La elección del primer presidente",
+        "La creación de la escarapela nacional",
+        "La declaración de la independencia",
+        "Una serie de reformas políticas que sentaron las bases institucionales",
+        "La disolución del virreinato",
+        "La formación del Ejército de los Andes",
+        "El establecimiento del Congreso de Tucumán",
+        "La federalización de Buenos Aires"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "La **Asamblea del Año XIII** impulsó importantes reformas como la abolición de la esclavitud y la supresión de títulos nobiliarios, sentando bases institucionales clave para la futura independencia."
+},
+{
+    "Text": "¿Cuál es el punto más alto de la Argentina?",
+    "Options": [
+        "Cerro Fitz Roy",
+        "Volcán Lanín",
+        "Cerro Uritorco",
+        "Cerro Aconcagua",
+        "Cerro Champaquí",
+        "Cerro Catedral",
+        "Volcán Domuyo",
+        "Cerro Mercedario"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Geografía Argentina",
+    "Difficult": "Facil",
+    "Justification": "El **Cerro Aconcagua**, ubicado en la provincia de Mendoza, es el punto más alto de la Argentina y de América, con una altitud de 6.960 metros sobre el nivel del mar."
+},
+{
+    "Text": "¿Qué flor fue declarada como flor nacional argentina?",
+    "Options": [
+        "Ceibo",
+        "Lapacho",
+        "Jacarandá",
+        "Rosa",
+        "Girasol",
+        "Malvón",
+        "Lirio",
+        "Magnolia"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Símbolos Nacionales",
+    "Difficult": "Facil",
+    "Justification": "El **ceibo** fue declarado **flor nacional argentina** en 1942. Es nativo del país y se destaca por su color rojo intenso y su presencia en zonas ribereñas."
+},
+{
+    "Text": "¿Qué género musical es considerado tradicional y representativo de la Argentina?",
+    "Options": [
+        "Cueca",
+        "Samba",
+        "Tango",
+        "Cumbia",
+        "Salsa",
+        "Milonga",
+        "Rock nacional",
+        "Murga"
+    ],
+    "CorrectAnswerIndex": 2,
+    "Topic": "Cultura Argentina",
+    "Difficult": "Facil",
+    "Justification": "El **tango** es un género musical y una danza originada en el Río de la Plata, especialmente en Buenos Aires, y es reconocido como uno de los principales símbolos culturales argentinos."
+},
+{
+    "Text": "¿Qué científico argentino recibió el Premio Nobel de Medicina en 1947?",
+    "Options": [
+        "César Milstein",
+        "Luis Federico Leloir",
+        "Bernardo Houssay",
+        "René Favaloro",
+        "Julio Cortázar",
+        "Florentino Ameghino",
+        "Carlos Chagas",
+        "Héctor Croxatto"
+    ],
+    "CorrectAnswerIndex": 2,
+    "Topic": "Ciencia Argentina",
+    "Difficult": "Facil",
+    "Justification": "**Bernardo Houssay** fue galardonado con el **Premio Nobel de Medicina en 1947** por sus investigaciones sobre el rol de las hormonas en el metabolismo del azúcar."
+},
+{
+    "Text": "¿Qué selección nacional ganó la Copa Mundial de Fútbol de la FIFA en el año 2022?",
+    "Options": [
+        "Brasil",
+        "Francia",
+        "Alemania",
+        "Argentina",
+        "España",
+        "Inglaterra",
+        "Portugal",
+        "Italia"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Deportes",
+    "Difficult": "Facil",
+    "Justification": "La **Selección Argentina** ganó la **Copa Mundial de la FIFA 2022** en Catar, consagrándose campeona tras vencer a Francia en una emocionante final por penales."
+},
+{
+    "Text": "¿Cuál de los siguientes alimentos es considerado una comida típica tradicional argentina?",
+    "Options": [
+        "Tacos",
+        "Feijoada",
+        "Arepas",
+        "Empanadas",
+        "Pabellón criollo",
+        "Moqueca",
+        "Churrasco",
+        "Tamales"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Cultura Argentina",
+    "Difficult": "Facil",
+    "Justification": "Las **empanadas** son una comida tradicional muy popular en todo el país, especialmente en el norte argentino, con distintas variantes según la región."
+},
+{
+    "Text": "¿Cuál es la capital de la provincia de Córdoba?",
+    "Options": [
+        "Río Cuarto",
+        "Carlos Paz",
+        "Alta Gracia",
+        "Córdoba",
+        "Villa María",
+        "Jesús María",
+        "La Falda",
+        "Cosquín"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Geografía Argentina",
+    "Difficult": "Facil",
+    "Justification": "La **ciudad de Córdoba** es la capital de la provincia homónima y una de las más importantes del país por su historia, cultura y universidades."
+},
+{
+    "Text": "¿Quién fue el primer presidente constitucional de la Argentina?",
+    "Options": [
+        "Domingo Faustino Sarmiento",
+        "Manuel Belgrano",
+        "Bartolomé Mitre",
+        "Bernardino Rivadavia",
+        "Justo José de Urquiza",
+        "Juan Manuel de Rosas",
+        "Julio Argentino Roca",
+        "Hipólito Yrigoyen"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "**Bernardino Rivadavia** fue el primer presidente constitucional de las Provincias Unidas del Río de la Plata, aunque su poder fue limitado y no reconocido por todas las provincias."
+},
+{
+    "Text": "¿Qué escritor argentino es autor del cuento 'El Aleph'?",
+    "Options": [
+        "Julio Cortázar",
+        "Roberto Arlt",
+        "Adolfo Bioy Casares",
+        "Jorge Luis Borges",
+        "Ricardo Piglia",
+        "Manuel Puig",
+        "Ernesto Sabato",
+        "Leopoldo Lugones"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Literatura Argentina",
+    "Difficult": "Facil",
+    "Justification": "**Jorge Luis Borges** escribió 'El Aleph', uno de sus cuentos más famosos, publicado por primera vez en 1945 y luego incluido en una colección homónima."
+},
+{
+    "Text": "¿Qué película argentina ganó el Óscar a Mejor Película Extranjera en 1986?",
+    "Options": [
+        "El secreto de sus ojos",
+        "La historia oficial",
+        "Relatos salvajes",
+        "Nueve reinas",
+        "El clan",
+        "Kamchatka",
+        "El hijo de la novia",
+        "Carancho"
+    ],
+    "CorrectAnswerIndex": 1,
+    "Topic": "Cine Argentino",
+    "Difficult": "Facil",
+    "Justification": "**La historia oficial**, dirigida por Luis Puenzo, fue la primera película argentina en ganar un **Premio Óscar** a Mejor Película Extranjera en 1986."
+},
+{
+    "Text": "¿Qué bebida es considerada tradicional y representativa de la cultura argentina?",
+    "Options": [
+        "Té verde",
+        "Café con leche",
+        "Agua de coco",
+        "Mate",
+        "Fernet con coca",
+        "Té de hibiscus",
+        "Chicha",
+        "Jugo de naranja"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Cultura Argentina",
+    "Difficult": "Facil",
+    "Justification": "El **mate** es una infusión típica de la Argentina, elaborada con hojas de yerba mate y compartida socialmente en todo el país."
+},
+{
+    "Text": "¿Quién es conocido como el máximo exponente del cuarteto en la Argentina?",
+    "Options": [
+        "Charly García",
+        "Abel Pintos",
+        "Gustavo Cerati",
+        "Carlos 'La Mona' Jiménez",
+        "Andrés Calamaro",
+        "Rodrigo Bueno",
+        "Soledad Pastorutti",
+        "Fito Páez"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Música Argentina",
+    "Difficult": "Facil",
+    "Justification": "**Carlos 'La Mona' Jiménez** es considerado el mayor exponente del **cuarteto**, un género musical muy popular especialmente en Córdoba."
+},
+{
+    "Text": "¿Quién pintó la serie de cuadros conocida como 'Juanito Laguna'?",
+    "Options": [
+        "Antonio Berni",
+        "Xul Solar",
+        "Benito Quinquela Martín",
+        "Emilio Pettoruti",
+        "Prilidiano Pueyrredón",
+        "Florencio Molina Campos",
+        "Eduardo Sívori",
+        "León Ferrari"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Arte Argentino",
+    "Difficult": "Facil",
+    "Justification": "**Antonio Berni** creó la serie de obras de arte sobre **Juanito Laguna**, un niño de los barrios humildes, utilizando pintura y materiales reciclados como denuncia social."
+},
+{
+    "Text": "¿Qué día se celebra el Día de la Tradición en Argentina?",
+    "Options": [
+        "25 de mayo",
+        "9 de julio",
+        "1 de marzo",
+        "10 de noviembre",
+        "5 de agosto",
+        "20 de junio",
+        "24 de septiembre",
+        "17 de agosto"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Cultura Argentina",
+    "Difficult": "Facil",
+    "Justification": "El **10 de noviembre** se celebra el **Día de la Tradición** en honor al nacimiento de **José Hernández**, autor del 'Martín Fierro', obra emblemática de la literatura gauchesca."
+},
+{
+    "Text": "¿Cuál de las siguientes danzas es tradicional del folklore argentino?",
+    "Options": [
+        "Salsa",
+        "Cueca chilena",
+        "Tango electrónico",
+        "Zamba",
+        "Pasodoble",
+        "Samba brasileña",
+        "Merengue",
+        "Cumbia villera"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Folklore Argentino",
+    "Difficult": "Facil",
+    "Justification": "La **zamba** es una danza tradicional del **folklore argentino**, especialmente del noroeste del país, que se baila en pareja con pañuelos."
+},
+{
+    "Text": "¿Cuál de los siguientes platos es típico de los asados argentinos?",
+    "Options": [
+        "Pabellón criollo",
+        "Feijoada",
+        "Bandeja paisa",
+        "Choripán",
+        "Tamales",
+        "Arepas",
+        "Tacos al pastor",
+        "Ceviche"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Cultura Argentina",
+    "Difficult": "Facil",
+    "Justification": "El **choripán** es un clásico del **asado argentino**, compuesto por chorizo asado dentro de un pan, muchas veces acompañado de chimichurri."
+},
+{
+    "Text": "¿Quién fue Diego Armando Maradona?",
+    "Options": [
+        "Un actor de cine argentino",
+        "Un científico premiado",
+        "Un presidente argentino",
+        "Un futbolista considerado entre los mejores del mundo",
+        "Un pintor surrealista",
+        "Un poeta gauchesco",
+        "Un cantante de tango",
+        "Un piloto de Fórmula 1"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Deportes y Cultura",
+    "Difficult": "Facil",
+    "Justification": "**Diego Armando Maradona** fue un **futbolista argentino** reconocido a nivel mundial, especialmente por su actuación en el Mundial de 1986, donde ganó la Copa del Mundo con Argentina."
+},
+{
+    "Text": "¿Qué día de la semana es típico para comer pastas en muchas familias argentinas?",
+    "Options": [
+        "Lunes",
+        "Martes",
+        "Miércoles",
+        "Domingo",
+        "Viernes",
+        "Sábado",
+        "Jueves",
+        "Martes y jueves"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Costumbres Argentinas",
+    "Difficult": "Facil",
+    "Justification": "En muchas familias argentinas es costumbre comer **pastas los domingos**, como un ritual familiar acompañado de salsa y queso rallado."
+},
+{
+    "Text": "¿Qué se celebra en Argentina el 20 de junio?",
+    "Options": [
+        "Día de la Independencia",
+        "Día del Trabajador",
+        "Día de la Democracia",
+        "Día de la Bandera",
+        "Día de la Revolución de Mayo",
+        "Día del Estudiante",
+        "Día del Veterano de Malvinas",
+        "Día de la Tradición"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Efemérides Argentinas",
+    "Difficult": "Facil",
+    "Justification": "El **20 de junio** se celebra el **Día de la Bandera Argentina**, en conmemoración al fallecimiento de su creador, **Manuel Belgrano**."
+},
+{
+    "Text": "¿Qué significa 'bondi' en la jerga argentina?",
+    "Options": [
+        "Comida",
+        "Dinero",
+        "Taxi",
+        "Colectivo (autobús)",
+        "Policía",
+        "Trabajo",
+        "Amigo",
+        "Cigarrillo"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Lengua y Cultura Popular",
+    "Difficult": "Facil",
+    "Justification": "En el lenguaje coloquial argentino, **'bondi'** es una manera informal de decir **colectivo o autobús**."
+},
+{
+    "Text": "¿Qué revolucionario argentino es conocido mundialmente por su participación en la Revolución Cubana?",
+    "Options": [
+        "Juan Domingo Perón",
+        "Domingo Faustino Sarmiento",
+        "Manuel Belgrano",
+        "Ernesto 'Che' Guevara",
+        "Bernardino Rivadavia",
+        "José de San Martín",
+        "Hipólito Yrigoyen",
+        "Martín Miguel de Güemes"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Personajes Argentinos",
+    "Difficult": "Facil",
+    "Justification": "**Ernesto 'Che' Guevara** fue un médico y revolucionario argentino, conocido por su papel fundamental en la **Revolución Cubana** junto a Fidel Castro."
+},
+{
+    "Text": "¿Quién es conocido como el Libertador de Argentina, Chile y Perú?",
+    "Options": [
+        "Simón Bolívar",
+        "Manuel Belgrano",
+        "Domingo Sarmiento",
+        "José de San Martín",
+        "Martín Miguel de Güemes",
+        "Juan Lavalle",
+        "Artigas",
+        "Juan Manuel de Rosas"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Personajes Argentinos",
+    "Difficult": "Facil",
+    "Justification": "El **General José de San Martín** lideró campañas militares fundamentales para la independencia de Argentina, Chile y Perú, y es considerado un prócer continental."
+},
+{
+    "Text": "¿Cuál es el nombre del Papa argentino elegido en 2013?",
+    "Options": [
+        "Juan Pablo II",
+        "Benedicto XVI",
+        "Francisco",
+        "Pío XII",
+        "León XIII",
+        "Gregorio XVI",
+        "Juan XXIII",
+        "Pedro I"
+    ],
+    "CorrectAnswerIndex": 2,
+    "Topic": "Personajes Argentinos",
+    "Difficult": "Facil",
+    "Justification": "El Papa **Francisco**, cuyo nombre real es **Jorge Mario Bergoglio**, fue elegido en 2013 y es el primer pontífice argentino y latinoamericano de la historia."
+},
+{
+    "Text": "¿Qué futbolista argentino es famoso por el 'Gol del Siglo' y la 'Mano de Dios' en el Mundial de 1986?",
+    "Options": [
+        "Mario Kempes",
+        "Carlos Tévez",
+        "Gabriel Batistuta",
+        "Diego Maradona",
+        "Juan Román Riquelme",
+        "Sergio Agüero",
+        "Javier Zanetti",
+        "Oscar Ruggeri"
+    ],
+    "CorrectAnswerIndex": 3,
+    "Topic": "Personajes Argentinos",
+    "Difficult": "Facil",
+    "Justification": "**Diego Maradona** hizo historia en el Mundial de México 1986 al anotar dos de los goles más famosos: la **'Mano de Dios'** y el **'Gol del Siglo'** contra Inglaterra."
+},
+{
+    "Text": "¿Qué médico argentino ganó el Premio Nobel de Medicina en 1947?",
+    "Options": [
+        "Luis Agote",
+        "Bernardo Houssay",
+        "César Milstein",
+        "René Favaloro",
+        "Carlos Saavedra Lamas",
+        "Julio Palmaz",
+        "Domingo Liotta",
+        "Florencio Escardó"
+    ],
+    "CorrectAnswerIndex": 1,
+    "Topic": "Personajes Argentinos",
+    "Difficult": "Facil",
+    "Justification": "El médico **Bernardo Houssay** fue galardonado con el **Premio Nobel de Medicina en 1947** por sus investigaciones sobre las hormonas y el metabolismo del azúcar."
+},
+{
+    "Text": "¿Quién fue la primera mujer presidenta de la Argentina elegida por el voto popular?",
+    "Options": [
+        "Alicia Kirchner",
+        "Eva Perón",
+        "Cristina Fernández de Kirchner",
+        "María Estela Martínez de Perón",
+        "Victoria Donda",
+        "Gabriela Michetti",
+        "Lilita Carrió",
+        "Patricia Bullrich"
+    ],
+    "CorrectAnswerIndex": 2,
+    "Topic": "Personajes Argentinos",
+    "Difficult": "Facil",
+    "Justification": "**Cristina Fernández de Kirchner** fue la **primera mujer elegida por el voto popular** para la presidencia de la Nación, cargo que ocupó entre 2007 y 2015."
+},
+{
+    "Text": "¿Qué artista pop argentina comenzó su carrera en programas infantiles y luego triunfó internacionalmente con su música?",
+    "Options": [
+        "Tini Stoessel",
+        "Lali Espósito",
+        "Natalie Pérez",
+        "María Becerra",
+        "Brenda Asnicar",
+        "Cazzu",
+        "Ángela Torres",
+        "Jimena Barón"
+    ],
+    "CorrectAnswerIndex": 1,
+    "Topic": "Personajes Argentinos",
+    "Difficult": "Facil",
+    "Justification": "**Lali Espósito** comenzó su carrera en series infantiles como *Casi Ángeles*, y luego se convirtió en una de las **figuras más importantes del pop argentino** a nivel internacional."
+},
+{
+    "Text": "¿Qué médico argentino es reconocido por haber desarrollado la técnica del bypass coronario?",
+    "Options": [
+        "Luis Federico Leloir",
+        "César Milstein",
+        "René Favaloro",
+        "Bernardo Houssay",
+        "Carlos Saavedra Lamas",
+        "Julio Palmaz",
+        "Domingo Liotta",
+        "Pedro Cahn"
+    ],
+    "CorrectAnswerIndex": 2,
+    "Topic": "Personajes Argentinos",
+    "Difficult": "Facil",
+    "Justification": "El médico argentino **René Favaloro** fue reconocido mundialmente por haber desarrollado la **técnica del bypass coronario** en 1967, revolucionando la cirugía cardiovascular."
+},
+{
+    "Text": "¿Quién fue el presidente argentino conocido por fundar el movimiento político llamado peronismo?",
+    "Options": [
+        "Juan Domingo Perón",
+        "Hipólito Yrigoyen",
+        "Arturo Illia",
+        "Raúl Alfonsín",
+        "Domingo Faustino Sarmiento",
+        "Carlos Menem",
+        "Néstor Kirchner",
+        "Bartolomé Mitre"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "Juan Domingo Perón fue el fundador del peronismo, un movimiento político muy influyente en la historia argentina."
+},
+{
+    "Text": "¿Quién fue Eva Perón, conocida popularmente como Evita?",
+    "Options": [
+        "Primera presidenta argentina",
+        "Esposa de Juan Domingo Perón y líder social",
+        "Presidenta de la Corte Suprema",
+        "Revolucionaria durante la guerra civil",
+        "Gobernadora de Buenos Aires",
+        "Escritora famosa de la época",
+        "Actriz internacional",
+        "Primera mujer diputada"
+    ],
+    "CorrectAnswerIndex": 1,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "Eva Perón fue la esposa de Juan Domingo Perón y una líder social muy querida, conocida por su trabajo con los trabajadores y los más pobres."
+},
+{
+    "Text": "¿Quién asumió la presidencia argentina en 1973 luego de la vuelta del peronismo al poder?",
+    "Options": [
+        "Héctor Cámpora",
+        "Carlos Menem",
+        "Raúl Alfonsín",
+        "Arturo Frondizi",
+        "Isabel Perón",
+        "Ricardo Balbín",
+        "Jorge Rafael Videla",
+        "Domingo Cavallo"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "Héctor Cámpora asumió la presidencia en 1973 tras la vuelta del peronismo al poder, abriendo paso al retorno de Juan Domingo Perón."
+},
+{
+    "Text": "¿Quién fue Juan Manuel de Rosas en la historia argentina?",
+    "Options": [
+        "Un caudillo y gobernador de Buenos Aires en el siglo XIX",
+        "El primer presidente de Argentina",
+        "Un héroe de la independencia",
+        "Un poeta y escritor reconocido",
+        "Un líder de la Revolución de Mayo",
+        "Un general británico durante las invasiones inglesas",
+        "Un político radical de principios del siglo XX",
+        "Un diplomático argentino en Europa"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "Juan Manuel de Rosas fue un caudillo que gobernó la provincia de Buenos Aires con gran poder durante la primera mitad del siglo XIX."
+},
+{
+    "Text": "¿Qué presidente argentino fue fundamental en la sanción de la Constitución Nacional de 1853?",
+    "Options": [
+        "Justo José de Urquiza",
+        "Domingo Faustino Sarmiento",
+        "Bernardino Rivadavia",
+        "José de San Martín",
+        "Hipólito Yrigoyen",
+        "Carlos Pellegrini",
+        "Juan Domingo Perón",
+        "Juan Manuel de Rosas"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "Justo José de Urquiza fue clave para la sanción de la Constitución Nacional en 1853, sentando las bases legales del Estado argentino."
+},
+{
+    "Text": "¿Cuál era el nombre completo de Evita, la esposa de Juan Domingo Perón?",
+    "Options": [
+        "María Eva Duarte",
+        "Eva Perón",
+        "María Eva González",
+        "Eva María Sosa",
+        "Eva Fernández",
+        "María Juana Perón",
+        "Eva Rojas",
+        "María Eva Rosas"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "El nombre completo de Evita era María Eva Duarte, conocida popularmente como Eva Perón."
+},
+{
+    "Text": "¿En qué año asumió Juan Domingo Perón por primera vez como presidente de Argentina?",
+    "Options": [
+        "1946",
+        "1930",
+        "1955",
+        "1940",
+        "1935",
+        "1948",
+        "1950",
+        "1960"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "Juan Domingo Perón asumió la presidencia por primera vez en 1946."
+},
+{
+    "Text": "¿Qué cargo político ocupó Héctor Cámpora antes de asumir la presidencia en 1973?",
+    "Options": [
+        "Diputado nacional",
+        "Gobernador de Buenos Aires",
+        "Ministro de Economía",
+        "Intendente de La Plata",
+        "Senador nacional",
+        "Jefe de la Policía Federal",
+        "Canciller",
+        "Presidente del Partido Justicialista"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "Antes de ser presidente, Héctor Cámpora fue diputado nacional."
+},
+{
+    "Text": "¿Qué batalla fue decisiva para la caída del poder de Juan Manuel de Rosas?",
+    "Options": [
+        "Batalla de Caseros",
+        "Batalla de San Lorenzo",
+        "Batalla de Maipú",
+        "Batalla de Tucumán",
+        "Batalla de Cepeda",
+        "Batalla de Pavón",
+        "Batalla de Chacabuco",
+        "Batalla de Salta"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "La Batalla de Caseros en 1852 fue la que terminó con el gobierno de Rosas."
+},
+{
+    "Text": "¿Qué importante logro se atribuye a Justo José de Urquiza?",
+    "Options": [
+        "Convocar al Congreso Constituyente que sancionó la Constitución de 1853",
+        "Fundar la Universidad de Buenos Aires",
+        "Ser primer presidente argentino electo",
+        "Encabezar la independencia de Argentina",
+        "Liderar la guerra contra Brasil",
+        "Crear el Partido Radical",
+        "Ser gobernador de Santa Fe",
+        "Firmar el tratado de paz con Chile"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "Urquiza convocó al Congreso Constituyente que sancionó la Constitución Nacional en 1853."
+},
+{
+    "Text": "¿Qué cargo ocupó Juan Domingo Perón antes de ser presidente por primera vez?",
+    "Options": [
+        "Secretario de Trabajo y Previsión",
+        "Ministro de Defensa",
+        "Jefe de la Policía",
+        "Canciller",
+        "Gobernador de Buenos Aires",
+        "Diputado Nacional",
+        "Senador",
+        "Presidente del Partido Justicialista"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "Antes de ser presidente, Perón fue Secretario de Trabajo y Previsión, cargo desde donde ganó gran popularidad."
+},
+{
+    "Text": "¿Cuál era el verdadero nombre de 'Evita', la famosa esposa de Perón?",
+    "Options": [
+        "María Eva Duarte",
+        "María Eugenia Perón",
+        "Eva González",
+        "Eva Martínez",
+        "María Elena Duarte",
+        "Eva Rojas",
+        "María Isabel Perón",
+        "Eva Fernández"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "El nombre completo de Evita era María Eva Duarte, antes de casarse con Juan Domingo Perón."
+},
+{
+    "Text": "¿Qué presidente argentino asumió tras la renuncia de Héctor Cámpora en 1973?",
+    "Options": [
+        "Juan Domingo Perón",
+        "Isabel Perón",
+        "Raúl Alfonsín",
+        "Carlos Menem",
+        "Arturo Frondizi",
+        "Carlos Saúl Ménem",
+        "Ricardo Balbín",
+        "Víctor Martínez"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "Tras la renuncia de Cámpora, Perón regresó y asumió la presidencia por tercera vez en 1973."
+},
+{
+    "Text": "¿Qué provincia gobernó Juan Manuel de Rosas durante gran parte de su mandato?",
+    "Options": [
+        "Buenos Aires",
+        "Córdoba",
+        "Santa Fe",
+        "Mendoza",
+        "Tucumán",
+        "Salta",
+        "Corrientes",
+        "Entre Ríos"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "Juan Manuel de Rosas fue gobernador de la provincia de Buenos Aires durante varias décadas."
+},
+{
+    "Text": "¿Cuál fue el rol político más importante de Justo José de Urquiza en Argentina?",
+    "Options": [
+        "Presidente de la Confederación Argentina",
+        "Gobernador de Mendoza",
+        "Jefe del Ejército Nacional",
+        "Presidente de la Cámara de Diputados",
+        "Senador por Buenos Aires",
+        "Ministro de Relaciones Exteriores",
+        "Presidente de la Corte Suprema",
+        "Intendente de Rosario"
+    ],
+    "CorrectAnswerIndex": 0,
+    "Topic": "Historia Argentina",
+    "Difficult": "Facil",
+    "Justification": "Urquiza fue presidente de la Confederación Argentina tras la caída de Rosas."
+}
+]
