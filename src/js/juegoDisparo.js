@@ -10,10 +10,21 @@ let gameState = {
     spawnTimer: null
 };
 
-// Sistema de Audio
+// Sistema de Audio Corregido
+// Sistema de Audio Corregido
 const audioSystem = {
     sounds: {},
-    muted: false,
+    music: {
+        welcome: null,    
+        game: null,       
+        gameOver: null    
+    },
+    currentMusic: null,   
+    sfxMuted: false,
+    musicMuted: false,
+    sfxVolume: 0.7,
+    musicVolume: 0.5,
+    panelOpen: false,
     
     // Inicializar todos los sonidos
     init() {
@@ -23,53 +34,456 @@ const audioSystem = {
             point: './src/audio/gameHornerito/game_point.mp3',
             victory: './src/audio/gameHornerito/game_victory.mp3',
             error: './src/audio/gameHornerito/game_error.mp3',
-            gameOver: './src/audio/gameHornerito/game_gameover.mp3'
         };
         
-        // Precargar todos los audios
+        // Inicializar múltiples músicas de fondo
+        const musicFiles = {
+            welcome: './src/audio/gameHornerito/game_song.mp3',
+            game: './src/audio/gameHornerito/game_songGAME.mp3',
+            gameOver: './src/audio/gameHornerito/game_songGameOver.mp3'
+        };
+        
+        // CORREGIDO: Inicializar músicas correctamente
+        Object.keys(musicFiles).forEach(key => {
+            this.music[key] = new Audio(musicFiles[key]);
+            this.music[key].preload = 'auto';
+            this.music[key].volume = this.musicVolume;
+            this.music[key].loop = true;
+            
+            // Eventos para debugging
+            this.music[key].addEventListener('loadstart', () => {
+                console.log(`Cargando música: ${key}`);
+            });
+            
+            this.music[key].addEventListener('canplay', () => {
+                console.log(`Música lista para reproducir: ${key}`);
+            });
+            
+            this.music[key].addEventListener('error', (e) => {
+                console.error(`Error cargando música ${key}:`, e);
+            });
+            
+            this.music[key].addEventListener('play', () => {
+                console.log(`Reproduciendo música: ${key}`);
+            });
+        });
+
+        // Precargar efectos de sonido
         Object.keys(soundFiles).forEach(key => {
             this.sounds[key] = new Audio(soundFiles[key]);
             this.sounds[key].preload = 'auto';
-            this.sounds[key].volume = 0.7; // Volumen por defecto
+            this.sounds[key].volume = this.sfxVolume;
             
-            // Manejo de errores de carga
-            this.sounds[key].onerror = () => {
-                console.warn(`No se pudo cargar el audio: ${soundFiles[key]}`);
-            };
+            this.sounds[key].addEventListener('error', (e) => {
+                console.error(`Error cargando sonido ${key}:`, e);
+            });
         });
         
         console.log('Sistema de audio inicializado');
+        this.setupAudioControls();
     },
     
-    // Reproducir un sonido específico
+    // Reproducir un efecto de sonido específico
     play(soundName) {
-        if (this.muted) return;
+        if (this.sfxMuted) return;
         
         const sound = this.sounds[soundName];
         if (sound) {
-            // Reiniciar el audio si ya se está reproduciendo
             sound.currentTime = 0;
+            sound.volume = this.sfxVolume;
+            
+            // Promesa para manejar errores de reproducción
             sound.play().catch(error => {
                 console.warn(`Error al reproducir ${soundName}:`, error);
+                // Si falla, intentar habilitar audio con interacción del usuario
+                this.requestAudioPermission();
             });
         } else {
             console.warn(`Sonido no encontrado: ${soundName}`);
         }
     },
-    
-    // Alternar mute
-    toggleMute() {
-        this.muted = !this.muted;
-        console.log('Audio', this.muted ? 'silenciado' : 'activado');
+
+    // NUEVO: Función para solicitar permisos de audio
+    requestAudioPermission() {
+        if (!this.audioUnlocked) {
+            console.log('Solicitando permisos de audio...');
+            // Crear un evento de click temporal para desbloquear audio
+            const unlockAudio = () => {
+                // Intentar reproducir un sonido silencioso
+                Object.values(this.sounds).forEach(sound => {
+                    if (sound) {
+                        sound.play().then(() => {
+                            sound.pause();
+                            sound.currentTime = 0;
+                        }).catch(() => {});
+                    }
+                });
+                
+                // Intentar con la música también
+                Object.values(this.music).forEach(music => {
+                    if (music) {
+                        music.play().then(() => {
+                            music.pause();
+                            music.currentTime = 0;
+                        }).catch(() => {});
+                    }
+                });
+                
+                this.audioUnlocked = true;
+                console.log('Audio desbloqueado');
+                document.removeEventListener('click', unlockAudio);
+                document.removeEventListener('touchstart', unlockAudio);
+            };
+            
+            document.addEventListener('click', unlockAudio);
+            document.addEventListener('touchstart', unlockAudio);
+        }
+    },
+
+    startWelcomeMusic() {
+        this.playSpecificMusic('welcome');
     },
     
-    // Ajustar volumen general
-    setVolume(volume) {
+    startGameMusic() {
+        this.playSpecificMusic('game');
+    },
+    
+    startGameOverMusic() {
+        this.playSpecificMusic('gameOver');
+    },
+    
+    // Reproducir música de fondo
+    playMusic() {
+        this.startGameMusic();
+    },
+
+    playSpecificMusic(musicType) {
+        if (this.musicMuted) return;
+        
+        console.log(`Intentando reproducir música: ${musicType}`);
+        
+        // Pausar música actual si existe
+        if (this.currentMusic && !this.currentMusic.paused) {
+            console.log('Pausando música actual');
+            this.currentMusic.pause();
+            this.currentMusic.currentTime = 0;
+        }
+        
+        // Reproducir nueva música
+        const targetMusic = this.music[musicType];
+        if (targetMusic) {
+            this.currentMusic = targetMusic;
+            targetMusic.volume = this.musicVolume;
+            
+            // Promesa para manejar la reproducción
+            targetMusic.play()
+                .then(() => {
+                    console.log(`Música ${musicType} reproduciéndose correctamente`);
+                })
+                .catch(error => {
+                    console.error(`Error al reproducir música ${musicType}:`, error);
+                    console.log('Posibles causas: archivos no encontrados, permisos de audio, o autoplay bloqueado');
+                    
+                    // Intentar desbloquear audio
+                    this.requestAudioPermission();
+                });
+        } else {
+            console.error(`Música no encontrada: ${musicType}`);
+        }
+    },
+    
+    // Pausar música de fondo
+    pauseMusic() {
+        if (this.currentMusic && !this.currentMusic.paused) {
+            console.log('Pausando música');
+            this.currentMusic.pause();
+        }
+    },
+    
+    // Detener música de fondo
+    stopMusic() {
+        if (this.currentMusic) {
+            console.log('Deteniendo música');
+            this.currentMusic.pause();
+            this.currentMusic.currentTime = 0;
+            this.currentMusic = null;
+        }
+    },
+    
+    // Configurar todos los controles de audio
+    setupAudioControls() {
+        const audioToggleBtn = document.getElementById('audioToggleBtn');
+        
+        if (audioToggleBtn) {
+            audioToggleBtn.addEventListener('click', () => {
+                this.togglePanel();
+            });
+            console.log('Event listener agregado al botón de audio');
+        } else {
+            console.warn('Botón audioToggleBtn no encontrado en el DOM');
+        }
+        
+        this.setupSFXControls();
+        this.setupMusicControls();
+        this.updateVolumeIndicators();
+        this.updateUI();
+        
+        // NUEVO: Desbloquear audio en la primera interacción
+        this.requestAudioPermission();
+    },
+    
+    // Configurar controles de efectos de sonido
+    setupSFXControls() {
+        const sfxMuteBtn = document.getElementById('sfxMuteBtn');
+        const sfxVolumeSlider = document.getElementById('sfxVolumeSlider');
+        
+        if (sfxMuteBtn) {
+            sfxMuteBtn.addEventListener('click', () => {
+                this.toggleSFXMute();
+            });
+        } else {
+            console.warn('Botón sfxMuteBtn no encontrado');
+        }
+        
+        if (sfxVolumeSlider) {
+            sfxVolumeSlider.addEventListener('input', (e) => {
+                this.setSFXVolume(e.target.value / 100);
+            });
+        } else {
+            console.warn('Slider sfxVolumeSlider no encontrado');
+        }
+    },
+    
+    // Configurar controles de música
+    setupMusicControls() {
+        const musicMuteBtn = document.getElementById('musicMuteBtn');
+        const musicVolumeSlider = document.getElementById('musicVolumeSlider');
+        
+        if (musicMuteBtn) {
+            musicMuteBtn.addEventListener('click', () => {
+                this.toggleMusicMute();
+            });
+        } else {
+            console.warn('Botón musicMuteBtn no encontrado');
+        }
+        
+        if (musicVolumeSlider) {
+            musicVolumeSlider.addEventListener('input', (e) => {
+                this.setMusicVolume(e.target.value / 100);
+            });
+        } else {
+            console.warn('Slider musicVolumeSlider no encontrado');
+        }
+    },
+    
+    // Toggle del panel
+    togglePanel() {
+        console.log('Toggling panel, estado actual:', this.panelOpen);
+        if (this.panelOpen) {
+            this.closePanel();
+        } else {
+            this.openPanel();
+        }
+    },
+
+    // Abrir panel
+    openPanel() {
+        this.panelOpen = true;
+        this.updateUI();
+        console.log('Panel de audio abierto');
+    },
+
+    // Cerrar panel
+    closePanel() {
+        this.panelOpen = false;
+        this.updateUI();
+        console.log('Panel de audio cerrado');
+    },
+
+    // Actualizar la UI del panel
+    updateUI() {
+        const audioControls = document.getElementById('audioControls');
+        
+        if (audioControls) {
+            if (this.panelOpen) {
+                audioControls.style.display = 'flex';
+            } else {
+                audioControls.style.display = 'none';
+            }
+        } else {
+            console.warn('Elemento audioControls no encontrado');
+        }
+    },
+    
+    // Toggle mute para efectos de sonido
+    toggleSFXMute() {
+        this.sfxMuted = !this.sfxMuted;
+        this.updateSFXButton();
+        console.log('Efectos de sonido', this.sfxMuted ? 'silenciados' : 'activados');
+    },
+    
+    // Toggle mute para música
+    toggleMusicMute() {
+        this.musicMuted = !this.musicMuted;
+        
+        if (this.musicMuted) {
+            this.pauseMusic();
+        } else if (this.currentMusic) {
+            this.currentMusic.play().catch(error => {
+                console.warn('Error al reanudar música:', error);
+            });
+        }
+        
+        this.updateMusicButton();
+        console.log('Música', this.musicMuted ? 'silenciada' : 'activada');
+    },
+    
+    // Establecer volumen de efectos de sonido
+    setSFXVolume(volume) {
+        this.sfxVolume = Math.max(0, Math.min(1, volume));
+        
         Object.values(this.sounds).forEach(sound => {
-            sound.volume = Math.max(0, Math.min(1, volume));
+            if (sound) sound.volume = this.sfxVolume;
         });
+        
+        this.updateVolumeIndicators();
+        console.log('Volumen SFX:', this.sfxVolume);
+    },
+    
+    // Establecer volumen de música
+    setMusicVolume(volume) {
+        this.musicVolume = Math.max(0, Math.min(1, volume));
+        
+        Object.values(this.music).forEach(music => {
+            if (music) music.volume = this.musicVolume;
+        });
+        
+        this.updateVolumeIndicators();
+        console.log('Volumen música:', this.musicVolume);
+    },
+
+    // Actualizar botón de efectos de sonido
+    updateSFXButton() {
+        const sfxMuteBtn = document.getElementById('sfxMuteBtn');
+        if (sfxMuteBtn) {
+            sfxMuteBtn.textContent = this.sfxMuted ? '🔇' : '🔊';
+            sfxMuteBtn.title = this.sfxMuted ? 'Activar efectos de sonido' : 'Mutear efectos de sonido';
+        }
+    },
+    
+    // Actualizar botón de música
+    updateMusicButton() {
+        const musicMuteBtn = document.getElementById('musicMuteBtn');
+        if (musicMuteBtn) {
+            musicMuteBtn.textContent = this.musicMuted ? '🔇' : '🎵';
+            musicMuteBtn.title = this.musicMuted ? 'Activar música' : 'Mutear música';
+        }
+    },
+    
+    // Actualizar indicadores de volumen
+    updateVolumeIndicators() {
+        const sfxIndicator = document.getElementById('sfxVolumeIndicator');
+        const musicIndicator = document.getElementById('musicVolumeIndicator');
+        
+        if (sfxIndicator) {
+            sfxIndicator.textContent = Math.round(this.sfxVolume * 100) + '%';
+        }
+        
+        if (musicIndicator) {
+            musicIndicator.textContent = Math.round(this.musicVolume * 100) + '%';
+        }
+        
+        const sfxSlider = document.getElementById('sfxVolumeSlider');
+        const musicSlider = document.getElementById('musicVolumeSlider');
+        
+        if (sfxSlider) {
+            sfxSlider.value = this.sfxVolume * 100;
+        }
+        
+        if (musicSlider) {
+            musicSlider.value = this.musicVolume * 100;
+        }
+    },
+    
+    // NUEVO: Función de diagnóstico
+    diagnose() {
+        console.log('=== DIAGNÓSTICO DE AUDIO ===');
+        console.log('SFX Muted:', this.sfxMuted);
+        console.log('Music Muted:', this.musicMuted);
+        console.log('SFX Volume:', this.sfxVolume);
+        console.log('Music Volume:', this.musicVolume);
+        console.log('Current Music:', this.currentMusic);
+        
+        console.log('Archivos de música cargados:');
+        Object.keys(this.music).forEach(key => {
+            const music = this.music[key];
+            if (music) {
+                console.log(`  ${key}:`, {
+                    src: music.src,
+                    readyState: music.readyState,
+                    error: music.error,
+                    paused: music.paused,
+                    volume: music.volume
+                });
+            }
+        });
+        
+        console.log('Archivos de sonido cargados:');
+        Object.keys(this.sounds).forEach(key => {
+            const sound = this.sounds[key];
+            if (sound) {
+                console.log(`  ${key}:`, {
+                    src: sound.src,
+                    readyState: sound.readyState,
+                    error: sound.error
+                });
+            }
+        });
+        console.log('=== FIN DIAGNÓSTICO ===');
     }
 };
+
+// Función corregida para cerrar el panel al hacer clic fuera
+document.addEventListener('click', function(e) {
+    const audioControlPanel = document.getElementById('audioControlPanel');
+    const audioToggleBtn = document.getElementById('audioToggleBtn');
+    
+    // Solo cerrar si el panel está abierto y el clic no es en el panel o en el botón
+    if (audioSystem.panelOpen && 
+        audioControlPanel && 
+        !audioControlPanel.contains(e.target) && 
+        !audioToggleBtn.contains(e.target)) {
+        audioSystem.closePanel();
+    }
+});
+
+// Función para manejar teclas de acceso rápido
+document.addEventListener('keydown', function(e) {
+    // M para mutear/desmutear efectos de sonido
+    if (e.key === 'm' || e.key === 'M') {
+        if (!e.ctrlKey && !e.altKey) {
+            audioSystem.toggleSFXMute();
+            e.preventDefault();
+        }
+    }
+    
+    // N para mutear/desmutear música
+    if (e.key === 'n' || e.key === 'N') {
+        if (!e.ctrlKey && !e.altKey) {
+            audioSystem.toggleMusicMute();
+            e.preventDefault();
+        }
+    }
+    
+    // A para abrir/cerrar panel de audio
+    if (e.key === 'a' || e.key === 'A') {
+        if (!e.ctrlKey && !e.altKey) {
+            audioSystem.togglePanel();
+            e.preventDefault();
+        }
+    }
+});
+
 
 const damageStyles = `
     @keyframes damageFlash {
@@ -194,10 +608,16 @@ const badMessages = ['¡Mal!', '¡Cuidado!', '¡Error!', '¡No dispares a los am
 document.addEventListener('DOMContentLoaded', function() {
     try {
         console.log('Inicializando juego...');
-        audioSystem.init(); // Inicializar sistema de audio
+        audioSystem.init();
         createParticles();
         setupEventListeners();
         showWelcome();
+        
+        // NUEVO: Intentar reproducir música después de un pequeño delay
+        setTimeout(() => {
+            audioSystem.startWelcomeMusic();
+        }, 500);
+        
         console.log('Juego inicializado correctamente');
     } catch (error) {
         console.error('Error al inicializar el juego:', error);
@@ -211,7 +631,6 @@ function setupEventListeners() {
     document.getElementById('continueBtn').addEventListener('click', startGame);
     document.getElementById('backToWelcomeBtn').addEventListener('click', showWelcome);
     document.getElementById('backToMenuBtn').addEventListener('click', showWelcome);
-    document.getElementById('playAgainBtn').addEventListener('click', restartFromBeginning);
     document.getElementById('backToMainMenuBtn').addEventListener('click', showWelcome);
     document.getElementById('nextLevelBtn').addEventListener('click', nextLevel);
     document.getElementById('backToMainMenu2Btn').addEventListener('click', showWelcome);
@@ -224,6 +643,8 @@ function setupEventListeners() {
         });
     }
 
+    
+
     // Área de juego
     document.getElementById('gameArea').addEventListener('click', handleGameAreaClick);
 
@@ -232,6 +653,7 @@ function setupEventListeners() {
         console.error('Error en el juego:', e.error);
     });
 }
+
 
 // Crear partículas de fondo
 function createParticles() {
@@ -288,11 +710,14 @@ function showScreen(screenId) {
 function showWelcome() {
     stopGame();
     showScreen('welcomeScreen');
+    audioSystem.startWelcomeMusic(); // Música de bienvenida
 }
+
 
 function showInstructions() {
     console.log('Mostrando instrucciones');
     showScreen('instructionsScreen');
+    audioSystem.startWelcomeMusic(); // Música de bienvenida también en instrucciones
 }
 
 function startGame() {
@@ -300,6 +725,9 @@ function startGame() {
     showScreen('gameScreen');
     initializeLevel();
     gameState.isPlaying = true;
+    
+    audioSystem.startGameMusic(); // ¡MÚSICA DE JUEGO!
+    
     startGameLoop();
 }
 
@@ -310,17 +738,26 @@ function restartFromBeginning() {
     startGame();
 }
 
-function resetGame() {
-    console.log('Reseteando estado del juego');
-    stopGame(); // Asegurar que todo esté limpio
-    gameState.lives = 3;
-    gameState.score = 0;
-    gameState.level = 1;
-    gameState.timeLeft = levels[1].timeLimit;
-    gameState.targets = [];
+function stopGame() {
+    console.log('Deteniendo juego');
+    gameState.isPlaying = false;
+    
+    // ¡NUEVO! Pausar música de fondo
+    audioSystem.pauseMusic();
+    
+    if (gameState.gameTimer) {
+        clearInterval(gameState.gameTimer);
+        gameState.gameTimer = null;
+    }
+    
+    if (gameState.spawnTimer) {
+        clearTimeout(gameState.spawnTimer);
+        gameState.spawnTimer = null;
+    }
+    
     clearTargets();
-    updateHUD();
 }
+
 
 function initializeLevel() {
     console.log('Inicializando nivel:', gameState.level);
@@ -337,6 +774,7 @@ function initializeLevel() {
     
     updateHUD();
 }
+
 
 function startGameLoop() {
     console.log('Iniciando loop del juego');
@@ -654,7 +1092,6 @@ function levelComplete() {
     console.log('Nivel completado:', gameState.level);
     stopGame();
     
-    // ¡NUEVO! Reproducir sonido de nivel completado
     audioSystem.play('levelUp');
     
     const messageEl = document.getElementById('levelCompleteMessage');
@@ -663,6 +1100,7 @@ function levelComplete() {
     }
     
     showScreen('nextLevelScreen');
+    audioSystem.startWelcomeMusic(); // Música de bienvenida en pantalla de siguiente nivel
 }
 
 function nextLevel() {
@@ -683,9 +1121,13 @@ function gameOver(reason) {
     console.log('Game Over:', reason);
     stopGame();
     
-    // ¡NUEVO! Reproducir sonido de game over solo si no es victoria
+    // Reproducir sonido de game over solo si no es victoria
     if (!reason.includes('Felicitaciones')) {
         audioSystem.play('gameOver');
+        audioSystem.startGameOverMusic(); // ¡MÚSICA DE GAME OVER!
+    } else {
+        audioSystem.play('victory');
+        audioSystem.startWelcomeMusic(); // Música de bienvenida para victoria
     }
     
     const messageEl = document.getElementById('gameOverMessage');
@@ -696,6 +1138,37 @@ function gameOver(reason) {
     
     showScreen('gameOverScreen');
 }
+
+// Función para cerrar el panel de audio al hacer clic fuera
+document.addEventListener('click', function(e) {
+    const audioControlPanel = document.getElementById('audioControlPanel');
+    const audioControls = document.getElementById('audioControls');
+    
+    if (audioControlPanel && audioControls && 
+        !audioControlPanel.contains(e.target) && 
+        audioControls.classList.contains('show')) {
+        audioControls.classList.remove('show');
+    }
+});
+
+// Función para manejar teclas de acceso rápido (opcional)
+document.addEventListener('keydown', function(e) {
+    // M para mutear/desmutear efectos de sonido
+    if (e.key === 'm' || e.key === 'M') {
+        if (!e.ctrlKey && !e.altKey) {
+            audioSystem.toggleSFXMute();
+            e.preventDefault();
+        }
+    }
+    
+    // N para mutear/desmutear música
+    if (e.key === 'n' || e.key === 'N') {
+        if (!e.ctrlKey && !e.altKey) {
+            audioSystem.toggleMusicMute();
+            e.preventDefault();
+        }
+    }
+});
 
 function stopGame() {
     console.log('Deteniendo juego');

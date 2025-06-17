@@ -625,6 +625,9 @@
         }
 
      /* Panel de control de audio */
+
+
+/* O si prefieres una solución más elegante, puedes usar esta alternativa: */
 .audio-control-panel {
     position: fixed;
     bottom: 20px;
@@ -634,7 +637,7 @@
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
-    padding: 20px 25px;
+    padding: 7px;
     z-index: 25;
     display: flex;
     align-items: center;
@@ -642,16 +645,18 @@
     font-family: 'Inter', sans-serif;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     transition: all 0.3s ease;
-    min-width: 400px;
+    width: auto; /* Permitir que el ancho se ajuste automáticamente */
 }
 
 .audio-control-panel.collapsed {
     padding: 15px;
     min-width: auto;
+    width: auto; /* Se ajustará al contenido (solo el botón) */
     gap: 0;
 }
 
 .audio-control-panel.collapsed .audio-controls {
+     border-radius: 50%;
     display: none;
 }
 
@@ -799,7 +804,6 @@
 /* Responsive */
 @media (max-width: 768px) {
     .audio-control-panel {
-        min-width: 300px;
         gap: 15px;
         padding: 15px 20px;
     }
@@ -819,7 +823,6 @@
 
 @media (max-width: 480px) {
     .audio-control-panel {
-        min-width: 280px;
         gap: 10px;
         padding: 12px 15px;
         bottom: 10px;
