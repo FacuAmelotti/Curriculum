@@ -16,12 +16,34 @@ const songs = [
         artist: "Fakito",
         description: "Electronica",
         date: "2023",
-        rating: "★★★",
+        rating: "★★★★",
         image: "./src/img/songs_repro/cognosce.png", // Ruta a tu imagen
         audio: "./src/audio/songs_repro/cognosce.mp3",  // Ruta a tu MP3
         downloadUrl: "./src/audio/songs_repro/cognosce.mp3" // URL de descarga
     },
+            {
+
+        title: "Lapsus",
+        artist: "Fakito",
+        description: "Dubstep",
+        date: "2025",
+        rating: "★★★★",
+        image: "./src/img/songs_repro/lapsus.jpg", // Ruta a tu imagen
+        audio: "./src/audio/songs_repro/lapsus.mp3",  // Ruta a tu MP3
+        downloadUrl: "./src/audio/songs_repro/lapsus.mp3" // URL de descarga
+    },
         {
+    
+        title: "Voluptas",
+        artist: "Fakito",
+        description: "House",
+        date: "2024",
+        rating: "★★★★",
+        image: "./src/img/songs_repro/voluptas.jpg", // Ruta a tu imagen
+        audio: "./src/audio/songs_repro/voluptas.mp3",  // Ruta a tu MP3
+        downloadUrl: "./src/audio/songs_repro/voluptas.mp3" // URL de descarga
+    },    
+            {
  
         title: "Bla bla",
         artist: "Fakito",
@@ -34,17 +56,6 @@ const songs = [
     },
             {
 
-        title: "Lapsus",
-        artist: "Fakito",
-        description: "Dubstep",
-        date: "2025",
-        rating: "★★★",
-        image: "./src/img/songs_repro/lapsus.jpg", // Ruta a tu imagen
-        audio: "./src/audio/songs_repro/lapsus.mp3",  // Ruta a tu MP3
-        downloadUrl: "./src/audio/songs_repro/lapsus.mp3" // URL de descarga
-    },
-            {
-
         title: "Concussa",
         artist: "Fakito",
         description: "Dubstep",
@@ -54,28 +65,7 @@ const songs = [
         audio: "./src/audio/songs_repro/concussa.mp3",  // Ruta a tu MP3
         downloadUrl: "./src/audio/songs_repro/concussa.mp3" // URL de descarga
     },
-    {
-    
-        title: "Voluptas",
-        artist: "Fakito",
-        description: "House",
-        date: "2024",
-        rating: "★★★",
-        image: "./src/img/songs_repro/voluptas.jpg", // Ruta a tu imagen
-        audio: "./src/audio/songs_repro/voluptas.mp3",  // Ruta a tu MP3
-        downloadUrl: "./src/audio/songs_repro/voluptas.mp3" // URL de descarga
-    },    
-        {
- 
-        title: "Extraneus",
-        artist: "Fakito",
-        description: "Electronic",
-        date: "2021",
-        rating: "★★★",
-        image: "./src/img/songs_repro/extraneus.jpg", // Ruta a tu imagen
-        audio: "./src/audio/songs_repro/extraneus.mp3",  // Ruta a tu MP3
-        downloadUrl: "./src/audio/songs_repro/extraneus.mp3" // URL de descarga
-    },
+
         {
 
         title: "Tenebris",
@@ -87,7 +77,51 @@ const songs = [
         audio: "./src/audio/songs_repro/tenebris.mp3",  // Ruta a tu MP3
         downloadUrl: "./src/audio/songs_repro/tenebris.mp3" // URL de descarga
     },
-    {
+            {
+     
+        title: "Intermunize",
+        artist: "Fakito",
+        description: "Electronic",
+        date: "2022",
+        rating: "★★",
+        image: "./src/img/songs_repro/Internumize.jpg", // Ruta a tu imagen
+        audio: "./src/audio/songs_repro/internumize.mp3",  // Ruta a tu MP3
+        downloadUrl: "./src/audio/songs_repro/internumize.mp3" // URL de descarga
+    },
+        {
+
+        title: "Inter Infinitum",
+        artist: "Fakito",
+        description: "Chill",
+        date: "2021",
+        rating: "★★",
+        image: "./src/img/songs_repro/inter-infinitum.png", // Ruta a tu imagen
+        audio: "./src/audio/songs_repro/inter-infinitum.mp3",  // Ruta a tu MP3
+        downloadUrl: "./src/audio/songs_repro/inter-infinitum.mp3" // URL de descarga
+    },
+        {
+   
+        title: "Vetus Somnia",
+        artist: "Fakito",
+        description: "Electro Hard",
+        date: "2024",
+        rating: "★★★",
+        image: "./src/img/songs_repro/vetus-somnia.jpg", // Ruta a tu imagen
+        audio: "./src/audio/songs_repro/vetus-somnia.mp3",  // Ruta a tu MP3
+        downloadUrl: "./src/audio/songs_repro/vetus-somnia.mp3" // URL de descarga
+    },
+            {
+ 
+        title: "Extraneus",
+        artist: "Fakito",
+        description: "Electronic",
+        date: "2021",
+        rating: "★★",
+        image: "./src/img/songs_repro/extraneus.jpg", // Ruta a tu imagen
+        audio: "./src/audio/songs_repro/extraneus.mp3",  // Ruta a tu MP3
+        downloadUrl: "./src/audio/songs_repro/extraneus.mp3" // URL de descarga
+    },
+        {
 
         title: "Victus",
         artist: "Fakito",
@@ -115,45 +149,12 @@ const songs = [
         artist: "Fakito",
         description: "House",
         date: "2020",
-        rating: "★★★",
+        rating: "★★",
         image: "./src/img/songs_repro/ignis.png", // Ruta a tu imagen
         audio: "./src/audio/songs_repro/ignis.mp3",  // Ruta a tu MP3
         downloadUrl: "./src/audio/songs_repro/ignis.mp3" // URL de descarga
-    },
-    {
-   
-        title: "Vetus Somnia",
-        artist: "Fakito",
-        description: "Electro Hard",
-        date: "2024",
-        rating: "★★★",
-        image: "./src/img/songs_repro/vetus-somnia.png", // Ruta a tu imagen
-        audio: "./src/audio/songs_repro/vetus-somnia.mp3",  // Ruta a tu MP3
-        downloadUrl: "./src/audio/songs_repro/vetus-somnia.mp3" // URL de descarga
     }
-    ,
-    {
-
-        title: "Inter Infinitum",
-        artist: "Fakito",
-        description: "Chill",
-        date: "2021",
-        rating: "★★★",
-        image: "./src/img/songs_repro/inter-infinitum.png", // Ruta a tu imagen
-        audio: "./src/audio/songs_repro/inter-infinitum.mp3",  // Ruta a tu MP3
-        downloadUrl: "./src/audio/songs_repro/inter-infinitum.mp3" // URL de descarga
-    },
-        {
-     
-        title: "Intermunize",
-        artist: "Fakito",
-        description: "Electronic",
-        date: "2022",
-        rating: "★★★",
-        image: "./src/img/songs_repro/Internumize.jpg", // Ruta a tu imagen
-        audio: "./src/audio/songs_repro/internumize.mp3",  // Ruta a tu MP3
-        downloadUrl: "./src/audio/songs_repro/internumize.mp3" // URL de descarga
-    }
+    
     // Agrega más canciones aquí...
 ];
 
