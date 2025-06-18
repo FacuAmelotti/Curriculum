@@ -15,6 +15,10 @@ let backgroundMusic = null;
 let isMuted = false;
 let currentVolume = 0.5; // Cambiado de 0.3 a 0.5 para coincidir con HTML
 
+let currentGameDifficulty = '';
+let currentGameTopic = 'Argentina'; // Valor por defecto
+
+
 // Efectos de sonido
 const audioEffects = {
     click: null,
@@ -536,6 +540,9 @@ function startGame(difficulty) {
     // Reproducir sonido de inicio de juego
     playGameStartSound();
     
+    // Guardar la dificultad actual
+    currentGameDifficulty = difficulty;
+    
     // Usar la nueva función para seleccionar preguntas combinadas
     currentQuestions = selectCombinedQuestions(difficulty, 20);
     
@@ -560,8 +567,20 @@ function loadQuestion() {
     const question = currentQuestions[currentQuestionIndex];
     const questionNumber = currentQuestionIndex + 1;
     
+    // Actualizar información del header
     document.getElementById('questionNumber').textContent = questionNumber;
     document.getElementById('currentScore').textContent = (score).toFixed(1);
+    
+    // Actualizar tema (puedes obtenerlo de la pregunta si lo tienes en el JSON)
+    const topicElement = document.getElementById('currentTopic');
+    if (topicElement) {
+        topicElement.textContent = question.Topic || currentGameTopic;
+    }
+    
+    // Actualizar dificultad
+    updateDifficultyDisplay();
+    
+    // Resto de la función original...
     document.getElementById('questionText').textContent = question.Text;
     
     // Actualizar barra de progreso
@@ -588,6 +607,48 @@ function loadQuestion() {
     document.getElementById('nextBtn').style.display = 'none';
 }
 
+// Nueva función para actualizar la visualización de dificultad
+function updateDifficultyDisplay() {
+    const difficultyElement = document.getElementById('currentDifficulty');
+    if (!difficultyElement) return;
+    
+    // Limpiar clases anteriores
+    difficultyElement.classList.remove('difficulty-facil', 'difficulty-normal', 'difficulty-dificil');
+    
+    // Determinar el texto y clase según la dificultad
+    let displayText = '';
+    let className = '';
+    
+    switch(currentGameDifficulty) {
+        case 'facil':
+            displayText = 'Fácil';
+            className = 'difficulty-facil';
+            break;
+        case 'normal':
+            displayText = 'Normal';
+            className = 'difficulty-normal';
+            break;
+        case 'dificil':
+            displayText = 'Difícil';
+            className = 'difficulty-dificil';
+            break;
+        default:
+            displayText = 'Desconocido';
+            className = 'difficulty-normal';
+    }
+    
+    difficultyElement.textContent = displayText;
+    difficultyElement.classList.add(className);
+}
+
+// Función adicional para establecer tema dinámicamente (opcional)
+function setGameTopic(topic) {
+    currentGameTopic = topic;
+    const topicElement = document.getElementById('currentTopic');
+    if (topicElement) {
+        topicElement.textContent = topic;
+    }
+}
 function loadOptions(options) {
     const container = document.getElementById('optionsContainer');
     container.innerHTML = '';
@@ -696,6 +757,8 @@ function resetGame() {
     incorrectAnswers = 0;
     selectedAnswer = null;
     gameStarted = false;
+    currentGameDifficulty = '';
+    // currentGameTopic se mantiene para futuras partidas
 }
 
 // Función para limpiar el historial de preguntas usadas (opcional - para testing)

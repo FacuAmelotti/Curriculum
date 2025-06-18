@@ -62,8 +62,25 @@
         <div class="screen" id="gameScreen">
             <div class="game-container">
                 <div class="game-header">
-                    <span>Pregunta <span id="questionNumber">1</span> de 20</span>
-                    <span>Puntuación: <span id="currentScore">0</span>/10</span>
+                    <div class="game-header-item">
+                <span class="game-header-label">Pregunta</span>
+                <span class="game-header-value"><span id="questionNumber">1</span> de 20</span>
+            </div>
+            
+            <div class="game-header-item">
+                <span class="game-header-label">Puntuación</span>
+                <span class="game-header-value"><span id="currentScore">0</span></span>
+            </div>
+            
+            <div class="game-header-item">
+                <span class="game-header-label">Tema</span>
+                <span class="game-header-value topic-value" id="currentTopic">Argentina</span>
+            </div>
+            
+            <div class="game-header-item">
+                <span class="game-header-label">Dificultad</span>
+                <span class="game-header-value difficulty-value difficulty-facil" id="currentDifficulty">Fácil</span>
+            </div>
                 </div>
                 
                 <div class="progress-bar">

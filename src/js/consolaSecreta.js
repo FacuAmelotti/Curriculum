@@ -565,7 +565,7 @@ rendimiento: () => {
   },
 
     musica_fakito: () => {
-    window.open('https://facuamelotti.github.io/MiMusica/', '_blank');
+    window.open('./reproductor.html', '_blank');
     return "🎧 Abriendo reproductor de musica personalizado...";
   },
 

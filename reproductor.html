@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Música - Reproductor</title>
+    <meta name="description" content="Reproductor de música personal con composiciones originales">
+    <link rel="stylesheet" href="./src/css/reproductorMp3.css">
+    <link rel="icon" href="./src/img/miMusicIcon.png" type="image/png">
+</head>
+<body>
+    <!-- Pantalla de bienvenida -->
+    <section class="intro-screen" id="introScreen" role="banner">
+        <div class="intro-content">
+            <h1 class="intro-title">🎵 Mi Música</h1>
+            <p class="intro-description">
+                Bienvenido a mi repertorio de música.
+            </p>
+            <p class="intro-description">
+                Aquí encontrarás algunas de mis composiciones originales. ¡Espero que te gusten!
+            </p>
+            <button class="continue-btn" onclick="startPlayer()" type="button">
+                Continuar
+            </button>
+        </div>
+    </section>
+
+    <!-- Reproductor principal -->
+    <main class="main-player" id="mainPlayer" role="main">
+        <div class="background-img-move" id="backgroundImg" aria-hidden="true"></div>
+        
+        <div class="player-container">
+            <!-- Header de navegación -->
+            <header class="player-header">
+                <button class="exit-btn" onclick="exitPlayer()" type="button" aria-label="Salir del reproductor">
+                    ← Salir
+                </button>
+                <button class="playlist-btn" onclick="openPlaylist()" type="button" aria-label="Abrir lista de reproducción">
+                    📝 Lista de Reproducción
+                </button>
+            </header>
+
+            <!-- Información de la canción actual -->
+            <section class="song-info" aria-label="Información de la canción">
+                <h2 class="song-title" id="songTitle">Ambient Dreams</h2>
+                <p class="song-artist" id="songArtist">Tu Nombre</p>
+                
+                <dl class="song-details">
+                    <div class="detail-item">
+                        <dt>Descripción:</dt>
+                        <dd id="songDescription">Una melodía relajante</dd>
+                    </div>
+                    <div class="detail-item">
+                        <dt>Fecha:</dt>
+                        <dd id="songDate">2024</dd>
+                    </div>
+                    <div class="detail-item">
+                        <dt>Puntuación:</dt>
+                        <dd class="rating" id="songRating" aria-label="4 de 5 estrellas">★★★★☆</dd>
+                    </div>
+                </dl>
+
+                <!-- Botones de acción -->
+                <div class="action-buttons">
+                    <button id="donationBtn" onclick="openDonation()" class="action-btn" type="button" aria-label="Hacer una donación">
+                        💝 Donar
+                    </button>
+                    <button id="downloadBtn" onclick="downloadSong()" class="action-btn" type="button" aria-label="Descargar canción actual">
+                        ⬇️ Descargar canción
+                    </button>
+                </div>
+            </section>
+
+            <!-- Visualización del disco -->
+            <section class="vinyl-container" aria-label="Visualización del disco">
+                <div class="vinyl-record" id="vinylRecord" role="img" aria-label="Disco de vinilo giratorio">
+                    <div class="vinyl-center" id="vinylCenter"></div>
+                    <div class="vinyl-hole"></div>
+                </div>
+            </section>
+
+            <!-- Panel de controles de reproducción -->
+            <section class="controls-panel" aria-label="Controles de reproducción">
+                <!-- Controles principales -->
+                <div class="main-controls" role="group" aria-label="Controles principales">
+                    <button class="control-btn" onclick="previousSong()" type="button" aria-label="Canción anterior">
+                        ⏮
+                    </button>
+                    <button class="control-btn" onclick="seekTime(-10)" type="button" aria-label="Retroceder 10 segundos">
+                        -10s
+                    </button>
+                    <button class="control-btn play-pause" id="playPauseBtn" onclick="togglePlay()" type="button" aria-label="Reproducir/Pausar">
+                        ▶
+                    </button>
+                    <button class="control-btn" onclick="seekTime(10)" type="button" aria-label="Avanzar 10 segundos">
+                        +10s
+                    </button>
+                    <button class="control-btn" onclick="nextSong()" type="button" aria-label="Siguiente canción">
+                        ⏭
+                    </button>
+                </div>
+
+                <!-- Barra de progreso -->
+                <div class="progress-container">
+                    <div class="progress-bar" onclick="setProgress(event)" role="progressbar" aria-label="Progreso de reproducción" tabindex="0">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="time-display">
+                        <time id="currentTime" aria-label="Tiempo actual">0:00</time>
+                        <time id="totalTime" aria-label="Duración total">0:00</time>
+                    </div>
+                </div>
+
+                <!-- Control de volumen -->
+                <div class="volume-control" role="group" aria-label="Control de volumen">
+                    <button class="control-btn" onclick="toggleMute()" type="button" id="muteBtn" aria-label="Silenciar/Activar sonido">
+                        🔊
+                    </button>
+                    <label for="volumeSlider" class="sr-only">Nivel de volumen</label>
+                    <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70" aria-label="Control de volumen">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal de lista de reproducción -->
+    <aside class="playlist-modal" id="playlistModal" role="dialog" aria-modal="true" aria-labelledby="playlistTitle">
+        <div class="playlist-content">
+            <header class="playlist-header">
+                <h2 id="playlistTitle">Mi Lista de Reproducción</h2>
+                <button class="close-playlist" onclick="closePlaylist()" type="button" aria-label="Cerrar lista de reproducción">
+                    ✕
+                </button>
+            </header>
+            <div id="playlistItems" role="list" aria-label="Canciones en la lista">
+                <!-- Las canciones se cargarán aquí dinámicamente -->
+            </div>
+        </div>
+    </aside>
+
+    <!-- Audio element (oculto) -->
+    <audio id="audioPlayer" preload="metadata" aria-hidden="true"></audio>
+
+    <!-- Scripts -->
+    <script src="./src/js/reproductorMp3.js"></script>
+</body>
+</html>
