@@ -78,7 +78,7 @@ function initializeMatrixBackground() {
     createMatrixRain();
 }
 
-// NUEVO: Función para el efecto de desvanecimiento en scroll
+// MODIFICADO: Función para el efecto de desvanecimiento más sutil en scroll
 function initializeScrollFadeEffect() {
     const sections = document.querySelectorAll('section');
     
@@ -94,18 +94,21 @@ function initializeScrollFadeEffect() {
             
             // Calcular la distancia desde el centro de la ventana
             const distance = Math.abs(scrollCenter - sectionCenter);
-            const maxDistance = windowHeight;
+            const maxDistance = windowHeight * 1.5; // Aumentado para efecto más gradual
             
             // Calcular opacidad basada en la distancia
             let opacity = 1 - (distance / maxDistance);
-            opacity = Math.max(0, Math.min(1, opacity));
+            opacity = Math.max(0.3, Math.min(1, opacity)); // Opacidad mínima de 0.3 en vez de 0
             
-            // Aplicar una curva más suave
-            opacity = Math.pow(opacity, 0.8);
+            // Aplicar una curva más suave y menos pronunciada
+            opacity = Math.pow(opacity, 0.5); // Reducido de 0.8 a 0.5 para menos contraste
+            
+            // Reducir el efecto de movimiento
+            const translateY = (1 - opacity) * 10; // Reducido de 20px a 10px
             
             // Aplicar el efecto
             section.style.opacity = opacity;
-            section.style.transform = `translateY(${(1 - opacity) * 20}px)`;
+            section.style.transform = `translateY(${translateY}px)`;
         });
     }
     

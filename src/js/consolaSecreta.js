@@ -580,6 +580,18 @@ rendimiento: () => {
     return "🎮 Abriendo juego 'Preguntas de Argentina!'...";
   },
 
+  descargar_himno: () => {
+  const ruta = "./src/audio/himnoArg.mp3"; // Cambia esta ruta según donde esté tu archivo
+  const enlace = document.createElement("a");
+  enlace.href = ruta;
+  enlace.download = "Himno Argentino.mp3"; // Nombre con el que se descargará
+  document.body.appendChild(enlace);
+  enlace.click();
+  document.body.removeChild(enlace);
+  return "🎵 ¡Descargando el Himno Argentino!";
+},
+
+
   // Ejecuta un efecto visual (explosión)
   fxeffect: () => {
     createExplosion(); // Asegurate de que esta función esté definida en tu código

@@ -485,3 +485,54 @@
         page-break-inside: avoid;
     }
 }
+
+.img-proyTech {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #4A4A4A;
+    margin-left: 12px;
+    margin-top: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        filter 0.3s ease;
+    object-fit: cover;
+    background-color: #fff;
+}
+
+/* Efecto hover: escala, rotación leve y brillo */
+.img-proyTech:hover {
+    transform: scale(1.55) rotate(-1deg);
+    box-shadow: 0 0 15px 4px rgba(255, 255, 255, 0.4);
+    border-color: #ffffff;
+    filter: brightness(1.1);
+}
+
+/* Tooltip personalizado usando data-alt */
+.img-proyTech::after {
+    content: attr(data-alt);
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+}
+
+.img-proyTech:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px);
+}
+
