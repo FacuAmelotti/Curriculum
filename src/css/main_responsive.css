@@ -536,6 +536,7 @@
     transform: translateX(-50%) translateY(-5px);
 }
 
+
 .project {
    background: transparent;
    position: relative;
@@ -543,21 +544,58 @@
    transition: all 0.3s ease;
 }
 
-.project::before {
-   content: '';
-   position: absolute;
-   top: 0;
-   left: -100%;
-   width: 100%;
-   height: 100%;
-   background: linear-gradient(90deg, 
-       transparent 0%, 
-       rgba(192, 192, 192, 0.3) 50%, 
-       transparent 100%);
-   transition: left 0.6s ease;
-   z-index: -1;
-}
+ /* Efecto shimmer principal */
+        .project::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -100%;
+            width: 100%;
+            height: 200%;
+            background: linear-gradient(45deg, 
+                transparent 0%, 
+                transparent 30%,
+                rgba(255, 255, 255, 0.48) 50%,
+                rgba(255, 255, 255, 0.34) 60%,
+                transparent 70%,
+                transparent 100%);
+            transform: rotate(45deg);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: 1;
+            opacity: 0;
+        }
 
-.project:hover::before {
-   left: 100%;
-}
+
+        .project:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.3),
+                0 0 60px rgba(255, 255, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+   
+        }
+
+        .project:hover::before {
+            left: 100%;
+            opacity: 1;
+            animation: shimmer 0.8s ease-out;
+        }
+
+        .project:hover::after {
+            opacity: 1;
+        }
+
+        
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.32;
+            }
+            100% {
+                left: 100%;
+                opacity: 0;
+            }
+        }

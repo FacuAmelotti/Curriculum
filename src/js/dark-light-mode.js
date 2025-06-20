@@ -219,11 +219,11 @@ class ThemeToggle {
 
             body.light-mode .hero-subtitle,
             body.light-mode .hero-credentials {
-                color: #6a6a6a;
+                color:rgb(85, 85, 85);
             }
 
             body.light-mode .hero-description {
-                color: #5a5a5a;
+                color:rgb(65, 65, 65);
             }
 
             body.light-mode .section h2 {
@@ -231,7 +231,7 @@ class ThemeToggle {
             }
 
             body.light-mode .section-subtitle {
-                color:rgb(88, 88, 88);
+                color:rgb(66, 66, 66);
             }
 
             body.light-mode .section-description {
@@ -335,6 +335,21 @@ class ThemeToggle {
                 color: #5a5a5a;
             }
 
+            body.light-mode .project::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at left, 
+                rgba(255, 255, 255, 0.96) 0%, 
+                transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+            }
+
             body.light-mode .experience-item {
                 background: rgba(255, 255, 255, 0.6);
                 border: 1px solid rgba(0, 0, 0, 0.1);
@@ -345,20 +360,20 @@ class ThemeToggle {
             }
 
             body.light-mode .experience-period {
-                color: #7a7a7a;
+                color:rgb(87, 87, 87);
             }
 
             body.light-mode .experience-company,
             body.light-mode .experience-description {
-                color:rgb(68, 68, 68);
+                color:rgb(51, 51, 51);
             }
 
             body.light-mode .experience-tasks li {
-                color: #5a5a5a;
+                color:rgb(68, 68, 68);
             }
 
             body.light-mode .experience-tasks li::before {
-                color: #7a7a7a;
+                color:rgb(83, 83, 83);
             }
 
             body.light-mode .project {
@@ -387,11 +402,11 @@ class ThemeToggle {
             }
 
             body.light-mode .footer p {
-                color: #7a7a7a;
+                color:rgb(90, 90, 90);
             }
 
             body.light-mode .footer-links a {
-                color: #5a5a5a;
+                color:rgb(65, 65, 65);
             }
 
             body.light-mode .footer-links a:hover {
