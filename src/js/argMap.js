@@ -45,11 +45,11 @@
                 y: 42,
                 photos: [
                     {
-                        src: './src/img/mendozaFacu_2.jpg',
+                        src: './src/img/bsFacu_1.jpg',
                         description: 'Buenos Aires es una ciudad que vibra. Caótica y encantadora, mezcla lo europeo con lo bien argentino. Es tango en una esquina, café con medialunas, librerías infinitas y noches que no se terminan.'
                     },
                     {
-                        src: './src/img/mendozaFacu_2.jpg',
+                        src: './src/img/bsFacu_2.jpg',
                         description: 'Caminar por sus barrios —desde la elegancia de Recoleta hasta la bohemia de San Telmo— es sentir que cada rincón tiene una historia. Es arte, protesta, pasión futbolera y mil formas de vivirla. Te abraza con su ritmo y no te deja ir.'
                     }
                 ]
@@ -61,11 +61,11 @@
                 y: 46,
                 photos: [
                     {
-                        src: './src/img/lpFacu_1.jpg',
+                        src: './src/img/lpFacu_2.jpg',
                         description: 'La Plata es una ciudad pensada, trazada con compás y corazón. Es joven, universitaria, llena de cultura, historia y ciencia. Tiene una energía única: entre diagonales, plazas y edificios majestuosos, se respira movimiento.'
                     },
                     {
-                       src: './src/img/mendozaFacu_2.jpg',
+                       src: './src/img/lpFacu_1.jpg',
                        description: 'Con su catedral imponente, sus museos, bares y vida nocturna, La Plata mezcla lo clásico con lo moderno. Es de esas ciudades que te atrapan sin hacer ruido, pero que dejan huella.',          
                     }
                 ]
@@ -111,11 +111,11 @@
                 y: 32,
                 photos: [
                     {
-                        src: './src/img/mendozaFacu_2.jpg',
+                        src: './src/img/cordobaFacu_2.jpg',
                         description: 'Córdoba es alegría serrana y tonada que te abraza. Es mate al sol, ríos frescos y sierras que invitan a perderse.'
                     },
                     {
-                        src: './src/img/mendozaFacu_2.jpg',
+                        src: './src/img/cordobaFacu_1.jpg',
                         description: 'En la ciudad, lo colonial se mezcla con lo moderno, y en cada rincón hay historia, arte y juventud. Es una provincia que vibra con sus festivales, sus pueblos con alma y esa calidez única de su gente.'
                     }
                 ]
