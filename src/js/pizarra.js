@@ -283,6 +283,12 @@ function createObject(type, x, y) {
 
 
 function renderObject(obj) {
+    // Verificar si el objeto ya existe y eliminarlo
+    const existingElement = document.getElementById(`object-${obj.id}`);
+    if (existingElement) {
+        existingElement.remove();
+    }
+    
     const element = document.createElement('div');
     element.className = `wb-object wb-${obj.type}`;
     element.id = `object-${obj.id}`;
@@ -291,17 +297,19 @@ function renderObject(obj) {
     element.style.position = 'absolute';
     element.style.cursor = 'pointer';
     element.style.userSelect = 'none';
-    element.style.zIndex = obj.zIndex || 1; // NUEVO: Aplicar z-index
+    element.style.zIndex = obj.zIndex || 1;
     
+    // Configurar según el tipo de objeto
     switch(obj.type) {
         case 'text':
-            element.innerHTML = obj.text;
+            element.innerHTML = obj.text || 'Nuevo texto';
             element.contentEditable = true;
             element.style.padding = '8px';
             element.style.fontSize = '16px';
             element.style.fontFamily = 'Arial, sans-serif';
             element.style.minWidth = '50px';
             element.style.minHeight = '30px';
+            element.style.whiteSpace = 'pre-wrap'; // Preservar saltos de línea
             element.addEventListener('input', () => {
                 obj.text = element.innerHTML;
             });
@@ -325,9 +333,11 @@ function renderObject(obj) {
             break;
     }
 
+    // Aplicar posición y estilos inmediatamente
     updateObjectPosition(obj);
     updateObjectStyle(obj);
     
+    // Agregar eventos
     element.addEventListener('click', (e) => {
         e.stopPropagation();
         selectObject(obj);
@@ -345,7 +355,15 @@ function renderObject(obj) {
         }
     });
 
+    // Agregar al DOM
     whiteboardContent.appendChild(element);
+    
+    // Forzar repintado para asegurar que todos los estilos se apliquen
+    requestAnimationFrame(() => {
+        element.style.display = 'none';
+        element.offsetHeight; // Trigger reflow
+        element.style.display = 'block';
+    });
 }
 
 function updateObjectPosition(obj) {
@@ -361,9 +379,150 @@ function updateObjectPosition(obj) {
 }
 
 // FUNCIÓN CORREGIDA - Esta es la clave del problema
+// Función corregida para cargar proyectos
+function loadProject() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.json';
+    input.onchange = (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            try {
+                const projectData = JSON.parse(e.target.result);
+                objects = projectData.objects || [];
+                zoom = projectData.zoom || 1;
+                panX = projectData.panX || 0;
+                panY = projectData.panY || 0;
+                objectIdCounter = projectData.objectIdCounter || objects.length;
+                
+                // Limpiar la pizarra
+                if (whiteboardContent) whiteboardContent.innerHTML = '';
+                
+                // Renderizar objetos con una pequeña pausa para asegurar el DOM
+                objects.forEach((obj, index) => {
+                    setTimeout(() => {
+                        renderObject(obj);
+                        // Forzar la actualización de estilos después del renderizado
+                        setTimeout(() => {
+                            updateObjectPosition(obj);
+                            updateObjectStyle(obj);
+                        }, 10);
+                    }, index * 5); // Pequeño delay escalonado para cada objeto
+                });
+                
+                updateComponentsList();
+                updateTransform();
+                deselectAll();
+                
+                console.log('Proyecto cargado exitosamente:', objects.length, 'objetos');
+            } catch (error) {
+                alert('Error al cargar el proyecto: ' + error.message);
+                console.error('Error completo:', error);
+            }
+        };
+        reader.readAsText(file);
+    };
+    input.click();
+}
+
+// Función mejorada para renderizar objetos (reemplaza la función existente)
+function renderObject(obj) {
+    // Verificar si el objeto ya existe y eliminarlo
+    const existingElement = document.getElementById(`object-${obj.id}`);
+    if (existingElement) {
+        existingElement.remove();
+    }
+    
+    const element = document.createElement('div');
+    element.className = `wb-object wb-${obj.type}`;
+    element.id = `object-${obj.id}`;
+    
+    // Aplicar estilos base
+    element.style.position = 'absolute';
+    element.style.cursor = 'pointer';
+    element.style.userSelect = 'none';
+    element.style.zIndex = obj.zIndex || 1;
+    
+    // Configurar según el tipo de objeto
+    switch(obj.type) {
+        case 'text':
+            element.innerHTML = obj.text || 'Nuevo texto';
+            element.contentEditable = true;
+            element.style.padding = '8px';
+            element.style.fontSize = '16px';
+            element.style.fontFamily = 'Arial, sans-serif';
+            element.style.minWidth = '50px';
+            element.style.minHeight = '30px';
+            element.style.whiteSpace = 'pre-wrap'; // Preservar saltos de línea
+            element.addEventListener('input', () => {
+                obj.text = element.innerHTML;
+            });
+            element.addEventListener('blur', () => {
+                updateComponentsList();
+            });
+            break;
+        case 'rectangle':
+            element.style.minWidth = '20px';
+            element.style.minHeight = '20px';
+            break;
+        case 'circle':
+            element.style.borderRadius = '50%';
+            element.style.minWidth = '20px';
+            element.style.minHeight = '20px';
+            break;
+        case 'line':
+            element.style.minWidth = '20px';
+            element.style.minHeight = '2px';
+            element.style.transformOrigin = 'left center';
+            break;
+    }
+
+    // Aplicar posición y estilos inmediatamente
+    updateObjectPosition(obj);
+    updateObjectStyle(obj);
+    
+    // Agregar eventos
+    element.addEventListener('click', (e) => {
+        e.stopPropagation();
+        selectObject(obj);
+    });
+
+    element.addEventListener('mouseenter', () => {
+        if (currentTool === 'select') {
+            element.style.outline = '1px dashed #007bff';
+        }
+    });
+    
+    element.addEventListener('mouseleave', () => {
+        if (!element.classList.contains('selected')) {
+            element.style.outline = 'none';
+        }
+    });
+
+    // Agregar al DOM
+    whiteboardContent.appendChild(element);
+    
+    // Forzar repintado para asegurar que todos los estilos se apliquen
+    requestAnimationFrame(() => {
+        element.style.display = 'none';
+        element.offsetHeight; // Trigger reflow
+        element.style.display = 'block';
+    });
+}
+
+// Función mejorada para aplicar estilos (reemplaza la función existente)
 function updateObjectStyle(obj) {
     const element = document.getElementById(`object-${obj.id}`);
     if (!element) return;
+    
+    // Asegurar que todas las propiedades del objeto tengan valores por defecto
+    obj.backgroundColor = obj.backgroundColor || '#ffffff';
+    obj.borderColor = obj.borderColor || '#000000';
+    obj.borderWidth = obj.borderWidth || 3;
+    obj.zIndex = obj.zIndex || 1;
     
     // Limpiar estilos previos para evitar conflictos
     element.style.backgroundColor = '';
@@ -387,10 +546,67 @@ function updateObjectStyle(obj) {
         element.style.borderStyle = 'solid';
     }
     
-    // Forzar el repintado del elemento
+    // Aplicar z-index
+    element.style.zIndex = obj.zIndex;
+    
+    // Forzar el repintado del elemento de manera más efectiva
+    const display = element.style.display;
     element.style.display = 'none';
     element.offsetHeight; // Trigger reflow
-    element.style.display = 'block';
+    element.style.display = display || 'block';
+    
+    // Aplicar una clase temporal para forzar actualización
+    element.classList.add('style-updated');
+    setTimeout(() => {
+        element.classList.remove('style-updated');
+    }, 10);
+}
+
+// Función para cargar automáticamente una pizarra predeterminada
+async function loadDefaultProject() {
+    try {
+        // Cambia 'default-project.json' por el nombre de tu archivo
+        const response = await fetch('./src/json/pizarra_inicial.json');
+        
+        if (!response.ok) {
+            console.log('No se encontró archivo predeterminado, iniciando con pizarra vacía');
+            return;
+        }
+        
+        const projectData = await response.json();
+        
+        // Cargar los datos del proyecto
+        objects = projectData.objects || [];
+        zoom = projectData.zoom || 1;
+        panX = projectData.panX || 0;
+        panY = projectData.panY || 0;
+        objectIdCounter = projectData.objectIdCounter || objects.length;
+        
+        // Limpiar la pizarra
+        if (whiteboardContent) whiteboardContent.innerHTML = '';
+        
+        // Renderizar objetos con delay escalonado
+        objects.forEach((obj, index) => {
+            setTimeout(() => {
+                renderObject(obj);
+                // Forzar la actualización de estilos después del renderizado
+                setTimeout(() => {
+                    updateObjectPosition(obj);
+                    updateObjectStyle(obj);
+                }, 10);
+            }, index * 5);
+        });
+        
+        updateComponentsList();
+        updateTransform();
+        deselectAll();
+        
+        console.log('Pizarra predeterminada cargada exitosamente:', objects.length, 'objetos');
+        
+    } catch (error) {
+        console.error('Error al cargar pizarra predeterminada:', error);
+        console.log('Iniciando con pizarra vacía');
+    }
 }
 
 // CORRECCIÓN 1: Modificar la función togglePropertiesPanel para usar clases CSS
@@ -885,7 +1101,8 @@ function updateObjectProperty(property, value) {
 document.addEventListener('DOMContentLoaded', function() {
     // Inicializar panel oculto al cargar la página
     togglePropertiesPanel(false);
-    
+     loadDefaultProject();
+
     // Resto de tu código de inicialización...
     const bgColorInput = document.getElementById('bg-color');
     const borderColorInput = document.getElementById('border-color');
@@ -1118,13 +1335,29 @@ function loadProject() {
                 panY = projectData.panY || 0;
                 objectIdCounter = projectData.objectIdCounter || objects.length;
                 
+                // Limpiar la pizarra
                 if (whiteboardContent) whiteboardContent.innerHTML = '';
-                objects.forEach(obj => renderObject(obj));
+                
+                // Renderizar objetos con una pequeña pausa para asegurar el DOM
+                objects.forEach((obj, index) => {
+                    setTimeout(() => {
+                        renderObject(obj);
+                        // Forzar la actualización de estilos después del renderizado
+                        setTimeout(() => {
+                            updateObjectPosition(obj);
+                            updateObjectStyle(obj);
+                        }, 10);
+                    }, index * 5); // Pequeño delay escalonado para cada objeto
+                });
+                
                 updateComponentsList();
                 updateTransform();
                 deselectAll();
+                
+                console.log('Proyecto cargado exitosamente:', objects.length, 'objetos');
             } catch (error) {
                 alert('Error al cargar el proyecto: ' + error.message);
+                console.error('Error completo:', error);
             }
         };
         reader.readAsText(file);
