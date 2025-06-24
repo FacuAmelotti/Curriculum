@@ -43,10 +43,8 @@
         -->
         <div class="nav-item">
             Información
-            <div class="dropdown">
-                <div class="dropdown-item" onclick="showHelp()">Ayuda</div>
+            <div class="dropdown">            
                 <div class="dropdown-item" onclick="showAbout()">Acerca de...</div>
-                <div class="dropdown-item" onclick="showTutorial()">Tutorial</div>
                 <!--
                 <div class="dropdown-item" onclick="showShortcuts()">Atajos de Teclado</div>
                 -->
@@ -91,20 +89,35 @@
 
     <!-- Pantalla de Bienvenida -->
     <div class="welcome-screen" id="welcomeScreen">
-    <h1 class="welcome-title">Pizarra</h1>
-    <div class="welcome-panel">
-        <h2>Bienvenido a la Pizarra</h2>
-        <p>Esta herramienta te permite crear, organizar y diseñar tus ideas visuales de forma intuitiva.</p>
-        <ul>
-            <li>Arrastra objetos</li>
-            <li>Personaliza estilos</li>
-            <li>Diseña diagramas y flujos</li>
-            <li>Exporta tu trabajo</li>
-        </ul>
-        <p class="dev-msg">Esta Aplicacion aun se encuentra en desarrollo.</p>
-    
-        <button class="welcome-btn" onclick="closeWelcome()">Continuar</button>
+        <h1 class="welcome-title">Pizarra Interactiva</h1>
+        <div class="welcome-panel">
+            <p>Esta herramienta te permite crear, organizar y diseñar tus ideas visuales de forma intuitiva.</p>
+            <ul>
+                <li>Arrastra objetos</li>
+                <li>Personaliza estilos</li>
+                <li>Diseña diagramas y flujos</li>
+                <li>Exporta tu trabajo</li>
+            </ul>
+            <p class="dev-msg">Esta Aplicacion aun se encuentra en desarrollo.</p>
+        
+            <button class="welcome-btn" onclick="closeWelcome()">Continuar</button>
+        </div>
     </div>
+
+    <!-- Panel de Acerca de -->
+    <div class="welcome-screen" id="aboutPanel" style="display: none;">
+        <h1 class="welcome-title">¡Sobre la Pizarra!</h1>
+        <div class="welcome-panel">
+            <h2>Acerca de esta herramienta</h2>
+            <ul>
+                <li>¡Herramienta ideada para crear y organizar ideas visualmente!</li>
+                <li>Desarrollada por <a href="https://www.linkedin.com/in/facundoamelotti/"  target="_blank" class="dev-link">@FacuAmelotti</a></li>
+                <li>Tecnologías usadas: HTML, CSS y JS</li>
+            </ul>
+
+            <p class="dev-msg">Esta Aplicación aún se encuentra en desarrollo.</p>
+            <button class="welcome-btn" onclick="closeAbout()">Cerrar</button>
+        </div>
     </div>
 
     <!-- Panel de propiedades -->

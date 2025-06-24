@@ -1285,8 +1285,22 @@ function centerView() {
     updateTransform();
 }
 
+
+function closeAbout() {
+    const about = document.getElementById('aboutPanel');
+    about.style.opacity = '0';
+    about.style.pointerEvents = 'none';
+
+    setTimeout(() => {
+        about.style.display = 'none';
+    }, 500);
+}
+
 function showAbout() {
-    alert('· ¡¡¡ Bienvenidos al Pizarron !!!\n· Herramienta ideada para crear y organizar ideas visualmente.\n· Desarrollada por @FacuAmelotti\n· HTML, CSS y JS\n(Aplicacion aun en desarrollo... )');
+    const about = document.getElementById('aboutPanel');
+    about.style.display = 'flex';
+    about.style.opacity = '1';
+    about.style.pointerEvents = 'auto';
 }
 
 

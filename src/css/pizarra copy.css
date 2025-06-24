@@ -396,7 +396,6 @@ body {
     border-radius: 3px;
     background: #ddd;
     outline: none;
-    -webkit-appearance: none;
 }
 
 .property-slider::-webkit-slider-thumb {

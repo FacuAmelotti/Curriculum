@@ -567,6 +567,20 @@ body {
     visibility: visible;
 }
 
+
+.dev-link {
+    color: #00bcd4; /* Azul brillante */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.dev-link:hover {
+    color: #0097a7; /* Un tono más oscuro al pasar el mouse */
+    text-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+    transform: scale(1.05);
+}
+
 @media (max-width: 480px) {
     
     .welcome-panel {
