@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizarra</title>
+    <link rel="stylesheet" href="./src/css/pizarra.css">
+    <link rel="icon" href="./src/img/pizarra.png" type="image/png">
+</head>
+<body>
+    <!-- Navegación superior -->
+    <nav class="nav-menu">
+        <div class="nav-item">
+            Archivo
+            <div class="dropdown">
+                <div class="dropdown-item" onclick="newProject()">Nuevo Proyecto</div>
+                <div class="dropdown-item" onclick="saveProject()">Guardar</div>
+                <div class="dropdown-item" onclick="loadProject()">Cargar</div>
+                <div class="dropdown-item" onclick="exportProject()">Exportar</div>
+            </div>
+        </div>
+        <div class="nav-item">
+            Edición
+            <div class="dropdown">
+                <div class="dropdown-item" onclick="undo()">Deshacer</div>
+                <div class="dropdown-item" onclick="redo()">Rehacer</div>
+                <div class="dropdown-item" onclick="selectAll()">Seleccionar Todo</div>
+                <div class="dropdown-item" onclick="deleteSelected()">Eliminar</div>
+            </div>
+        </div>
+        <!--
+        <div class="nav-item">
+            Herramientas
+            <div class="dropdown">
+                <div class="dropdown-item" onclick="setTool('select')">Seleccionar</div>
+                <div class="dropdown-item" onclick="setTool('text')">Texto</div>
+                <div class="dropdown-item" onclick="setTool('rectangle')">Rectángulo</div>
+                <div class="dropdown-item" onclick="setTool('circle')">Círculo</div>
+                <div class="dropdown-item" onclick="setTool('line')">Linea</div>
+            </div>
+        </div>
+        -->
+        <div class="nav-item">
+            Información
+            <div class="dropdown">
+                <div class="dropdown-item" onclick="showHelp()">Ayuda</div>
+                <div class="dropdown-item" onclick="showAbout()">Acerca de...</div>
+                <div class="dropdown-item" onclick="showTutorial()">Tutorial</div>
+                <!--
+                <div class="dropdown-item" onclick="showShortcuts()">Atajos de Teclado</div>
+                -->
+            </div>
+        </div>
+        <div class="nav-item">
+            Configuración
+            <div class="dropdown">
+                <div class="dropdown-item" onclick="toggleGrid()">Mostrar/Ocultar Rejilla</div>
+                <div class="dropdown-item" onclick="resetZoom()">Restablecer Zoom</div>
+                <div class="dropdown-item" onclick="centerView()">Centrar Vista</div>
+            </div>
+        </div>
+         <!-- Botón de salir a la derecha -->
+        <div class="nav-exit-btn" onclick="goToCV()" title="Volver al PORTFOLIO">
+            ✕
+        </div>
+    </nav>
+
+    <!-- Panel de herramientas -->
+    <div class="tools-panel">
+        <div class="tool-btn" onclick="setTool('select')" title="Seleccionar">
+            ↖
+        </div>
+        <div class="tool-btn" onclick="setTool('pan')" title="Moverse">
+            ⥂
+        </div>
+        <div class="tool-btn" onclick="setTool('text')" title="Texto">
+            T
+        </div>
+        <div class="tool-btn" onclick="setTool('rectangle')" title="Rectángulo">
+            ▢
+        </div>
+        <div class="tool-btn" onclick="setTool('circle')" title="Círculo">
+            ○
+        </div>
+        <div class="tool-btn" onclick="setTool('line')" title="Círculo">
+            /
+        </div>
+    </div>
+
+    <!-- Panel de propiedades -->
+    <div class="properties-panel">
+        <div class="panel-section">
+            <div class="panel-title">Propiedades del Objeto</div>
+            <div id="object-properties">
+                <p>Selecciona un objeto para ver sus propiedades</p>
+            </div>
+        </div>
+        
+        <div class="panel-section">
+            <div class="panel-title">Estilo</div>
+            <div class="property-group">
+                <label class="property-label">Color de Fondo:</label>
+                <input type="color" class="color-picker" id="bg-color" value="#ffffff">
+            </div>
+            <div class="property-group">
+                <label class="property-label">Color de Borde:</label>
+                <input type="color" class="color-picker" id="border-color" value="#000000">
+            </div>
+            <div class="property-group">
+                <label class="property-label">Grosor de Borde:</label>
+                <input type="range" class="property-input" id="border-width" min="1" max="10" value="3">
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel de componentes -->
+    <div class="components-panel">
+        <div class="panel-title">Componentes en la Pizarra</div>
+        <div class="components-list" id="components-list">
+            <!-- Los componentes se agregarán dinámicamente -->
+        </div>
+    </div>
+
+    <!-- Pizarra principal -->
+    <div class="whiteboard" id="whiteboard">
+        <div class="whiteboard-content" id="whiteboard-content">
+            <!-- Los objetos se crearán aquí -->
+        </div>
+    </div>
+
+    <!-- Controles de zoom -->
+    <div class="zoom-controls">
+        <button class="zoom-btn" onclick="zoomIn()" title="Acercar">+</button>
+        <button class="zoom-btn" onclick="zoomOut()" title="Alejar">-</button>
+        <button class="zoom-btn" onclick="resetZoom()" title="Reset">⌂</button>
+    </div>
+
+   <script src="./src/js/pizarra.js"></script>
+</body></html>
