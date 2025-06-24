@@ -1132,6 +1132,17 @@ function loadProject() {
     input.click();
 }
 
+function closeWelcome() {
+    const welcome = document.getElementById('welcomeScreen');
+    welcome.style.opacity = '0';
+    welcome.style.pointerEvents = 'none'; // Permite interactuar con el contenido debajo
+
+    // Opcional: deshabilitar por completo después de la transición
+    setTimeout(() => {
+        welcome.style.display = 'none';
+    }, 500); // tiempo en ms igual a la duración de la animación
+}
+
 function exportProject() {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');

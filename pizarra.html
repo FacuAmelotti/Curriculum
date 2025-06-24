@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pizarra</title>
     <link rel="stylesheet" href="./src/css/pizarra.css">
+        <link rel="stylesheet" href="./src/css/pizarraAditional.css">
     <link rel="icon" href="./src/img/pizarra.png" type="image/png">
 </head>
 <body>
@@ -85,6 +86,25 @@
         <div class="tool-btn" onclick="setTool('line')" title="Círculo">
             /
         </div>
+    </div>
+
+
+    <!-- Pantalla de Bienvenida -->
+    <div class="welcome-screen" id="welcomeScreen">
+    <h1 class="welcome-title">Pizarra</h1>
+    <div class="welcome-panel">
+        <h2>Bienvenido a la Pizarra</h2>
+        <p>Esta herramienta te permite crear, organizar y diseñar tus ideas visuales de forma intuitiva.</p>
+        <ul>
+            <li>Arrastra objetos</li>
+            <li>Personaliza estilos</li>
+            <li>Diseña diagramas y flujos</li>
+            <li>Exporta tu trabajo</li>
+        </ul>
+        <p class="dev-msg">Esta Aplicacion aun se encuentra en desarrollo.</p>
+    
+        <button class="welcome-btn" onclick="closeWelcome()">Continuar</button>
+    </div>
     </div>
 
     <!-- Panel de propiedades -->

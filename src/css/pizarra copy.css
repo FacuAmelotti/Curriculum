@@ -49,6 +49,7 @@ body {
     padding: 0 20px;
     color: var(--charcoal);
     transition: all 0.2s ease;
+    border-right: 1px solid var(--light-gray);
     font-weight: 400;
     font-size: 13px;
     letter-spacing: 0.3px;
@@ -395,6 +396,7 @@ body {
     border-radius: 3px;
     background: #ddd;
     outline: none;
+    -webkit-appearance: none;
 }
 
 .property-slider::-webkit-slider-thumb {

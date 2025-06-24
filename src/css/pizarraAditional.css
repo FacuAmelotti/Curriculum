@@ -1,0 +1,582 @@
+/* === RESET Y CONFIGURACIÓN GENERAL === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+:root {
+    /* Colores principales */
+    --bg-dark: #000000;
+    --bg-darker: #1a1a1a;
+    --bg-panel: #1a1a1a;
+    --accent: #00e676; /* verde vibrante */
+    --text-light: #f5f5f5;
+    --text-medium: #cccccc;
+    --border-color: #333333;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --hover-bg: #242424;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    overflow: hidden;
+    position: relative;
+}
+
+/* === BARRA DE NAVEGACIÓN SUPERIOR === */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: var(--bg-darker);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    z-index: 1000;
+    padding: 0 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-item {
+
+    position: relative;
+    padding: 15px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-medium);
+    transition: background 0.3s;
+}
+
+.nav-item:hover {
+    background: var(--hover-bg);
+    color: var(--accent);
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg-panel);
+    min-width: 180px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s;
+}
+
+.nav-item:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    padding: 12px 20px;
+    color: var(--text-medium);
+    font-size: 13px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background: var(--hover-bg);
+    color: var(--accent);
+}
+
+.nav-exit-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-darker);
+    color: var(--text-medium);
+    font-size: 20px;
+    border-left: 1px solid var(--border-color);
+    transition: background 0.3s;
+}
+
+.nav-exit-btn:hover {
+    background: #ff1744;
+    color: white;
+}
+
+.dev-msg {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 12px;
+    color: #97822c;
+    background-color: rgba(255, 204, 0, 0.1);
+    border: 1px solid rgba(255, 204, 0, 0.3);
+    border-radius: 4px;
+    margin-top: 10px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    box-shadow: 0 0 4px rgba(255, 204, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.dev-msg::before {
+    content: "🔧 ";
+    font-size: 10px;
+    vertical-align: middle;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === PIZARRA CENTRAL === */
+.whiteboard {
+    position: absolute;
+    top: 60px;
+    left: 70px;
+    right: 300px;
+    bottom: 200px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* === PANEL DE HERRAMIENTAS IZQUIERDO === */
+.tools-panel {
+    position: fixed;
+    left: 0;
+    top: 60px;
+    width: 70px;
+    height: calc(100vh - 60px);
+    background: var(--bg-darker);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 900;
+}
+
+.tool-btn {
+    width: 50px;
+    height: 50px;
+    background: var(--bg-panel);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-medium);
+    font-size: 20px;
+    transition: all 0.3s;
+}
+
+.tool-btn:hover,
+.tool-btn.active {
+    background: var(--hover-bg);
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* === PANEL DE PROPIEDADES DERECHO === */
+.properties-panel {
+    position: fixed;
+    right: 0;
+    top: 60px;
+    width: 300px;
+    height: calc(100vh - 60px);
+    background: var(--bg-panel);
+    border-left: 1px solid var(--border-color);
+    color: var(--text-light);
+    padding: 20px;
+    overflow-y: auto;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 900;
+}
+
+.properties-panel.visible {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.panel-section {
+    background: var(--bg-darker);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.panel-title {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: var(--text-medium);
+    position: relative;
+    padding-bottom: 6px;
+}
+
+.panel-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+}
+
+.property-group {
+    margin-bottom: 15px;
+}
+
+.property-label {
+    font-size: 12px;
+    color: var(--text-medium);
+    margin-bottom: 5px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.color-picker,
+.property-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-darker);
+    color: var(--text-light);
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.color-picker:focus,
+.property-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: var(--bg-panel);
+}
+
+
+
+/* === COMPONENTES INFERIORES === */
+.components-panel {
+    position: fixed;
+    bottom: 0;
+    left: 70px;
+    right: 300px;
+    height: 200px;
+    background: var(--bg-darker);
+    border-top: 1px solid var(--border-color);
+    padding: 15px;
+    overflow-x: auto;
+    white-space: nowrap;
+    z-index: 900;
+}
+
+.component-item {
+    display: inline-block;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 6px;
+    color: var(--text-medium);
+    transition: all 0.3s;
+}
+
+.component-item:hover {
+    background: var(--hover-bg);
+    color: var(--accent);
+}
+
+/* === CONTROLES DE ZOOM === */
+.zoom-controls {
+    position: fixed;
+    bottom: 220px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.zoom-btn {
+    width: 50px;
+    height: 50px;
+    background: var(--bg-panel);
+    color: var(--text-light);
+    border: 1px solid var(--border-color);
+    font-size: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.zoom-btn:hover {
+    background: var(--hover-bg);
+    color: var(--accent);
+    transform: scale(1.1);
+}
+
+/* === SCROLLBAR PERSONALIZADO === */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-darker);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+/* === PANTALLA DE BIENVENIDA === */
+
+
+.welcome-title {
+    font-size: 48px;
+    color: white;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.welcome-panel {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    width: 100%;
+    animation: fadeInUp 0.5s ease;
+}
+
+.welcome-panel h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.welcome-panel ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 15px;
+}
+
+.welcome-panel ul li {
+    margin-bottom: 6px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.welcome-panel ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.welcome-btn {
+    background: var(--accent);
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.welcome-btn:hover {
+    background: #15c240;
+}
+
+.welcome-btn:hover {
+    transform: scale(1.05);
+}
+
+/* === ANIMACIONES === */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+
+/* === TOOLTIP O SUGERENCIAS VISUALES === */
+.tooltip {
+    position: absolute;
+    background: var(--bg-darker);
+    color: var(--text-light);
+    border: 1px solid var(--border-color);
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    z-index: 9999;
+    white-space: nowrap;
+}
+
+.tooltip.visible {
+    opacity: 1;
+    visibility: visible;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* === BOTONES DE HERRAMIENTAS CON ÍCONOS === */
+.tool-btn i {
+    font-size: 20px;
+    transition: transform 0.2s;
+}
+
+.tool-btn:hover i {
+    transform: scale(1.2);
+}
+
+/* === CONTROLES AVANZADOS DE ZOOM === */
+.zoom-controls .zoom-btn:first-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.zoom-controls .zoom-btn:last-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.zoom-controls .zoom-btn:nth-child(2) {
+    border-radius: 0;
+}
+
+/* === PANEL DE COMPONENTES INFERIOR === */
+.components-panel::-webkit-scrollbar {
+    height: 6px;
+}
+
+.components-panel::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 3px;
+}
+
+.component-item {
+    display: inline-block;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 6px;
+    color: var(--text-medium);
+    transition: all 0.3s ease;
+    font-size: 13px;
+}
+
+.component-item:hover {
+    background: var(--hover-bg);
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* === PANEL DE PROPIEDADES INTERACTIVO === */
+.property-input,
+.color-picker {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-darker);
+    color: var(--text-light);
+    border-radius: 6px;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+.property-input:focus,
+.color-picker:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: var(--bg-panel);
+    box-shadow: 0 0 0 2px rgba(0, 230, 118, 0.2);
+}
+
+
+
+/* === ESTILO DE MENSAJES TEMPORALES (TOASTS) === */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--bg-darker);
+    color: var(--text-light);
+    padding: 12px 20px;
+    border-radius: 6px;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 9998;
+    font-size: 13px;
+    animation: fadeInUp 0.3s ease forwards;
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 480px) {
+    
+    .welcome-panel {
+        background: rgba(0, 0, 0, 0.58);
+    }
+
+}
+
+@media (max-width: 768px) {
+    .welcome-panel {
+        background: rgba(0, 0, 0, 0.58);
+    }
+}
