@@ -300,6 +300,111 @@ const knowledge = {
     ]
   },
 
+  duda: {
+  weight: 9,
+  synonyms: ["mmm", "no sé", "nose", "que hago", "qué hago", "no estoy seguro", "estoy perdido", "y ahora", "ayuda"],
+  responses: [
+    "Tranqui, vamos paso a paso. Contame qué estás viendo o qué querés hacer.",
+    "Eso suena a que hay algo que no cierra. ¿Querés que lo pensemos juntos?",
+    "Mmm, suena a dilema técnico. A ver... ¿qué probaste hasta ahora?",
+    "No te preocupes, a todos nos pasa. Empecemos desde lo más básico.",
+    "Ok, pará... respiro hondo y te tiro una mano. ¿Qué es lo que más te traba?",
+    "Si estás en la etapa del '¿qué hago?', estás justo antes del 'ahhh ahí estaba'. 😉"
+  ]
+},
+
+frustracion: {
+  weight: 9,
+  synonyms: ["esto no anda", "no me sale", "me frustra", "me rompe", "no funciona", "ya fue", "no sirve", "odio esto"],
+  responses: [
+    "Uff, sí, eso quema. Pero tranqui, todo bug tiene su punto débil 💥",
+    "Te entiendo. Probá tomar aire, mirar el código con otros ojos, y si querés lo vemos juntos.",
+    "Eso grita *'stackoverflow time'*, pero capaz lo resolvemos más rápido 😄",
+    "La tecnología nos ama… solo que a veces se expresa mal. Mandame lo que tenés.",
+    "No te rindas. El 90% del laburo es insistir con estilo 😎",
+    "Tirá el error exacto, y vemos qué hacemos. Entre los dos, seguro sale."
+  ]
+},
+
+charla: {
+  weight: 7,
+  synonyms: ["estoy aburrido", "me colgué", "tengo tiempo", "charlamos", "charlamos?", "decime algo", "hablame"],
+  responses: [
+    "Bueno, ya que estamos... ¿Querés que te tire un dato freak o un chiste malo?",
+    "Podemos hablar de lo que sea: redes, código, teorías locas, la vida...",
+    "¿Sabías que Facu creó un juego sobre protocolos? Alta nerdada, pero re bien pensada.",
+    "Yo estoy 24/7, así que si querés charlar, decime nomás.",
+    "Te entiendo. A veces lo mejor es frenar un rato y hablar boludeces.",
+    "¿Y si jugamos a que somos productivos por 5 minutos? 😅"
+  ]
+},
+
+confusion: {
+  weight: 8,
+  synonyms: ["que onda", "eh?", "wtf", "no entiendo", "qué carajo", "qué es esto", "what", "raro esto"],
+  responses: [
+    "Jajaja, sí, suena raro. Pero tiene una lógica, te la explico si querés.",
+    "Yo también reaccionaría igual 😂 Pero dejame mostrarte cómo va.",
+    "Esa fue tu cara de '¿qué estoy viendo?', ¿no? Tranqui, tiene sentido.",
+    "Te juro que no es magia negra, es solo lógica… torcida.",
+    "¡Entendible! A veces el código parece hablar en klingon.",
+    "Dale otra mirada, y si seguís sin entender, lo destrabamos juntos."
+  ]
+},
+
+validacion: {
+  weight: 6,
+  synonyms: ["te parece", "está bien así", "voy bien", "estoy haciendo bien", "funciona esto", "es correcto"],
+  responses: [
+    "Suena bastante bien, che. Yo lo dejaría así salvo que tengas otra idea.",
+    "Sí, va por buen camino. Acordate que lo más importante es que entiendas vos lo que hiciste.",
+    "Podés validarlo corriendo unos tests o pensándolo como si se lo explicaras a alguien más.",
+    "Para mí va bien. Igual, si querés más precisión, mostrame el código y te digo mejor.",
+    "Sí, parece que va bien. ¿Querés probarlo con un caso más extremo?",
+    "Me copa la idea. No hay una única forma de hacer las cosas, y esta es válida."
+  ]
+},
+
+elogio: {
+  weight: 7,
+  synonyms: ["sos un genio", "crack", "que groso", "ídolo", "me encantó", "está buenísimo", "re bien hecho"],
+  responses: [
+    "¡Gracias loco! Me alegra que te cope, de verdad. 😄",
+    "Aww, se hace lo que se puede. ¡Gracias por la buena onda!",
+    "Gracias por ese mimo digital. Lo guardo en mi RAM emocional 🧠❤️",
+    "¡Vamos todavía! Esas palabras suman banda.",
+    "Qué bueno leer eso, posta. Me motiva a seguir metiéndole.",
+    "Gracias por el feedback fachero 😎"
+  ]
+},
+
+agradecimiento: {
+  weight: 6,
+  synonyms: ["gracias", "mil gracias", "te agradezco", "muy amable", "graciasss"],
+  responses: [
+    "¡De nada, loco! Acá para lo que necesites.",
+    "Siempre un gusto dar una mano. 😉",
+    "Para eso estoy, no hay drama.",
+    "Cuando quieras. Vos avisá nomás.",
+    "Gracias a vos por confiar. ¡Seguimos!",
+    "Un placer ayudarte. ¡Seguimos codeando!"
+  ]
+},
+
+critica: {
+  weight: 5,
+  synonyms: ["esto es una porquería", "no me gusta", "es horrible", "una cagada", "anda mal", "te odio"],
+  responses: [
+    "Ey, tranqui. Si algo no va, lo arreglamos. Todo se puede mejorar. 💪",
+    "Duele, pero acepto el feedback. ¿Qué parte no te gustó?",
+    "No busco gustar a todos, pero si me tirás detalles, lo mejoro.",
+    "Si algo anda mal, pasá data así lo solucionamos.",
+    "Te entiendo. No todo encaja para todos. Pero gracias por decirlo.",
+    "Bueno... fuerte pero justo. ¡Vamos a pulirlo entonces!"
+  ]
+},
+
+
   // Humor Negro - CLAVE DIFERENTE Y SINÓNIMOS ESPECÍFICOS
   humor_negro: {
     weight: 10,
@@ -420,7 +525,7 @@ const knowledge = {
 
 // Comandos específicos expandidos y actualizados
 const commands = {
-  help: "📜 LISTA COMPLETA DE COMANDOS:\n\n🔹 INFORMACIÓN BÁSICA:\n• 🆘 /help - Mostrar ayuda principal\n• ℹ️ /info - Información detallada sobre mí\n• 🧹 /clear - Limpiar la consola\n• ☁️ /clima - Info meteorológica (simulada)\n• 🗺️ /mapa - Abrir mapa interactivo de Argentina\n• 👨‍🏫 /pizarra - Abrir la pizarra iteractiva\n• 🌓 /changemode - Cambiar entre tema claro/oscuro\n• 🔢 /version - Ver mi versión\n• 👤 /creator - Info sobre Facundo\n• 💻 /estado - Estado del sistema\n\n🔹 TIEMPO Y FECHA:\n• 🕒 /hora - Ver la hora actual\n• 📆 /fecha - Ver fecha y hora completas\n• 📅 /dia - Saber qué día es hoy\n• ⏱️ /uptime - Tiempo que llevo activo\n\n🔹 DIVERSIÓN Y JUEGOS:\n• 👋 /saludo - Recibir un saludo amigable\n• 😂 /chiste - Escuchar un chiste de programación\n• 🎲 /dado - Tirar un dado (1-6)\n• 🟡 /moneda - Tirar una moneda (cara/cruz)\n• 🎱 /pregunta - Respuesta mágica tipo 8-ball\n• 🔢 /random - Generar número aleatorio\n\n• 🐦 /juego_1 - 'Salva a los Horneritos!'\n• ❔  /juego_2 - 'Preguntas de Argentina!'",
+  help: "📜 LISTA COMPLETA DE COMANDOS:\n\n🔹 INFORMACIÓN BÁSICA:\n• 🆘 /help - Mostrar ayuda principal\n• ℹ️ /info - Información detallada sobre mí\n• 🧹 /clear - Limpiar la consola\n• ☁️ /clima - Info meteorológica (simulada)\n• 🗺️ /mapa - Abrir mapa interactivo de Argentina\n• 👨‍🏫 /pizarra - Abrir la pizarra iteractiva\n• 🌓 /changemode - Cambiar entre tema claro/oscuro\n• 🔢 /version - Ver mi versión\n• 👤 /creator - Info sobre Facundo\n• 💻 /estado - Estado del sistema\n\n🔹 TIEMPO Y FECHA:\n• 🕒 /hora - Ver la hora actual\n• 📆 /fecha - Ver fecha y hora completas\n• 📅 /dia - Saber qué día es hoy\n• ⏱️ /uptime - Tiempo que llevo activo\n\n🔹 DIVERSIÓN Y JUEGOS:\n• 👋 /saludo - Recibir un saludo amigable\n• 😂 /chiste - Escuchar un chiste de programación\n• 🎲 /dado - Tirar un dado (1-6)\n• 🟡 /moneda - Tirar una moneda (cara/cruz)\n• 🎱 /pregunta - Respuesta mágica tipo 8-ball\n• 🔢 /random - Generar número aleatorio\n\n• 🐦 /juego_1 - 'Salva a los Horneritos!'\n• ❔  /juego_2 - 'Preguntas de Argentina!'\n• 🌐 /juego_3 - 'Protocolopolis!'",
 
   info: "👋 ¡Hola! Soy F4.K1.T0 (Fakito)\n🧠 ChatBot semi-inteligente.\n👨💻 Fui creado por: Facundo Ezequiel Amelotti\n🌟 Versión: 2.0 (Sigo en desarrollo!)\n💬 Lenguaje: JavaScript puro\n\n¡Pregúntame lo que quieras! 🚀",
   
@@ -576,13 +681,18 @@ rendimiento: () => {
 
   juego_1: () => {  
 
-    window.open('./salvaHorneritos.html', '_blank');
+    window.open('./salvaHorneritos.html');
     return "🎮 Abriendo juego 'Salva a los horneritos!'...";
   },
 
   juego_2: () => {  
-    window.open('./preguntasYrespuestas.html', '_blank');
+    window.open('./preguntasYrespuestas.html');
     return "🎮 Abriendo juego 'Preguntas de Argentina!'...";
+  },
+
+    juego_3: () => {  
+    window.open('https://protocolopolis.netlify.app/', '_blank');
+    return "🎮 Abriendo juego 'Protocolopolis!'...";
   },
 
   descargar_himno: () => {
@@ -1067,7 +1177,7 @@ document.addEventListener("keydown", (e) => {
 const observer = new MutationObserver(() => {
   if (!greeted && !consoleBox.classList.contains("console-hidden")) {
     const welcomeMessages = [
-      " ¡BIENVENIDO AL SISTEMA!\n\n💙 Me llamo F4.K1.T0, ¡pero mis amigos me dicen Fakito!\n🧠 Soy un ChatBot semi-inteligente creado por Facundo Ezequiel Amelotti\n🎯 Versión 2.0 Enhanced con nuevas funciones\n\n📝 Escribí '/help' para ver todos mis comandos\n\n🚀 ¡Empecemos a conversar!"
+      " ¡BIENVENIDO AL SISTEMA!\n\n💙 Me llamo F4.K1.T0, ¡pero mis amigos me dicen Fakito!\n🧠 Soy un ChatBot semi-inteligente creado por Facundo Ezequiel Amelotti\n🎯 Versión 2.0\n\n📝 Escribí '/help' para ver todos mis comandos"
     ];
     
     appendToConsole(getRandomResponse(welcomeMessages));
